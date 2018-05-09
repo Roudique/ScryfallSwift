@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8429B4B1208832E2001B6BB7"
-               BuildableName = "ScryfallSwift_watchOS.framework"
+               BuildableName = "ScryfallSwift.framework"
                BlueprintName = "ScryfallSwift watchOS"
                ReferencedContainer = "container:ScryfallSwift.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8429B4B1208832E2001B6BB7"
-            BuildableName = "ScryfallSwift_watchOS.framework"
+            BuildableName = "ScryfallSwift.framework"
             BlueprintName = "ScryfallSwift watchOS"
             ReferencedContainer = "container:ScryfallSwift.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8429B4B1208832E2001B6BB7"
-            BuildableName = "ScryfallSwift_watchOS.framework"
+            BuildableName = "ScryfallSwift.framework"
             BlueprintName = "ScryfallSwift watchOS"
             ReferencedContainer = "container:ScryfallSwift.xcodeproj">
          </BuildableReference>

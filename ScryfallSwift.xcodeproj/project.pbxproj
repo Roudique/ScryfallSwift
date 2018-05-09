@@ -11,7 +11,29 @@
 		8429B4DB20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8429B4DC20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8429B4DD20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8429B4E420A2714F001B6BB7 /* ScryfallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */; };
+		8429B4E520A2714F001B6BB7 /* ScryfallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */; };
+		8429B4E620A2714F001B6BB7 /* ScryfallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */; };
+		8429B4E720A2714F001B6BB7 /* ScryfallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */; };
+		8429B4EA20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
+		8429B4EB20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
+		8429B4EC20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
+		8429B4ED20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
+		84E9F98420A285F900A3DD1D /* ScryfallSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9F98320A285F900A3DD1D /* ScryfallSwiftTests.swift */; };
+		84E9F98620A285F900A3DD1D /* ScryfallSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8429B4CC208832F8001B6BB7 /* ScryfallSwift.framework */; };
+		84E9F98C20A2863D00A3DD1D /* ScryfallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */; };
+		84E9F98D20A2864000A3DD1D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E9F98720A285F900A3DD1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8429B499208832CA001B6BB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8429B4CB208832F8001B6BB7;
+			remoteInfo = "ScryfallSwift macOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8429B4A4208832D8001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +46,11 @@
 		8429B4D820883349001B6BB7 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
 		8429B4D920883446001B6BB7 /* ScryfallSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScryfallSwift.h; sourceTree = "<group>"; };
 		8429B4DE2088349F001B6BB7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallManager.swift; sourceTree = "<group>"; };
+		8429B4E920A27250001B6BB7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		84E9F98120A285F900A3DD1D /* ScryfallSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScryfallSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E9F98320A285F900A3DD1D /* ScryfallSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallSwiftTests.swift; sourceTree = "<group>"; };
+		84E9F98520A285F900A3DD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +82,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E9F97E20A285F900A3DD1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E9F98620A285F900A3DD1D /* ScryfallSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -62,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				8429B4D42088330C001B6BB7 /* Sources */,
+				84E9F98220A285F900A3DD1D /* ScryfallSwiftTests */,
 				8429B4A5208832D8001B6BB7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +109,7 @@
 				8429B4B2208832E2001B6BB7 /* ScryfallSwift.framework */,
 				8429B4BF208832EC001B6BB7 /* ScryfallSwift.framework */,
 				8429B4CC208832F8001B6BB7 /* ScryfallSwift.framework */,
+				84E9F98120A285F900A3DD1D /* ScryfallSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,14 +117,33 @@
 		8429B4D42088330C001B6BB7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8429B4E820A2723E001B6BB7 /* Model */,
 				8429B4D920883446001B6BB7 /* ScryfallSwift.h */,
 				8429B4D620883349001B6BB7 /* Info-iOS.plist */,
 				8429B4D820883349001B6BB7 /* Info-macOS.plist */,
 				8429B4D520883349001B6BB7 /* Info-tvOS.plist */,
 				8429B4D720883349001B6BB7 /* Info-watchOS.plist */,
 				8429B4DE2088349F001B6BB7 /* Package.swift */,
+				8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		8429B4E820A2723E001B6BB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8429B4E920A27250001B6BB7 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84E9F98220A285F900A3DD1D /* ScryfallSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E9F98320A285F900A3DD1D /* ScryfallSwiftTests.swift */,
+				84E9F98520A285F900A3DD1D /* Info.plist */,
+			);
+			path = ScryfallSwiftTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,12 +256,31 @@
 			productReference = 8429B4CC208832F8001B6BB7 /* ScryfallSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		84E9F98020A285F900A3DD1D /* ScryfallSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E9F98920A285F900A3DD1D /* Build configuration list for PBXNativeTarget "ScryfallSwiftTests" */;
+			buildPhases = (
+				84E9F97D20A285F900A3DD1D /* Sources */,
+				84E9F97E20A285F900A3DD1D /* Frameworks */,
+				84E9F97F20A285F900A3DD1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E9F98820A285F900A3DD1D /* PBXTargetDependency */,
+			);
+			name = ScryfallSwiftTests;
+			productName = ScryfallSwiftTests;
+			productReference = 84E9F98120A285F900A3DD1D /* ScryfallSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8429B499208832CA001B6BB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					8429B4A3208832D8001B6BB7 = {
@@ -228,6 +303,10 @@
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
+					84E9F98020A285F900A3DD1D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 8429B49C208832CA001B6BB7 /* Build configuration list for PBXProject "ScryfallSwift" */;
@@ -246,6 +325,7 @@
 				8429B4B1208832E2001B6BB7 /* ScryfallSwift watchOS */,
 				8429B4BE208832EC001B6BB7 /* ScryfallSwift tvOS */,
 				8429B4CB208832F8001B6BB7 /* ScryfallSwift macOS */,
+				84E9F98020A285F900A3DD1D /* ScryfallSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +359,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E9F97F20A285F900A3DD1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -286,6 +373,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8429B4E420A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
+				8429B4EA20A27250001B6BB7 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +382,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8429B4E520A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
+				8429B4EB20A27250001B6BB7 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8429B4E620A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
+				8429B4EC20A27250001B6BB7 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,10 +400,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8429B4E720A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
+				8429B4ED20A27250001B6BB7 /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E9F97D20A285F900A3DD1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E9F98420A285F900A3DD1D /* ScryfallSwiftTests.swift in Sources */,
+				84E9F98D20A2864000A3DD1D /* Card.swift in Sources */,
+				84E9F98C20A2863D00A3DD1D /* ScryfallManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E9F98820A285F900A3DD1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8429B4CB208832F8001B6BB7 /* ScryfallSwift macOS */;
+			targetProxy = 84E9F98720A285F900A3DD1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8429B49D208832CA001B6BB7 /* Debug */ = {
@@ -886,6 +999,128 @@
 			};
 			name = Release;
 		};
+		84E9F98A20A285F900A3DD1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y3RCB36D2R;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ScryfallSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roudique.ScryfallSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		84E9F98B20A285F900A3DD1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y3RCB36D2R;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ScryfallSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roudique.ScryfallSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -930,6 +1165,15 @@
 			buildConfigurations = (
 				8429B4D2208832F9001B6BB7 /* Debug */,
 				8429B4D3208832F9001B6BB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E9F98920A285F900A3DD1D /* Build configuration list for PBXNativeTarget "ScryfallSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E9F98A20A285F900A3DD1D /* Debug */,
+				84E9F98B20A285F900A3DD1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

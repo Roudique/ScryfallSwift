@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8429B4CB208832F8001B6BB7"
-               BuildableName = "ScryfallSwift_macOS.framework"
+               BuildableName = "ScryfallSwift.framework"
                BlueprintName = "ScryfallSwift macOS"
                ReferencedContainer = "container:ScryfallSwift.xcodeproj">
             </BuildableReference>
@@ -27,9 +27,29 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84E9F98020A285F900A3DD1D"
+               BuildableName = "ScryfallSwiftTests.xctest"
+               BlueprintName = "ScryfallSwiftTests"
+               ReferencedContainer = "container:ScryfallSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8429B4CB208832F8001B6BB7"
+            BuildableName = "ScryfallSwift.framework"
+            BlueprintName = "ScryfallSwift macOS"
+            ReferencedContainer = "container:ScryfallSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -48,7 +68,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8429B4CB208832F8001B6BB7"
-            BuildableName = "ScryfallSwift_macOS.framework"
+            BuildableName = "ScryfallSwift.framework"
             BlueprintName = "ScryfallSwift macOS"
             ReferencedContainer = "container:ScryfallSwift.xcodeproj">
          </BuildableReference>
@@ -66,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8429B4CB208832F8001B6BB7"
-            BuildableName = "ScryfallSwift_macOS.framework"
+            BuildableName = "ScryfallSwift.framework"
             BlueprintName = "ScryfallSwift macOS"
             ReferencedContainer = "container:ScryfallSwift.xcodeproj">
          </BuildableReference>
