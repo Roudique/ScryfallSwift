@@ -8,6 +8,7 @@
 import Foundation
 
 
+/// While Magic cards can represent costs and colors using printed symbols, the Comprehensive Rules and Scryfall’s API use a text representation of these values.
 enum CardColor: String, Decodable {
     case white  = "W"
     case blue   = "U"
@@ -16,6 +17,8 @@ enum CardColor: String, Decodable {
     case green  = "G"
 }
 
+
+/// Card objects represent individual Magic: The Gathering cards that players could obtain and add to their collection (with a few minor exceptions).
 public class Card: Decodable {
     //MARK: - Core fields
     
@@ -83,6 +86,12 @@ public class Card: Decodable {
     var handModifier: String?
     
     /// This card’s colors.
+    ///
+    ///Whenever the API presents set of Magic colors, the field will be an array that uses the uppercase, single-character abbreviations for those colors. For example, ["W","U"] represents something that is both white and blue. Colorless sources are denoted with an empty array []
+    ///
+    ///Common places were you might see this kind of array are a Card object’s colors and color_identity. When a color field is null or missing, it implies that that information is not pertinent for the current object. It does not imply that the object is colorless.
+    ///
+    ///Color arrays are not guaranteed to be in a particular order.
     var colors: [CardColor]
     
     /// The colors in this card’s color indicator, if any. A null value for this field indicates the card does not have one.
@@ -185,7 +194,7 @@ public class Card: Decodable {
     var isFutureshifted: Bool
     
     
-    //MARK: - CodingKeys
+    // CodingKeys
     
     enum CodingKeys: String, CodingKey {
         // Core fields.
@@ -249,6 +258,9 @@ public class Card: Decodable {
     }
 }
 
+//MARK: -
+
+/// Multiface cards have a card_faces property containing at least two Card Face objects.
 struct CardFace: Decodable {
     var name: String
     var typeLine: String
@@ -277,5 +289,18 @@ struct CardFace: Decodable {
         case illustrationID = "illustration_id"
         case imageURIs = "image_uris"
     }
+}
+
+//MARK: -
+/// Cards that are closely related to other cards (because they call them by name, or generate a token, or meld, etc) have a related_cards property that contains Related Card objects.
+struct RelatedCard: Decodable {
+    /// An unique ID for this card in Scryfall’s database.
+    var id: String
+    
+    /// The name of this particular related card.
+    var name: String
+    
+    /// A URI where you can retrieve a full object describing this card on Scryfall’s API.
+    var uri: URL
 }
 
