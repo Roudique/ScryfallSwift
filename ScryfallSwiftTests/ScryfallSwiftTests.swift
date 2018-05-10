@@ -116,5 +116,9 @@ class ScryfallSwiftTests: XCTestCase {
         let card = try! jsonDecoder.decode(Card.self, from: json)
 
         assert(card.id.count > 0)
+        assert(card.name.count > 0)
+        assert(card.cmc > -1)
+        
+        print("card colors: \(card.colors)")
     }
 }
