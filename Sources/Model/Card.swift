@@ -62,13 +62,17 @@ public class Card: Decodable {
     var cmc: Int
     
     /// The type line of this card.
-    var typeLine: String
+    ///
+    /// **Null** if card is double-faced.
+    var typeLine: String?
     
     /// The Oracle text for this card, if any.
     var oracleText: String?
     
     /// The mana cost for this card. This value will be any empty string "" if the cost is absent. Remember that per the game rules, a missing mana cost and a mana cost of {0} are different values.
-    var manaCost: String
+    ///
+    /// **Null** if card is double-faced.
+    var manaCost: String?
     
     /// This card’s power, if any. Note that some cards have powers that are not numeric, such as *.
     var power: String?
@@ -92,7 +96,9 @@ public class Card: Decodable {
     ///Common places were you might see this kind of array are a Card object’s colors and color_identity. When a color field is null or missing, it implies that that information is not pertinent for the current object. It does not imply that the object is colorless.
     ///
     ///Color arrays are not guaranteed to be in a particular order.
-    var colors: [CardColor]
+    ///
+    /// **Null** if card is double-faced.
+    var colors: [CardColor]?
     
     /// The colors in this card’s color indicator, if any. A null value for this field indicates the card does not have one.
     var colorIndicator: [CardColor]?
@@ -192,6 +198,7 @@ public class Card: Decodable {
     
     /// True if this card is from the future.
     var isFutureshifted: Bool
+    
     
     
     // CodingKeys
