@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84E9F98020A285F900A3DD1D"
+               BuildableName = "ScryfallSwiftTests.xctest"
+               BlueprintName = "ScryfallSwiftTests"
+               ReferencedContainer = "container:ScryfallSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "8429B4A3208832D8001B6BB7"
+            BuildableName = "ScryfallSwift.framework"
+            BlueprintName = "ScryfallSwift iOS"
+            ReferencedContainer = "container:ScryfallSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

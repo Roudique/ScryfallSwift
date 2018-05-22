@@ -19,6 +19,8 @@
 		8429B4EB20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
 		8429B4EC20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
 		8429B4ED20A27250001B6BB7 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E920A27250001B6BB7 /* Card.swift */; };
+		847D731920A53E1400FDCDBB /* Test0.json in Resources */ = {isa = PBXBuildFile; fileRef = 847D731320A53C8C00FDCDBB /* Test0.json */; };
+		84BF792120B38D6300AB7EC3 /* Test1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84BF792020B38D6300AB7EC3 /* Test1.json */; };
 		84E9F98420A285F900A3DD1D /* ScryfallSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9F98320A285F900A3DD1D /* ScryfallSwiftTests.swift */; };
 		84E9F98620A285F900A3DD1D /* ScryfallSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8429B4CC208832F8001B6BB7 /* ScryfallSwift.framework */; };
 		84E9F98C20A2863D00A3DD1D /* ScryfallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */; };
@@ -48,6 +50,8 @@
 		8429B4DE2088349F001B6BB7 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		8429B4E320A2714F001B6BB7 /* ScryfallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallManager.swift; sourceTree = "<group>"; };
 		8429B4E920A27250001B6BB7 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		847D731320A53C8C00FDCDBB /* Test0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Test0.json; path = "ScryfallSwiftTests/Test json files/Test0.json"; sourceTree = SOURCE_ROOT; };
+		84BF792020B38D6300AB7EC3 /* Test1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test1.json; sourceTree = "<group>"; };
 		84E9F98120A285F900A3DD1D /* ScryfallSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScryfallSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E9F98320A285F900A3DD1D /* ScryfallSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallSwiftTests.swift; sourceTree = "<group>"; };
 		84E9F98520A285F900A3DD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,9 +141,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84BF791F20B38D3B00AB7EC3 /* Test json files */ = {
+			isa = PBXGroup;
+			children = (
+				847D731320A53C8C00FDCDBB /* Test0.json */,
+				84BF792020B38D6300AB7EC3 /* Test1.json */,
+			);
+			path = "Test json files";
+			sourceTree = "<group>";
+		};
 		84E9F98220A285F900A3DD1D /* ScryfallSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				84BF791F20B38D3B00AB7EC3 /* Test json files */,
 				84E9F98320A285F900A3DD1D /* ScryfallSwiftTests.swift */,
 				84E9F98520A285F900A3DD1D /* Info.plist */,
 			);
@@ -363,6 +377,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847D731920A53E1400FDCDBB /* Test0.json in Resources */,
+				84BF792120B38D6300AB7EC3 /* Test1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
