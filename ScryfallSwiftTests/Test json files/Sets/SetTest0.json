@@ -1,0 +1,15 @@
+{
+"object": "set",
+"code": "m19",
+"mtgo_code": "m19",
+"name": "Core Set 2019",
+"uri": "https://api.scryfall.com/sets/m19",
+"scryfall_uri": "https://scryfall.com/sets/m19",
+"search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Am19&unique=prints",
+"released_at": "2018-07-13",
+"set_type": "core",
+"card_count": 32,
+"digital": false,
+"foil_only": false,
+"icon_svg_uri": "https://assets.scryfall.com/assets/sets/m19.svg"
+}

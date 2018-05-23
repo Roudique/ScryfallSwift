@@ -22,7 +22,7 @@ class ScryfallSwiftTests: XCTestCase {
     
     func testExample() {
         var i = 0
-        let urls = urlsForTestFiles()
+        let urls = urlsForCardTestFiles()
         
         for url in urls {
             guard let jsonData = try? Data.init(contentsOf: url) else {
@@ -40,6 +40,28 @@ class ScryfallSwiftTests: XCTestCase {
         }
         
         print("Total cards tested: \(urls.count)")
+    }
+    
+    func testSets() {
+        var i = 0
+        let urls = urlsForSetTestFiles()
+        
+        for url in urls {
+            guard let jsonData = try? Data.init(contentsOf: url) else {
+                assertionFailure()
+                return
+            }
+            
+            let jsonDecoder = JSONDecoder()
+            let set = try? jsonDecoder.decode(CardSet.self, from: jsonData)
+            
+            assert(set != nil, "Set should not be nil. Looks like json wasn't parsed correctly.")
+            
+            print("Parsed set with name: [\(set!.name)]")
+            i += 1
+        }
+        
+        print("Total sets tested: \(urls.count)")
     }
     
     
@@ -62,16 +84,30 @@ class ScryfallSwiftTests: XCTestCase {
         return Set<String>.init(firstKeys).symmetricDifference(Set<String>.init(secondKeys))
     }
     
-    func urlsForTestFiles() -> [URL] {
+    func urlsForCardTestFiles() -> [URL] {
         var urls = [URL]()
         let bundle = Bundle(for: type(of: self))
 
         var i = 0
-        while let fileURL = bundle.url(forResource: "Test\(i)", withExtension: "json") {
+        while let fileURL = bundle.url(forResource: "CardTest\(i)", withExtension: "json") {
             urls.append(fileURL)
             i += 1
         }
         
         return urls
+    }
+    
+    func urlsForSetTestFiles() -> [URL] {
+        var urls = [URL]()
+        let bundle = Bundle(for: type(of: self))
+        
+        var i = 0
+        while let fileURL = bundle.url(forResource: "SetTest\(i)", withExtension: "json") {
+            urls.append(fileURL)
+            i += 1
+        }
+        
+        return urls
+
     }
 }
