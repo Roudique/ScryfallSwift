@@ -34,7 +34,7 @@ class ScryfallSwiftTests: XCTestCase {
             let card = try? jsonDecoder.decode(Card.self, from: jsonData)
 
             assert(card != nil, "Card should not be nil. Looks like json wasn't parsed")
-
+            
             print("Tried card with name: [\(card!.name)]")
             i += 1
         }
