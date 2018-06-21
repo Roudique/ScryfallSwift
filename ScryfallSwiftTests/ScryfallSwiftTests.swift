@@ -9,6 +9,7 @@ import XCTest
 import ScryfallSwift
 
 class ScryfallSwiftTests: XCTestCase {
+    let lineBrake = "======================================================================================"
     
     override func setUp() {
         super.setUp()
@@ -20,10 +21,12 @@ class ScryfallSwiftTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testCards() {
         var i = 0
         let urls = urlsForCardTestFiles()
         
+        print("\(lineBrake)\nStarted testing cards")
+
         for url in urls {
             guard let jsonData = try? Data.init(contentsOf: url) else {
                 assertionFailure()
@@ -34,17 +37,21 @@ class ScryfallSwiftTests: XCTestCase {
             let card = try? jsonDecoder.decode(Card.self, from: jsonData)
 
             assert(card != nil, "Card should not be nil. Looks like json wasn't parsed")
-
-            print("Tried card with name: [\(card!.name)]")
+            
+            print("Testing card with name: [\(card!.name)]...")
             i += 1
         }
         
-        print("Total cards tested: \(urls.count)")
+        print("\(lineBrake)\nFinished testing cards. Total cards tested: \(urls.count)")
+        print(lineBrake)
     }
     
     func testSets() {
         var i = 0
         let urls = urlsForSetTestFiles()
+        
+        print(lineBrake)
+        print("Started testing sets")
         
         for url in urls {
             guard let jsonData = try? Data.init(contentsOf: url) else {
@@ -61,7 +68,9 @@ class ScryfallSwiftTests: XCTestCase {
             i += 1
         }
         
+        print(lineBrake)
         print("Total sets tested: \(urls.count)")
+        print(lineBrake)
     }
     
     
