@@ -8,6 +8,7 @@
 import XCTest
 import ScryfallSwift
 
+
 class ScryfallSwiftTests: XCTestCase {
     let lineBrake = "======================================================================================"
     
@@ -47,29 +48,24 @@ class ScryfallSwiftTests: XCTestCase {
     }
     
     func testSets() {
-        var i = 0
-        let urls = urlsForSetTestFiles()
+        let url = urlForSetTestFile()
         
         print(lineBrake)
         print("Started testing sets")
         
-        for url in urls {
-            guard let jsonData = try? Data.init(contentsOf: url) else {
-                assertionFailure()
-                return
-            }
-            
-            let jsonDecoder = JSONDecoder()
-            let set = try? jsonDecoder.decode(CardSet.self, from: jsonData)
-            
-            assert(set != nil, "Set should not be nil. Looks like json wasn't parsed correctly.")
-            
-            print("Parsed set with name: [\(set!.name)]")
-            i += 1
+        guard let jsonData = try? Data.init(contentsOf: url) else {
+            assertionFailure()
+            return
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        guard let sets = try? jsonDecoder.decode([CardSet].self, from: jsonData) else {
+            assertionFailure("Set should not be nil. Looks like json wasn't parsed correctly.")
+            return
         }
         
         print(lineBrake)
-        print("Total sets tested: \(urls.count)")
+        print("Total sets tested: \(sets.count)")
         print(lineBrake)
     }
     
@@ -106,17 +102,11 @@ class ScryfallSwiftTests: XCTestCase {
         return urls
     }
     
-    func urlsForSetTestFiles() -> [URL] {
-        var urls = [URL]()
+    func urlForSetTestFile() -> URL {
         let bundle = Bundle(for: type(of: self))
         
-        var i = 0
-        while let fileURL = bundle.url(forResource: "SetTest\(i)", withExtension: "json") {
-            urls.append(fileURL)
-            i += 1
-        }
+        let fileURL = bundle.url(forResource: "SetsTest", withExtension: "json")!
         
-        return urls
-
+        return fileURL
     }
 }

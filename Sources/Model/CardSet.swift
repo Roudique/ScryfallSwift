@@ -17,7 +17,7 @@ class CardSet: Decodable {
     var code: String
     
     /// The unique code for this set on MTGO, which may differ from the regular code.
-    var mtgoCode: String
+    var mtgoCode: String?
     
     /// The English name of the set.
     var name: String
