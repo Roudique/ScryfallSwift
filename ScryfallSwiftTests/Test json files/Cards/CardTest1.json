@@ -8,12 +8,15 @@
                        ],
     "mtgo_id": 65194,
     "mtgo_foil_id": 65195,
+    "arena_id": 66143,
     "name": "Arguel's Blood Fast // Temple of Aclazotz",
+    "lang": "en",
     "uri": "https://api.scryfall.com/cards/xln/90",
     "scryfall_uri": "https://scryfall.com/card/xln/90?utm_source=api",
     "layout": "transform",
     "highres_image": true,
-    "cmc": 2,
+    "cmc": 2.0,
+    "type_line": "Legendary Enchantment // Legendary Land",
     "color_identity": [
                        "B"
                        ],
@@ -23,19 +26,21 @@
                    "name": "Arguel's Blood Fast",
                    "mana_cost": "{1}{B}",
                    "type_line": "Legendary Enchantment",
+                   "printed_type_line": "",
                    "oracle_text": "{1}{B}, Pay 2 life: Draw a card.\nAt the beginning of your upkeep, if you have 5 or less life, you may transform Arguel's Blood Fast.",
+                   "printed_text": "",
                    "colors": [
                               "B"
                               ],
                    "flavor_text": "Arguel's vision led him into the jungles of Ixalan . . .",
                    "illustration_id": "a1e9f54d-adde-4c8a-acd0-5c63c2fece55",
                    "image_uris": {
-                   "small": "https://img.scryfall.com/cards/small/en/xln/90a.jpg?1518204302",
-                   "normal": "https://img.scryfall.com/cards/normal/en/xln/90a.jpg?1518204302",
-                   "large": "https://img.scryfall.com/cards/large/en/xln/90a.jpg?1518204302",
-                   "png": "https://img.scryfall.com/cards/png/en/xln/90a.png?1518204302",
-                   "art_crop": "https://img.scryfall.com/cards/art_crop/en/xln/90a.jpg?1518204302",
-                   "border_crop": "https://img.scryfall.com/cards/border_crop/en/xln/90a.jpg?1518204302"
+                   "small": "https://img.scryfall.com/cards/small/en/xln/90a.jpg?1527428806",
+                   "normal": "https://img.scryfall.com/cards/normal/en/xln/90a.jpg?1527428806",
+                   "large": "https://img.scryfall.com/cards/large/en/xln/90a.jpg?1527428806",
+                   "png": "https://img.scryfall.com/cards/png/en/xln/90a.png?1527428806",
+                   "art_crop": "https://img.scryfall.com/cards/art_crop/en/xln/90a.jpg?1527428806",
+                   "border_crop": "https://img.scryfall.com/cards/border_crop/en/xln/90a.jpg?1527428806"
                    }
                    },
                    {
@@ -43,17 +48,21 @@
                    "name": "Temple of Aclazotz",
                    "mana_cost": "",
                    "type_line": "Legendary Land",
+                   "printed_type_line": "",
                    "oracle_text": "(Transforms from Arguel's Blood Fast.)\n{T}: Add {B}.\n{T}, Sacrifice a creature: You gain life equal to the sacrificed creature's toughness.",
-                   "colors": [],
+                   "printed_text": "",
+                   "colors": [
+                   
+                   ],
                    "flavor_text": ". . . to the lost temple of a bat-god of night, eternal enemy to the Threefold Sun.",
                    "illustration_id": "872bd01d-10b1-4050-84e8-bf128e624b6d",
                    "image_uris": {
-                   "small": "https://img.scryfall.com/cards/small/en/xln/90b.jpg?1518204302",
-                   "normal": "https://img.scryfall.com/cards/normal/en/xln/90b.jpg?1518204302",
-                   "large": "https://img.scryfall.com/cards/large/en/xln/90b.jpg?1518204302",
-                   "png": "https://img.scryfall.com/cards/png/en/xln/90b.png?1518204302",
-                   "art_crop": "https://img.scryfall.com/cards/art_crop/en/xln/90b.jpg?1518204302",
-                   "border_crop": "https://img.scryfall.com/cards/border_crop/en/xln/90b.jpg?1518204302"
+                   "small": "https://img.scryfall.com/cards/small/en/xln/90b.jpg?1527428806",
+                   "normal": "https://img.scryfall.com/cards/normal/en/xln/90b.jpg?1527428806",
+                   "large": "https://img.scryfall.com/cards/large/en/xln/90b.jpg?1527428806",
+                   "png": "https://img.scryfall.com/cards/png/en/xln/90b.png?1527428806",
+                   "art_crop": "https://img.scryfall.com/cards/art_crop/en/xln/90b.jpg?1527428806",
+                   "border_crop": "https://img.scryfall.com/cards/border_crop/en/xln/90b.jpg?1527428806"
                    }
                    }
                    ],
@@ -93,10 +102,10 @@
     "timeshifted": false,
     "colorshifted": false,
     "futureshifted": false,
-    "edhrec_rank": 987,
-    "usd": "0.76",
-    "tix": "1.28",
-    "eur": "0.55",
+    "edhrec_rank": 1003,
+    "usd": "1.88",
+    "tix": "1.87",
+    "eur": "0.72",
     "related_uris": {
         "gatherer": "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=435243",
         "tcgplayer_decks": "http://decks.tcgplayer.com/magic/deck/search?contains=Arguel%27s+Blood+Fast&page=1&partner=Scryfall",

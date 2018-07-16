@@ -6,7 +6,9 @@
                        443095
                        ],
     "mtgo_id": 67879,
+    "arena_id": 67518,
     "name": "Teferi, Hero of Dominaria",
+    "lang": "en",
     "uri": "https://api.scryfall.com/cards/dom/207",
     "scryfall_uri": "https://scryfall.com/card/dom/207?utm_source=api",
     "layout": "normal",
@@ -19,10 +21,10 @@
         "art_crop": "https://img.scryfall.com/cards/art_crop/en/dom/207.jpg?1524792087",
         "border_crop": "https://img.scryfall.com/cards/border_crop/en/dom/207.jpg?1524792087"
     },
-    "cmc": 5,
+    "mana_cost": "{3}{W}{U}",
+    "cmc": 5.0,
     "type_line": "Legendary Planeswalker — Teferi",
     "oracle_text": "+1: Draw a card. At the beginning of the next end step, untap two lands.\n−3: Put target nonland permanent into its owner's library third from the top.\n−8: You get an emblem with \"Whenever you draw a card, exile target permanent an opponent controls.\"",
-    "mana_cost": "{3}{W}{U}",
     "loyalty": "4",
     "colors": [
                "U",
@@ -69,10 +71,10 @@
     "timeshifted": false,
     "colorshifted": false,
     "futureshifted": false,
-    "edhrec_rank": 591,
-    "usd": "36.31",
-    "tix": "29.79",
-    "eur": "20.92",
+    "edhrec_rank": 649,
+    "usd": "29.03",
+    "tix": "21.37",
+    "eur": "32.45",
     "related_uris": {
         "gatherer": "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=443095",
         "tcgplayer_decks": "http://decks.tcgplayer.com/magic/deck/search?contains=Teferi%2C+Hero+of+Dominaria&page=1&partner=Scryfall",

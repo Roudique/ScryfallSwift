@@ -6,7 +6,9 @@
                        443111
                        ],
     "mtgo_id": 67911,
+    "arena_id": 67550,
     "name": "Mishra's Self-Replicator",
+    "lang": "en",
     "uri": "https://api.scryfall.com/cards/dom/223",
     "scryfall_uri": "https://scryfall.com/card/dom/223?utm_source=api",
     "layout": "normal",
@@ -19,14 +21,18 @@
         "art_crop": "https://img.scryfall.com/cards/art_crop/en/dom/223.jpg?1524792243",
         "border_crop": "https://img.scryfall.com/cards/border_crop/en/dom/223.jpg?1524792243"
     },
-    "cmc": 5,
+    "mana_cost": "{5}",
+    "cmc": 5.0,
     "type_line": "Artifact Creature — Assembly-Worker",
     "oracle_text": "Whenever you cast a historic spell, you may pay {1}. If you do, create a token that's a copy of Mishra's Self-Replicator. (Artifacts, legendaries, and Sagas are historic.)",
-    "mana_cost": "{5}",
     "power": "2",
     "toughness": "2",
-    "colors": [],
-    "color_identity": [],
+    "colors": [
+    
+    ],
+    "color_identity": [
+    
+    ],
     "legalities": {
         "standard": "legal",
         "future": "legal",
@@ -35,7 +41,7 @@
         "legacy": "legal",
         "pauper": "not_legal",
         "vintage": "legal",
-        "penny": "not_legal",
+        "penny": "legal",
         "commander": "legal",
         "1v1": "legal",
         "duel": "legal",
@@ -65,10 +71,10 @@
     "timeshifted": false,
     "colorshifted": false,
     "futureshifted": false,
-    "edhrec_rank": 1868,
-    "usd": "0.15",
-    "tix": "0.02",
-    "eur": "0.15",
+    "edhrec_rank": 2350,
+    "usd": "0.19",
+    "tix": "0.01",
+    "eur": "0.14",
     "related_uris": {
         "gatherer": "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=443111",
         "tcgplayer_decks": "http://decks.tcgplayer.com/magic/deck/search?contains=Mishra%27s+Self-Replicator&page=1&partner=Scryfall",

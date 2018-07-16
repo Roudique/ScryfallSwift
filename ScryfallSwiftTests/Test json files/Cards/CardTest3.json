@@ -6,7 +6,9 @@
                        442970
                        ],
     "mtgo_id": 67629,
+    "arena_id": 67268,
     "name": "Chainer's Torment",
+    "lang": "en",
     "uri": "https://api.scryfall.com/cards/dom/82",
     "scryfall_uri": "https://scryfall.com/card/dom/82?utm_source=api",
     "layout": "saga",
@@ -19,10 +21,10 @@
         "art_crop": "https://img.scryfall.com/cards/art_crop/en/dom/82.jpg?1524790788",
         "border_crop": "https://img.scryfall.com/cards/border_crop/en/dom/82.jpg?1524790788"
     },
-    "cmc": 4,
+    "mana_cost": "{3}{B}",
+    "cmc": 4.0,
     "type_line": "Enchantment — Saga",
     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II — Chainer's Torment deals 2 damage to each opponent and you gain 2 life.\nIII — Create an X/X black Nightmare Horror creature token, where X is half your life total, rounded up. It deals X damage to you.",
-    "mana_cost": "{3}{B}",
     "colors": [
                "B"
                ],
@@ -66,10 +68,10 @@
     "timeshifted": false,
     "colorshifted": false,
     "futureshifted": false,
-    "edhrec_rank": 4373,
+    "edhrec_rank": 5887,
     "usd": "0.04",
     "tix": "0.01",
-    "eur": "0.04",
+    "eur": "0.06",
     "related_uris": {
         "gatherer": "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=442970",
         "tcgplayer_decks": "http://decks.tcgplayer.com/magic/deck/search?contains=Chainer%27s+Torment&page=1&partner=Scryfall",

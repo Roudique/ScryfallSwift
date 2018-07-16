@@ -22,8 +22,14 @@ enum CardColor: String, Decodable {
 public class Card: Decodable {
     //MARK: - Core fields
     
+    /// This card’s Arena ID, if any. A large percentage of cards are not available on Arena and do not have this ID.
+    var arenaID: Int?
+    
     /// A unique ID for this card in Scryfall’s database.
     var id: String
+    
+    /// A language code for this printing. [Link to scryfall.com](https://scryfall.com/docs/api/languages)
+    var lang: String
     
     /// A unique ID for this card’s oracle identity. This value is consistent across reprinted card editions, and unique among different cards with the same name (tokens, Unstable variants, etc).
     var oracleID: String
@@ -205,7 +211,9 @@ public class Card: Decodable {
     
     enum CodingKeys: String, CodingKey {
         // Core fields.
+        case arenaID = "arena_id"
         case id
+        case lang
         case oracleID = "oracle_id"
         case multiverseIDs = "multiverse_ids"
         case mtgoID = "mtgo_id"
