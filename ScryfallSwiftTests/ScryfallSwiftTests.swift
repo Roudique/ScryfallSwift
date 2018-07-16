@@ -60,12 +60,34 @@ class ScryfallSwiftTests: XCTestCase {
         
         let jsonDecoder = JSONDecoder()
         guard let sets = try? jsonDecoder.decode([CardSet].self, from: jsonData) else {
-            assertionFailure("Set should not be nil. Looks like json wasn't parsed correctly.")
+            assertionFailure("Sets should not be nil. Looks like json wasn't parsed correctly.")
             return
         }
         
         print(lineBrake)
         print("Total sets tested: \(sets.count)")
+        print(lineBrake)
+    }
+    
+    func testRulings() {
+        let url = urlForRulingsTestFile()
+        
+        print(lineBrake)
+        print("Started testing rulings")
+        
+        guard let jsonData = try? Data.init(contentsOf: url) else {
+            assertionFailure()
+            return
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        guard let rulings = try? jsonDecoder.decode([Ruling].self, from: jsonData) else {
+            assertionFailure("Rulings should not be nil. Looks like json wasn't parsed correctly.")
+            return
+        }
+        
+        print(lineBrake)
+        print("Total rulings tested: \(rulings.count)")
         print(lineBrake)
     }
     
@@ -106,6 +128,14 @@ class ScryfallSwiftTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         
         let fileURL = bundle.url(forResource: "SetsTest", withExtension: "json")!
+        
+        return fileURL
+    }
+    
+    func urlForRulingsTestFile() -> URL {
+        let bundle = Bundle(for: type(of: self))
+        
+        let fileURL = bundle.url(forResource: "RulingsTest", withExtension: "json")!
         
         return fileURL
     }
