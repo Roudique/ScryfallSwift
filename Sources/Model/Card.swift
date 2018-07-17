@@ -154,8 +154,8 @@ public class Card: Decodable {
     /// A link to this card’s set on Scryfall’s website.
     var scryfallSetURI: URL
     
-    /// An object listing available imagery for this card. See the [Card Imagery](#) article for more information.
-    var imageURIs: [String: URL]?
+    /// An object listing available imagery for this card.
+    var imagery: Imagery?
     
     /// True if this card’s imagery is high resolution.
     var hasHighresImage: Bool
@@ -253,7 +253,7 @@ public class Card: Decodable {
         case collectorNumber = "collector_number"
         case setSearchURI = "set_search_uri"
         case scryfallSetURI = "scryfall_set_uri"
-        case imageURIs = "image_uris"
+        case imagery = "image_uris"
         case hasHighresImage = "highres_image"
         case isReprint = "reprint"
         case isDigital = "digital"
@@ -288,7 +288,7 @@ struct CardFace: Decodable {
     var loyalty: String?
     var flavorText: String?
     var illustrationID: String?
-    var imageURIs: [String: URL]?
+    var imagery: Imagery
     
     enum CodingKeys: String, CodingKey {
         case name
@@ -302,7 +302,7 @@ struct CardFace: Decodable {
         case loyalty
         case flavorText = "flavor_text"
         case illustrationID = "illustration_id"
-        case imageURIs = "image_uris"
+        case imagery = "image_uris"
     }
 }
 
