@@ -1,0 +1,9 @@
+version: "Apple Swift version 4.2 (swiftlang-1000.0.32.1 clang-1000.10.39)"
+options: "3b223fd4ade1a1cddbfdc87c2350d1fb"
+build_time: [1533236817, 518158000]
+inputs:
+  "/Users/oleksandrrudavka/Developer/ScryfallSwift/Sources/ScryfallManager.swift": [9223372036, 854775807]
+  "/Users/oleksandrrudavka/Developer/ScryfallSwift/Sources/Model/Ruling.swift": [9223372036, 854775807]
+  "/Users/oleksandrrudavka/Developer/ScryfallSwift/Sources/Model/CardSet.swift": [9223372036, 854775807]
+  "/Users/oleksandrrudavka/Developer/ScryfallSwift/Sources/Model/Imagery.swift": [9223372036, 854775807]
+  "/Users/oleksandrrudavka/Developer/ScryfallSwift/Sources/Model/Card.swift": [9223372036, 854775807]

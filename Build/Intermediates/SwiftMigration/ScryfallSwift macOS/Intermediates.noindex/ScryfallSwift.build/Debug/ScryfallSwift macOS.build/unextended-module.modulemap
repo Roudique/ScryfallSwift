@@ -1,0 +1,10 @@
+framework module ScryfallSwift {
+  umbrella header "ScryfallSwift.h"
+
+  export *
+  module * { export * }
+}
+
+module ScryfallSwift.__Swift {
+    exclude header "ScryfallSwift-Swift.h"
+}

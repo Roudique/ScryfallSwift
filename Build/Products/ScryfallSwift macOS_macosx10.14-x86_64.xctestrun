@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ScryfallSwiftTests</key>
+	<dict>
+		<key>BundleIdentifiersForCrashReportEmphasis</key>
+		<array>
+			<string>com.roudique.ScryfallSwift</string>
+			<string>com.roudique.ScryfallSwiftTests</string>
+		</array>
+		<key>ClangProfileDataDirectoryPath</key>
+		<string>/Users/oleksandrrudavka/Developer/ScryfallSwift/Build/Intermediates/CodeCoverage/ProfileData</string>
+		<key>CommandLineArguments</key>
+		<array/>
+		<key>DependentProductPaths</key>
+		<array>
+			<string>__TESTROOT__/Debug/ScryfallSwiftTests.xctest</string>
+			<string>__TESTROOT__/Debug/ScryfallSwift.framework</string>
+		</array>
+		<key>EnvironmentVariables</key>
+		<dict>
+			<key>OS_ACTIVITY_DT_MODE</key>
+			<string>YES</string>
+			<key>SQLITE_ENABLE_THREAD_ASSERTIONS</key>
+			<string>1</string>
+		</dict>
+		<key>ProductModuleName</key>
+		<string>ScryfallSwiftTests</string>
+		<key>RunOrder</key>
+		<integer>0</integer>
+		<key>SystemAttachmentLifetime</key>
+		<string>deleteOnSuccess</string>
+		<key>TestBundlePath</key>
+		<string>__TESTROOT__/Debug/ScryfallSwiftTests.xctest</string>
+		<key>TestHostPath</key>
+		<string>__PLATFORMS__/MacOSX.platform/Developer/Library/Xcode/Agents/xctest</string>
+		<key>TestingEnvironmentVariables</key>
+		<dict>
+			<key>DYLD_FRAMEWORK_PATH</key>
+			<string>__TESTROOT__/Debug:__SHAREDFRAMEWORKS__:</string>
+			<key>DYLD_INSERT_LIBRARIES</key>
+			<string>__DEVELOPERUSRLIB__/libMainThreadChecker.dylib</string>
+			<key>DYLD_LIBRARY_PATH</key>
+			<string>__TESTROOT__/Debug</string>
+			<key>IDEiPhoneInternalTestBundleName</key>
+			<string>ScryfallSwiftTests.xctest</string>
+			<key>MTC_CRASH_ON_REPORT</key>
+			<string>1</string>
+			<key>__XCODE_BUILT_PRODUCTS_DIR_PATHS</key>
+			<string>__TESTROOT__/Debug</string>
+			<key>__XPC_DYLD_FRAMEWORK_PATH</key>
+			<string>__TESTROOT__/Debug</string>
+			<key>__XPC_DYLD_LIBRARY_PATH</key>
+			<string>__TESTROOT__/Debug</string>
+		</dict>
+		<key>ToolchainsSettingValue</key>
+		<array/>
+		<key>UITargetAppCommandLineArguments</key>
+		<array/>
+		<key>UITargetAppMainThreadCheckerEnabled</key>
+		<true/>
+		<key>UserAttachmentLifetime</key>
+		<string>deleteOnSuccess</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,609 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ScryfallSwiftTests"
+provides-nominal:
+- "18ScryfallSwiftTestsAAC"
+provides-member:
+- ["18ScryfallSwiftTestsAAC", ""]
+provides-dynamic-lookup:
+- "compareJSONs"
+- "lineBrake"
+- "setUp"
+- "tearDown"
+- "testCards"
+- "testRulings"
+- "testSets"
+- "urlForRulingsTestFile"
+- "urlForSetTestFile"
+- "urlsForCardTestFiles"
+depends-top-level:
+- !private "!="
+- !private "+="
+- !private "Array"
+- !private "Bundle"
+- !private "Card"
+- !private "CardSet"
+- "CastingPrecedence"
+- !private "Data"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- !private "JSONDecoder"
+- !private "JSONSerialization"
+- !private "Ruling"
+- "ScryfallSwiftTests"
+- "Set"
+- "String"
+- "StringLiteralType"
+- "URL"
+- "XCTestCase"
+- !private "assert"
+- !private "assertionFailure"
+- !private "print"
+- !private "type"
+depends-member:
+- !private ["Sa", "append"]
+- !private ["Sa", "count"]
+- !private ["Sa", "init"]
+- !private ["s13ArrayProtocolP", "append"]
+- !private ["s13ArrayProtocolP", "count"]
+- !private ["s13ArrayProtocolP", "init"]
+- !private ["SK", "append"]
+- !private ["SK", "count"]
+- ["SK", "init"]
+- ["SK", "init"]
+- !private ["So8NSBundleC", "init"]
+- !private ["So8NSBundleC", "url"]
+- !private ["s7CVarArgP", "Bundle"]
+- !private ["s7CVarArgP", "Card"]
+- !private ["s7CVarArgP", "CardSet"]
+- !private ["s7CVarArgP", "Data"]
+- !private ["s7CVarArgP", "JSONDecoder"]
+- !private ["s7CVarArgP", "JSONSerialization"]
+- !private ["s7CVarArgP", "Ruling"]
+- !private ["s7CVarArgP", "Set"]
+- !private ["s7CVarArgP", "URL"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "append"]
+- !private ["s7CVarArgP", "assert"]
+- !private ["s7CVarArgP", "assertionFailure"]
+- !private ["s7CVarArgP", "count"]
+- ["s7CVarArgP", "init"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "jsonObject"]
+- !private ["s7CVarArgP", "keys"]
+- !private ["s7CVarArgP", "lineBrake"]
+- !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "setUp"]
+- !private ["s7CVarArgP", "symmetricDifference"]
+- !private ["s7CVarArgP", "tearDown"]
+- !private ["s7CVarArgP", "type"]
+- !private ["s7CVarArgP", "url"]
+- !private ["s7CVarArgP", "urlForRulingsTestFile"]
+- !private ["s7CVarArgP", "urlForSetTestFile"]
+- !private ["s7CVarArgP", "urlsForCardTestFiles"]
+- !private ["18ScryfallSwiftTests4CardC", "deinit"]
+- !private ["18ScryfallSwiftTests4CardC", "name"]
+- !private ["18ScryfallSwiftTests7CardSetC", "deinit"]
+- !private ["Sl", "append"]
+- !private ["Sl", "count"]
+- ["Sl", "init"]
+- ["Sl", "init"]
+- !private ["Sl", "keys"]
+- !private ["Sl", "symmetricDifference"]
+- ["SL", "init"]
+- ["SL", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "Bundle"]
+- !private ["s28CustomDebugStringConvertibleP", "Card"]
+- !private ["s28CustomDebugStringConvertibleP", "CardSet"]
+- !private ["s28CustomDebugStringConvertibleP", "Data"]
+- !private ["s28CustomDebugStringConvertibleP", "JSONDecoder"]
+- !private ["s28CustomDebugStringConvertibleP", "JSONSerialization"]
+- !private ["s28CustomDebugStringConvertibleP", "Ruling"]
+- !private ["s28CustomDebugStringConvertibleP", "Set"]
+- !private ["s28CustomDebugStringConvertibleP", "URL"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "append"]
+- !private ["s28CustomDebugStringConvertibleP", "assert"]
+- !private ["s28CustomDebugStringConvertibleP", "assertionFailure"]
+- !private ["s28CustomDebugStringConvertibleP", "count"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "jsonObject"]
+- !private ["s28CustomDebugStringConvertibleP", "keys"]
+- !private ["s28CustomDebugStringConvertibleP", "lineBrake"]
+- !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "setUp"]
+- !private ["s28CustomDebugStringConvertibleP", "symmetricDifference"]
+- !private ["s28CustomDebugStringConvertibleP", "tearDown"]
+- !private ["s28CustomDebugStringConvertibleP", "type"]
+- !private ["s28CustomDebugStringConvertibleP", "url"]
+- !private ["s28CustomDebugStringConvertibleP", "urlForRulingsTestFile"]
+- !private ["s28CustomDebugStringConvertibleP", "urlForSetTestFile"]
+- !private ["s28CustomDebugStringConvertibleP", "urlsForCardTestFiles"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "append"]
+- !private ["s17CustomReflectableP", "count"]
+- ["s17CustomReflectableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "keys"]
+- !private ["s17CustomReflectableP", "symmetricDifference"]
+- !private ["s23CustomStringConvertibleP", "Bundle"]
+- !private ["s23CustomStringConvertibleP", "Card"]
+- !private ["s23CustomStringConvertibleP", "CardSet"]
+- !private ["s23CustomStringConvertibleP", "Data"]
+- !private ["s23CustomStringConvertibleP", "JSONDecoder"]
+- !private ["s23CustomStringConvertibleP", "JSONSerialization"]
+- !private ["s23CustomStringConvertibleP", "Ruling"]
+- !private ["s23CustomStringConvertibleP", "Set"]
+- !private ["s23CustomStringConvertibleP", "URL"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "append"]
+- !private ["s23CustomStringConvertibleP", "assert"]
+- !private ["s23CustomStringConvertibleP", "assertionFailure"]
+- !private ["s23CustomStringConvertibleP", "count"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "jsonObject"]
+- !private ["s23CustomStringConvertibleP", "keys"]
+- !private ["s23CustomStringConvertibleP", "lineBrake"]
+- !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "setUp"]
+- !private ["s23CustomStringConvertibleP", "symmetricDifference"]
+- !private ["s23CustomStringConvertibleP", "tearDown"]
+- !private ["s23CustomStringConvertibleP", "type"]
+- !private ["s23CustomStringConvertibleP", "url"]
+- !private ["s23CustomStringConvertibleP", "urlForRulingsTestFile"]
+- !private ["s23CustomStringConvertibleP", "urlForSetTestFile"]
+- !private ["s23CustomStringConvertibleP", "urlsForCardTestFiles"]
+- !private ["10Foundation4DataV", "init"]
+- !private ["10Foundation4DataV", "init"]
+- !private ["Se", "append"]
+- !private ["Se", "count"]
+- ["Se", "init"]
+- ["Se", "init"]
+- !private ["Se", "keys"]
+- !private ["Se", "name"]
+- !private ["Se", "symmetricDifference"]
+- !private ["SD", "keys"]
+- !private ["SE", "append"]
+- !private ["SE", "count"]
+- ["SE", "init"]
+- ["SE", "init"]
+- !private ["SE", "keys"]
+- !private ["SE", "symmetricDifference"]
+- !private ["SQ", "Bundle"]
+- !private ["SQ", "Card"]
+- !private ["SQ", "CardSet"]
+- !private ["SQ", "Data"]
+- !private ["SQ", "JSONDecoder"]
+- !private ["SQ", "JSONSerialization"]
+- !private ["SQ", "Ruling"]
+- !private ["SQ", "Set"]
+- !private ["SQ", "URL"]
+- ["SQ", ""]
+- !private ["SQ", "append"]
+- !private ["SQ", "assert"]
+- !private ["SQ", "assertionFailure"]
+- !private ["SQ", "count"]
+- ["SQ", "init"]
+- ["SQ", "init"]
+- !private ["SQ", "jsonObject"]
+- !private ["SQ", "keys"]
+- !private ["SQ", "lineBrake"]
+- !private ["SQ", "print"]
+- !private ["SQ", "setUp"]
+- !private ["SQ", "symmetricDifference"]
+- !private ["SQ", "tearDown"]
+- !private ["SQ", "type"]
+- !private ["SQ", "url"]
+- !private ["SQ", "urlForRulingsTestFile"]
+- !private ["SQ", "urlForSetTestFile"]
+- !private ["SQ", "urlsForCardTestFiles"]
+- !private ["s25ExpressibleByArrayLiteralP", "append"]
+- !private ["s25ExpressibleByArrayLiteralP", "count"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "symmetricDifference"]
+- !private ["s30ExpressibleByDictionaryLiteralP", "keys"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s26ExpressibleByStringLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["SH", "Bundle"]
+- !private ["SH", "Card"]
+- !private ["SH", "CardSet"]
+- !private ["SH", "Data"]
+- !private ["SH", "JSONDecoder"]
+- !private ["SH", "JSONSerialization"]
+- !private ["SH", "Ruling"]
+- !private ["SH", "Set"]
+- !private ["SH", "URL"]
+- ["SH", ""]
+- !private ["SH", "append"]
+- !private ["SH", "assert"]
+- !private ["SH", "assertionFailure"]
+- !private ["SH", "count"]
+- ["SH", "init"]
+- ["SH", "init"]
+- !private ["SH", "jsonObject"]
+- !private ["SH", "keys"]
+- !private ["SH", "lineBrake"]
+- !private ["SH", "print"]
+- !private ["SH", "setUp"]
+- !private ["SH", "symmetricDifference"]
+- !private ["SH", "tearDown"]
+- !private ["SH", "type"]
+- !private ["SH", "url"]
+- !private ["SH", "urlForRulingsTestFile"]
+- !private ["SH", "urlForSetTestFile"]
+- !private ["SH", "urlsForCardTestFiles"]
+- !private ["10Foundation11JSONDecoderC", "decode"]
+- !private ["10Foundation11JSONDecoderC", "init"]
+- !private ["So19NSJSONSerializationC", "jsonObject"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s10MirrorPathP", "init"]
+- ["s10MirrorPathP", "init"]
+- !private ["SM", "append"]
+- !private ["SM", "count"]
+- !private ["SM", "init"]
+- !private ["SM", "init"]
+- !private ["So8NSObjectC", "Bundle"]
+- !private ["So8NSObjectC", "Card"]
+- !private ["So8NSObjectC", "CardSet"]
+- !private ["So8NSObjectC", "Data"]
+- !private ["So8NSObjectC", "JSONDecoder"]
+- !private ["So8NSObjectC", "JSONSerialization"]
+- !private ["So8NSObjectC", "Ruling"]
+- ["So8NSObjectC", "Set"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "URL"]
+- !private ["So8NSObjectC", "assert"]
+- !private ["So8NSObjectC", "assertionFailure"]
+- ["So8NSObjectC", "compareJSONs"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "jsonObject"]
+- ["So8NSObjectC", "lineBrake"]
+- !private ["So8NSObjectC", "print"]
+- ["So8NSObjectC", "setUp"]
+- ["So8NSObjectC", "tearDown"]
+- ["So8NSObjectC", "testCards"]
+- ["So8NSObjectC", "testRulings"]
+- ["So8NSObjectC", "testSets"]
+- !private ["So8NSObjectC", "type"]
+- !private ["So8NSObjectC", "url"]
+- ["So8NSObjectC", "urlForRulingsTestFile"]
+- ["So8NSObjectC", "urlForSetTestFile"]
+- ["So8NSObjectC", "urlsForCardTestFiles"]
+- !private ["So8NSObjectP", "Bundle"]
+- !private ["So8NSObjectP", "Card"]
+- !private ["So8NSObjectP", "CardSet"]
+- !private ["So8NSObjectP", "Data"]
+- !private ["So8NSObjectP", "JSONDecoder"]
+- !private ["So8NSObjectP", "JSONSerialization"]
+- !private ["So8NSObjectP", "Ruling"]
+- !private ["So8NSObjectP", "Set"]
+- !private ["So8NSObjectP", "URL"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "assert"]
+- !private ["So8NSObjectP", "assertionFailure"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "jsonObject"]
+- !private ["So8NSObjectP", "lineBrake"]
+- !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "setUp"]
+- !private ["So8NSObjectP", "tearDown"]
+- !private ["So8NSObjectP", "type"]
+- !private ["So8NSObjectP", "url"]
+- !private ["So8NSObjectP", "urlForRulingsTestFile"]
+- !private ["So8NSObjectP", "urlForSetTestFile"]
+- !private ["So8NSObjectP", "urlsForCardTestFiles"]
+- !private ["Sk", "append"]
+- !private ["Sk", "count"]
+- !private ["Sk", "init"]
+- !private ["Sk", "init"]
+- !private ["Sm", "append"]
+- !private ["Sm", "count"]
+- ["Sm", "init"]
+- ["Sm", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["18ScryfallSwiftTests6RulingC", "deinit"]
+- !private ["18ScryfallSwiftTestsAAC", "Bundle"]
+- !private ["18ScryfallSwiftTestsAAC", "Card"]
+- !private ["18ScryfallSwiftTestsAAC", "CardSet"]
+- !private ["18ScryfallSwiftTestsAAC", "Data"]
+- !private ["18ScryfallSwiftTestsAAC", "JSONDecoder"]
+- !private ["18ScryfallSwiftTestsAAC", "JSONSerialization"]
+- !private ["18ScryfallSwiftTestsAAC", "Ruling"]
+- ["18ScryfallSwiftTestsAAC", "Set"]
+- ["18ScryfallSwiftTestsAAC", "String"]
+- ["18ScryfallSwiftTestsAAC", "URL"]
+- !private ["18ScryfallSwiftTestsAAC", "assert"]
+- !private ["18ScryfallSwiftTestsAAC", "assertionFailure"]
+- ["18ScryfallSwiftTestsAAC", "compareJSONs"]
+- ["18ScryfallSwiftTestsAAC", "init"]
+- ["18ScryfallSwiftTestsAAC", "lineBrake"]
+- !private ["18ScryfallSwiftTestsAAC", "print"]
+- ["18ScryfallSwiftTestsAAC", "setUp"]
+- ["18ScryfallSwiftTestsAAC", "tearDown"]
+- ["18ScryfallSwiftTestsAAC", "testCards"]
+- ["18ScryfallSwiftTestsAAC", "testRulings"]
+- ["18ScryfallSwiftTestsAAC", "testSets"]
+- !private ["18ScryfallSwiftTestsAAC", "type"]
+- ["18ScryfallSwiftTestsAAC", "urlForRulingsTestFile"]
+- ["18ScryfallSwiftTestsAAC", "urlForSetTestFile"]
+- ["18ScryfallSwiftTestsAAC", "urlsForCardTestFiles"]
+- !private ["ST", "append"]
+- !private ["ST", "count"]
+- ["ST", "init"]
+- ["ST", "init"]
+- !private ["ST", "keys"]
+- !private ["ST", "symmetricDifference"]
+- !private ["Sh", "init"]
+- !private ["Sh", "init"]
+- !private ["Sh", "symmetricDifference"]
+- !private ["s10SetAlgebraP", "init"]
+- !private ["s10SetAlgebraP", "init"]
+- !private ["s10SetAlgebraP", "symmetricDifference"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s12StaticStringV", "init"]
+- ["SS", "init"]
+- ["SS", "init"]
+- ["Sy", "init"]
+- ["Sy", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s16TextOutputStreamP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- ["s20TextOutputStreamableP", "init"]
+- !private ["So11XCTActivityP", "Bundle"]
+- !private ["So11XCTActivityP", "Card"]
+- !private ["So11XCTActivityP", "CardSet"]
+- !private ["So11XCTActivityP", "Data"]
+- !private ["So11XCTActivityP", "JSONDecoder"]
+- !private ["So11XCTActivityP", "JSONSerialization"]
+- !private ["So11XCTActivityP", "Ruling"]
+- !private ["So11XCTActivityP", "Set"]
+- !private ["So11XCTActivityP", "URL"]
+- ["So11XCTActivityP", ""]
+- !private ["So11XCTActivityP", "assert"]
+- !private ["So11XCTActivityP", "assertionFailure"]
+- !private ["So11XCTActivityP", "init"]
+- !private ["So11XCTActivityP", "init"]
+- !private ["So11XCTActivityP", "lineBrake"]
+- !private ["So11XCTActivityP", "print"]
+- !private ["So11XCTActivityP", "setUp"]
+- !private ["So11XCTActivityP", "tearDown"]
+- !private ["So11XCTActivityP", "type"]
+- !private ["So11XCTActivityP", "urlForRulingsTestFile"]
+- !private ["So11XCTActivityP", "urlForSetTestFile"]
+- !private ["So11XCTActivityP", "urlsForCardTestFiles"]
+- !private ["So17XCTWaiterDelegateP", "Bundle"]
+- !private ["So17XCTWaiterDelegateP", "Card"]
+- !private ["So17XCTWaiterDelegateP", "CardSet"]
+- !private ["So17XCTWaiterDelegateP", "Data"]
+- !private ["So17XCTWaiterDelegateP", "JSONDecoder"]
+- !private ["So17XCTWaiterDelegateP", "JSONSerialization"]
+- !private ["So17XCTWaiterDelegateP", "Ruling"]
+- !private ["So17XCTWaiterDelegateP", "Set"]
+- !private ["So17XCTWaiterDelegateP", "URL"]
+- ["So17XCTWaiterDelegateP", ""]
+- !private ["So17XCTWaiterDelegateP", "assert"]
+- !private ["So17XCTWaiterDelegateP", "assertionFailure"]
+- !private ["So17XCTWaiterDelegateP", "init"]
+- !private ["So17XCTWaiterDelegateP", "init"]
+- !private ["So17XCTWaiterDelegateP", "lineBrake"]
+- !private ["So17XCTWaiterDelegateP", "print"]
+- !private ["So17XCTWaiterDelegateP", "setUp"]
+- !private ["So17XCTWaiterDelegateP", "tearDown"]
+- !private ["So17XCTWaiterDelegateP", "type"]
+- !private ["So17XCTWaiterDelegateP", "urlForRulingsTestFile"]
+- !private ["So17XCTWaiterDelegateP", "urlForSetTestFile"]
+- !private ["So17XCTWaiterDelegateP", "urlsForCardTestFiles"]
+- !private ["So6XCTestC", "Bundle"]
+- !private ["So6XCTestC", "Card"]
+- !private ["So6XCTestC", "CardSet"]
+- !private ["So6XCTestC", "Data"]
+- !private ["So6XCTestC", "JSONDecoder"]
+- !private ["So6XCTestC", "JSONSerialization"]
+- !private ["So6XCTestC", "Ruling"]
+- ["So6XCTestC", "Set"]
+- ["So6XCTestC", "String"]
+- ["So6XCTestC", "URL"]
+- !private ["So6XCTestC", "assert"]
+- !private ["So6XCTestC", "assertionFailure"]
+- ["So6XCTestC", "compareJSONs"]
+- ["So6XCTestC", "init"]
+- !private ["So6XCTestC", "init"]
+- ["So6XCTestC", "lineBrake"]
+- !private ["So6XCTestC", "print"]
+- ["So6XCTestC", "setUp"]
+- ["So6XCTestC", "tearDown"]
+- ["So6XCTestC", "testCards"]
+- ["So6XCTestC", "testRulings"]
+- ["So6XCTestC", "testSets"]
+- !private ["So6XCTestC", "type"]
+- ["So6XCTestC", "urlForRulingsTestFile"]
+- ["So6XCTestC", "urlForSetTestFile"]
+- ["So6XCTestC", "urlsForCardTestFiles"]
+- !private ["So10XCTestCaseC", "Bundle"]
+- !private ["So10XCTestCaseC", "Card"]
+- !private ["So10XCTestCaseC", "CardSet"]
+- !private ["So10XCTestCaseC", "Data"]
+- !private ["So10XCTestCaseC", "JSONDecoder"]
+- !private ["So10XCTestCaseC", "JSONSerialization"]
+- !private ["So10XCTestCaseC", "Ruling"]
+- ["So10XCTestCaseC", "Set"]
+- ["So10XCTestCaseC", "String"]
+- ["So10XCTestCaseC", "URL"]
+- ["So10XCTestCaseC", ""]
+- !private ["So10XCTestCaseC", "assert"]
+- !private ["So10XCTestCaseC", "assertionFailure"]
+- ["So10XCTestCaseC", "compareJSONs"]
+- ["So10XCTestCaseC", "init"]
+- !private ["So10XCTestCaseC", "init"]
+- ["So10XCTestCaseC", "lineBrake"]
+- !private ["So10XCTestCaseC", "print"]
+- ["So10XCTestCaseC", "setUp"]
+- ["So10XCTestCaseC", "tearDown"]
+- ["So10XCTestCaseC", "testCards"]
+- ["So10XCTestCaseC", "testRulings"]
+- ["So10XCTestCaseC", "testSets"]
+- !private ["So10XCTestCaseC", "type"]
+- ["So10XCTestCaseC", "urlForRulingsTestFile"]
+- ["So10XCTestCaseC", "urlForSetTestFile"]
+- ["So10XCTestCaseC", "urlsForCardTestFiles"]
+- !private ["s24_DestructorSafeContainerP", "append"]
+- !private ["s24_DestructorSafeContainerP", "count"]
+- !private ["s24_DestructorSafeContainerP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "append"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "count"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "keys"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "symmetricDifference"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Bundle"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Card"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CardSet"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Data"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "JSONDecoder"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "JSONSerialization"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Ruling"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Set"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "assert"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "assertionFailure"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "jsonObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "lineBrake"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setUp"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "tearDown"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "type"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "url"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "urlForRulingsTestFile"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "urlForSetTestFile"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "urlsForCardTestFiles"]
+- !private ["s21_ObjectiveCBridgeableP", "append"]
+- !private ["s21_ObjectiveCBridgeableP", "count"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "keys"]
+- !private ["s21_ObjectiveCBridgeableP", "symmetricDifference"]
+- ["s16_SwiftStringViewP", "init"]
+- ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "Sa"
+- !private "s13ArrayProtocolP"
+- "SK"
+- !private "So8NSBundleC"
+- "s7CVarArgP"
+- !private "18ScryfallSwiftTests4CardC"
+- !private "18ScryfallSwiftTests7CardSetC"
+- "Sl"
+- "SL"
+- "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DataV"
+- "Se"
+- !private "SD"
+- "SE"
+- "SQ"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s30ExpressibleByDictionaryLiteralP"
+- "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s26ExpressibleByStringLiteralP"
+- "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- !private "10Foundation11JSONDecoderC"
+- !private "So19NSJSONSerializationC"
+- "s25LosslessStringConvertibleP"
+- "s10MirrorPathP"
+- !private "SM"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "Sk"
+- "Sm"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "18ScryfallSwiftTests6RulingC"
+- "18ScryfallSwiftTestsAAC"
+- "ST"
+- !private "Sh"
+- !private "s10SetAlgebraP"
+- !private "s12StaticStringV"
+- "SS"
+- "Sy"
+- "s16TextOutputStreamP"
+- "s20TextOutputStreamableP"
+- "So11XCTActivityP"
+- "So17XCTWaiterDelegateP"
+- "So6XCTestC"
+- "So10XCTestCaseC"
+- !private "s24_DestructorSafeContainerP"
+- "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+- "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+- "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/oleksandrrudavka/Developer/ScryfallSwift/Build/Intermediates/SwiftMigration/ScryfallSwift macOS/Products/Debug/ScryfallSwift.framework/Modules/ScryfallSwift.swiftmodule/x86_64.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/QuartzCore.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Metal.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XCTest.swiftmodule"
+- "/Users/oleksandrrudavka/Developer/ScryfallSwift/Build/Intermediates/SwiftMigration/ScryfallSwift macOS/Products/Debug/ScryfallSwift.framework/Versions/A/Headers/ScryfallSwift-Swift.h"
+- "/Users/oleksandrrudavka/Developer/ScryfallSwift/Sources/ScryfallSwift.h"
+- "/Users/oleksandrrudavka/Developer/ScryfallSwift/Build/Intermediates/SwiftMigration/ScryfallSwift macOS/Intermediates.noindex/ScryfallSwift.build/Debug/ScryfallSwift macOS.build/module.modulemap"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xpc/XPC.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Darwin.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Users/oleksandrrudavka/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "6b3d2e0530795d9a35ec68e842dff326"
