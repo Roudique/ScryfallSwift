@@ -20,6 +20,10 @@
 		<data>
 		lZZSwldLFX6qWTMz37qCaH5GETk=
 		</data>
+		<key>Resources/CardTest4.json</key>
+		<data>
+		Ui9HjRhJJt5TwSouQaIFzAPeevU=
+		</data>
 		<key>Resources/RulingsTest.json</key>
 		<data>
 		4snHfpLtQZwPWnRTgAowLElMbzE=
@@ -214,6 +218,13 @@
 			<key>hash2</key>
 			<data>
 			w6k2XcplmCuIolWFTvPujDrNX43f++MutbB8SB4zsLg=
+			</data>
+		</dict>
+		<key>Resources/CardTest4.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LxYSaUxa8hEMIo2pQ/3ji/WxCHNw8j8BH4DcLWa2Nls=
 			</data>
 		</dict>
 		<key>Resources/RulingsTest.json</key>

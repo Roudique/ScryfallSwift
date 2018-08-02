@@ -13,6 +13,7 @@
 		4A77BE7D20B5C52D00166150 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77BE7920B5C52D00166150 /* CardSet.swift */; };
 		4A77BE7E20B5C52D00166150 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77BE7920B5C52D00166150 /* CardSet.swift */; };
 		4ABB6C3720B5C95A0077F7BE /* SetsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB6C3620B5C95A0077F7BE /* SetsTest.json */; };
+		4AE55A4E2113963A00D4A492 /* CardTest4.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE55A4D2113963A00D4A492 /* CardTest4.json */; };
 		8429B4DA20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8429B4DB20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8429B4DC20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		4A77BE7920B5C52D00166150 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		4ABB6C3620B5C95A0077F7BE /* SetsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SetsTest.json; sourceTree = "<group>"; };
+		4AE55A4D2113963A00D4A492 /* CardTest4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest4.json; sourceTree = "<group>"; };
 		8429B4A4208832D8001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429B4B2208832E2001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429B4BF208832EC001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				84BF792020B38D6300AB7EC3 /* CardTest1.json */,
 				8445F7CF20FC35FA006DA2AC /* CardTest2.json */,
 				8445F7CE20FC35FA006DA2AC /* CardTest3.json */,
+				4AE55A4D2113963A00D4A492 /* CardTest4.json */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				84BF792120B38D6300AB7EC3 /* CardTest1.json in Resources */,
 				84D4F9A320FC465900EBF4A3 /* RulingsTest.json in Resources */,
 				8445F7D020FC35FA006DA2AC /* CardTest3.json in Resources */,
+				4AE55A4E2113963A00D4A492 /* CardTest4.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
