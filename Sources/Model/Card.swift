@@ -18,58 +18,6 @@ enum CardColor: String, Decodable {
 }
 
 
-/// he layout property the arrangement of card parts, faces, and other bounded regions on cards. The layout can be used to programmatically determine which other properties on a card you can expect.
-///
-/// - cards with the layouts **split**, **flip**, **transform**, and **doubleFacedToken** will always have a **cardFaces** property describing the distinct faces.
-///  - cards with the layout **meld** will always have a **relatedCards** property pointing to the other meld parts.
-enum Layout: String, Decodable {
-    /// A standard Magic card with one face
-    case normal
-    
-    /// A split-faced card
-    case split
-
-    /// Cards that invert vertically with the flip keyword
-    case flip
-
-    /// Double-sided cards that transform
-    case transform
-
-    /// Cards with meld parts printed on the back
-    case meld
-
-    /// Cards with Level Up
-    case leveler
-
-    /// Saga-type cards
-    case saga
-    
-    /// Plane and Phenomenon-type cards
-    case planar
-
-    /// Scheme-type cards
-    case scheme
-
-    /// Vanguard-type cards
-    case vanguard
-
-    /// Token cards
-    case token
-
-    /// Tokens with another token printed on the back
-    case doubleFacedToken
-
-    /// Emblem cards
-    case emblem
-
-    /// Cards with **Augment**
-    case augment
-    
-    /// Host-type cards
-    case host
-}
-
-
 /// Card objects represent individual Magic: The Gathering cards that players could obtain and add to their collection (with a few minor exceptions).
 public class Card: Decodable {
     //MARK: - Core fields
@@ -219,7 +167,7 @@ public class Card: Decodable {
     var isDigital: Bool
     
     /// This card’s rarity. One of common, uncommon, rare, or mythic.
-    var rarity: String
+    var rarity: Rarity
 
     /// The flavor text, if any.
     var flavorText: String?
@@ -325,8 +273,8 @@ public class Card: Decodable {
     }
 }
 
-//MARK: -
 
+//MARK: -
 /// Multiface cards have a card_faces property containing at least two Card Face objects.
 struct CardFace: Decodable {
     var name: String
@@ -358,6 +306,7 @@ struct CardFace: Decodable {
     }
 }
 
+
 //MARK: -
 /// Cards that are closely related to other cards (because they call them by name, or generate a token, or meld, etc) have a related_cards property that contains Related Card objects.
 struct RelatedCard: Decodable {
@@ -371,3 +320,64 @@ struct RelatedCard: Decodable {
     var uri: URL
 }
 
+
+//MARK: -
+/// he layout property the arrangement of card parts, faces, and other bounded regions on cards. The layout can be used to programmatically determine which other properties on a card you can expect.
+///
+/// - cards with the layouts **split**, **flip**, **transform**, and **doubleFacedToken** will always have a **cardFaces** property describing the distinct faces.
+///  - cards with the layout **meld** will always have a **relatedCards** property pointing to the other meld parts.
+enum Layout: String, Decodable {
+    /// A standard Magic card with one face
+    case normal
+    
+    /// A split-faced card
+    case split
+    
+    /// Cards that invert vertically with the flip keyword
+    case flip
+    
+    /// Double-sided cards that transform
+    case transform
+    
+    /// Cards with meld parts printed on the back
+    case meld
+    
+    /// Cards with Level Up
+    case leveler
+    
+    /// Saga-type cards
+    case saga
+    
+    /// Plane and Phenomenon-type cards
+    case planar
+    
+    /// Scheme-type cards
+    case scheme
+    
+    /// Vanguard-type cards
+    case vanguard
+    
+    /// Token cards
+    case token
+    
+    /// Tokens with another token printed on the back
+    case doubleFacedToken
+    
+    /// Emblem cards
+    case emblem
+    
+    /// Cards with **Augment**
+    case augment
+    
+    /// Host-type cards
+    case host
+}
+
+
+/// Card's rarity.
+enum Rarity: String, Decodable {
+    case common
+    case uncommon
+    case rare
+    case mythic
+}
