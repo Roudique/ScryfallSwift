@@ -65,7 +65,7 @@ public class Card: Decodable {
     var layout: Layout
     
     /// The card’s converted mana cost. Note that some funny cards have fractional mana costs.
-    var cmc: Int
+    var cmc: Double
     
     /// The type line of this card.
     ///
@@ -119,7 +119,7 @@ public class Card: Decodable {
     var cardFaces: [CardFace]?
     
     /// An object describing the legality of this card.
-    var legalities: [String: String]
+    var legalities: Legality
     
     /// True if this card is on the Reserved List.
     var reserved: Bool

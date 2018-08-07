@@ -14,6 +14,11 @@
 		4A77BE7E20B5C52D00166150 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77BE7920B5C52D00166150 /* CardSet.swift */; };
 		4ABB6C3720B5C95A0077F7BE /* SetsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB6C3620B5C95A0077F7BE /* SetsTest.json */; };
 		4AE55A4E2113963A00D4A492 /* CardTest4.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE55A4D2113963A00D4A492 /* CardTest4.json */; };
+		840DBB8A21191C5E0001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
+		840DBB8B21191C640001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
+		840DBB8C21191C640001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
+		840DBB8D21191C650001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
+		840DBB8E21191C650001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
 		8429B4DA20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8429B4DB20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8429B4DC20883446001B6BB7 /* ScryfallSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 8429B4D920883446001B6BB7 /* ScryfallSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +66,7 @@
 		4A77BE7920B5C52D00166150 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		4ABB6C3620B5C95A0077F7BE /* SetsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SetsTest.json; sourceTree = "<group>"; };
 		4AE55A4D2113963A00D4A492 /* CardTest4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest4.json; sourceTree = "<group>"; };
+		840DBB8921191C5E0001B28E /* Legality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legality.swift; sourceTree = "<group>"; };
 		8429B4A4208832D8001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429B4B2208832E2001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429B4BF208832EC001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +182,7 @@
 				4A77BE7920B5C52D00166150 /* CardSet.swift */,
 				84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */,
 				84D4F9A420FD60C400EBF4A3 /* Imagery.swift */,
+				840DBB8921191C5E0001B28E /* Legality.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -455,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840DBB8A21191C5E0001B28E /* Legality.swift in Sources */,
 				4A77BE7A20B5C52D00166150 /* CardSet.swift in Sources */,
 				84D4F99C20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				8429B4E420A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
@@ -467,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840DBB8B21191C640001B28E /* Legality.swift in Sources */,
 				8429B4E520A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
 				84D4F99D20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				4A77BE7B20B5C52D00166150 /* CardSet.swift in Sources */,
@@ -479,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840DBB8C21191C640001B28E /* Legality.swift in Sources */,
 				8429B4E620A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
 				84D4F99E20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				4A77BE7C20B5C52D00166150 /* CardSet.swift in Sources */,
@@ -491,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840DBB8D21191C650001B28E /* Legality.swift in Sources */,
 				8429B4E720A2714F001B6BB7 /* ScryfallManager.swift in Sources */,
 				84D4F99F20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				4A77BE7D20B5C52D00166150 /* CardSet.swift in Sources */,
@@ -507,6 +518,7 @@
 				84D4F9A020FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				84E9F98420A285F900A3DD1D /* ScryfallSwiftTests.swift in Sources */,
 				84E9F98D20A2864000A3DD1D /* Card.swift in Sources */,
+				840DBB8E21191C650001B28E /* Legality.swift in Sources */,
 				4A77BE7E20B5C52D00166150 /* CardSet.swift in Sources */,
 				84E9F98C20A2863D00A3DD1D /* ScryfallManager.swift in Sources */,
 			);
