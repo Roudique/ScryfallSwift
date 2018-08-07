@@ -163,6 +163,15 @@ public class Card: Decodable {
     /// True if this card is a reprint.
     var isReprint: Bool
     
+    /// The localized name printed on this card.
+    var printedName: String?
+    
+    /// The localized text printed on this card.
+    var printedText: String?
+    
+    /// The localized type line printed on this card.
+    var printedTypeLine: String?
+    
     /// True if this is a digital card on Magic Online.
     var isDigital: Bool
     
@@ -255,6 +264,9 @@ public class Card: Decodable {
         case scryfallSetURI = "scryfall_set_uri"
         case imagery = "image_uris"
         case hasHighresImage = "highres_image"
+        case printedName = "printed_name"
+        case printedText = "printed_text"
+        case printedTypeLine = "printed_type_line"
         case isReprint = "reprint"
         case isDigital = "digital"
         case rarity
