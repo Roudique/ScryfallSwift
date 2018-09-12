@@ -91,6 +91,31 @@ class ScryfallSwiftTests: XCTestCase {
         print(lineBrake)
     }
     
+    func testSymbology() {
+        let url = urlForSymbologyTestFile()
+        
+        print(lineBrake)
+        print("Started testing symbology")
+        
+        guard let jsonData = try? Data.init(contentsOf: url) else {
+            assertionFailure()
+            return
+        }
+        
+        let jsonDecoder = JSONDecoder()
+        
+        do {
+            let symbologies = try jsonDecoder.decode([CardSymbol].self, from: jsonData)
+            
+            print(lineBrake)
+            print("Total symbologies tested: \(symbologies.count)")
+            print(lineBrake)
+        } catch {
+            assertionFailure("Symbologies should not be nil. Looks like json wasn't parsed correctly: \(error)")
+        }
+        
+    }
+    
     
     //MARK: - Utils
     
@@ -136,6 +161,14 @@ class ScryfallSwiftTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         
         let fileURL = bundle.url(forResource: "RulingsTest", withExtension: "json")!
+        
+        return fileURL
+    }
+    
+    func urlForSymbologyTestFile() -> URL {
+        let bundle = Bundle(for: type(of: self))
+        
+        let fileURL = bundle.url(forResource: "SymbologyTest", withExtension: "json")!
         
         return fileURL
     }
