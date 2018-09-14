@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScryfallError: Error, Codable {
+struct ScryfallError: Error, Decodable {
     /// An integer HTTP status code for this error.
     var status: Int
     

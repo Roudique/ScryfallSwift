@@ -113,7 +113,21 @@ class ScryfallSwiftTests: XCTestCase {
         } catch {
             assertionFailure("Symbologies should not be nil. Looks like json wasn't parsed correctly: \(error)")
         }
+    }
+    
+    func testList() {
+        let url = urlForListTestFile()
         
+        guard let jsonData = try? Data.init(contentsOf: url) else {
+            assertionFailure()
+            return
+        }
+        
+        guard let list = CardsList(with: jsonData) else {
+            assertionFailure("CardList shouldn't be nil")
+            return
+        }
+        assert(list.cards.count > 0, "CardList should have at lease 1 card")
     }
     
     
@@ -169,6 +183,14 @@ class ScryfallSwiftTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         
         let fileURL = bundle.url(forResource: "SymbologyTest", withExtension: "json")!
+        
+        return fileURL
+    }
+    
+    func urlForListTestFile() -> URL {
+        let bundle = Bundle(for: type(of: self))
+        
+        let fileURL = bundle.url(forResource: "ListTest", withExtension: "json")!
         
         return fileURL
     }

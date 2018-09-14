@@ -1,0 +1,94 @@
+{
+    "object": "list",
+    "total_cards": 1,
+    "has_more": false,
+    "data": [
+             {
+             "object": "card",
+             "id": "3313bd5c-b657-47a3-822a-dd0d9165492a",
+             "oracle_id": "28a52ba1-95da-44e1-8ac5-0dc23c902394",
+             "multiverse_ids": [],
+             "name": "Healer's Hawk",
+             "lang": "en",
+             "uri": "https://api.scryfall.com/cards/3313bd5c-b657-47a3-822a-dd0d9165492a",
+             "scryfall_uri": "https://scryfall.com/card/grn/14/healers-hawk?utm_source=api",
+             "layout": "normal",
+             "highres_image": false,
+             "image_uris": {
+             "small": "https://img.scryfall.com/cards/small/en/grn/14.jpg?1536340098",
+             "normal": "https://img.scryfall.com/cards/normal/en/grn/14.jpg?1536340098",
+             "large": "https://img.scryfall.com/cards/large/en/grn/14.jpg?1536340098",
+             "png": "https://img.scryfall.com/cards/png/en/grn/14.png?1536340098",
+             "art_crop": "https://img.scryfall.com/cards/art_crop/en/grn/14.jpg?1536340098",
+             "border_crop": "https://img.scryfall.com/cards/border_crop/en/grn/14.jpg?1536340098"
+             },
+             "mana_cost": "{W}",
+             "cmc": 1,
+             "type_line": "Creature — Bird",
+             "oracle_text": "Flying, lifelink",
+             "power": "1",
+             "toughness": "1",
+             "colors": [
+                        "W"
+                        ],
+             "color_identity": [
+                                "W"
+                                ],
+             "legalities": {
+             "standard": "not_legal",
+             "future": "legal",
+             "frontier": "not_legal",
+             "modern": "not_legal",
+             "legacy": "not_legal",
+             "pauper": "not_legal",
+             "vintage": "not_legal",
+             "penny": "not_legal",
+             "commander": "not_legal",
+             "1v1": "not_legal",
+             "duel": "not_legal",
+             "brawl": "not_legal"
+             },
+             "reserved": false,
+             "foil": true,
+             "nonfoil": true,
+             "oversized": false,
+             "reprint": false,
+             "set": "grn",
+             "set_name": "Guilds of Ravnica",
+             "set_uri": "https://api.scryfall.com/sets/grn",
+             "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Agrn&unique=prints",
+             "scryfall_set_uri": "https://scryfall.com/sets/grn?utm_source=api",
+             "rulings_uri": "https://api.scryfall.com/cards/3313bd5c-b657-47a3-822a-dd0d9165492a/rulings",
+             "prints_search_uri": "https://api.scryfall.com/cards/search?order=set&q=%21%E2%80%9CHealer%27s+Hawk%E2%80%9D+include%3Aextras&unique=prints",
+             "collector_number": "14",
+             "digital": false,
+             "rarity": "common",
+             "flavor_text": "The wounded see the glow of its vials long before they see its wings diving out of the clouds.",
+             "illustration_id": "faf1d895-1cbc-4702-8dbf-be5fff8e8151",
+             "artist": "Milivoj Ćeran",
+             "frame": "2015",
+             "full_art": false,
+             "border_color": "black",
+             "timeshifted": false,
+             "colorshifted": false,
+             "futureshifted": false,
+             "usd": "0.25",
+             "eur": "0.07",
+             "related_uris": {
+             "tcgplayer_decks": "http://decks.tcgplayer.com/magic/deck/search?contains=Healer%27s+Hawk&page=1&partner=Scryfall",
+             "edhrec": "http://edhrec.com/route/?cc=Healer%27s+Hawk",
+             "mtgtop8": "http://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Healer%27s+Hawk"
+             },
+             "purchase_uris": {
+             "amazon": "https://www.amazon.com/gp/search?ie=UTF8&index=toys-and-games&keywords=Healer%27s+Hawk&tag=scryfall-20",
+             "ebay": "http://rover.ebay.com/rover/1/711-53200-19255-0/1?campid=5337966903&icep_catId=19107&icep_ff3=10&icep_sortBy=12&icep_uq=Healer%27s+Hawk&icep_vectorid=229466&ipn=psmain&kw=lg&kwid=902099&mtid=824&pub=5575230669&toolid=10001",
+             "tcgplayer": "https://scryfall.com/s/tcgplayer/175546",
+             "magiccardmarket": "https://scryfall.com/s/mcm/363621",
+             "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Healer%27s+Hawk&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall",
+             "card_kingdom": "https://www.cardkingdom.com/catalog/item/221448?partner=scryfall&utm_campaign=affiliate&utm_medium=scryfall&utm_source=scryfall",
+             "mtgo_traders": "http://www.mtgotraders.com/store/search.php?q=Healer%27s+Hawk&referral=scryfall",
+             "coolstuffinc": "https://scryfall.com/s/coolstuffinc/4489726"
+             }
+             }
+             ]
+}
