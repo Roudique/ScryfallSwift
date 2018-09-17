@@ -118,16 +118,30 @@ class ScryfallSwiftTests: XCTestCase {
     func testList() {
         let url = urlForListTestFile()
         
+        print(lineBrake)
+        print("Started testing List")
+
         guard let jsonData = try? Data.init(contentsOf: url) else {
             assertionFailure()
             return
         }
         
-        guard let list = CardsList(with: jsonData) else {
-            assertionFailure("CardList shouldn't be nil")
-            return
+        let jsonDecoder = JSONDecoder()
+        
+        do {
+            let list = try jsonDecoder.decode(List.self, from: jsonData)
+            
+            switch list.data {
+            case .cards(let cards):
+                print("Total cards in list: \(cards.count)")
+            case .sets(let sets):
+                print("Total sets in list: \(sets.count)")
+            }
+            
+            print(lineBrake)
+        } catch {
+            assertionFailure("List should not be nil: \(error)")
         }
-        assert(list.cards.count > 0, "CardList should have at lease 1 card")
     }
     
     

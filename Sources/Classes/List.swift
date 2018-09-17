@@ -8,35 +8,28 @@
 import Foundation
 
 
+enum ListData: Decodable {
+    case cards([Card])
+    case sets([CardSet])
+}
 
-class List {
-    init?(with data: Data) {
-        do {
-            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]  else {
-                return nil
-            }
-            
-            if let more = json[CodingKeys.hasMore.rawValue] as? Bool {
-                self.hasMore = more
-            }
-            
-            if let nextPage = json[CodingKeys.nextPage.rawValue] as? String,
-                let nextPageURL = URL(string: nextPage) {
-                self.nextPage = nextPageURL
-            }
-            
-            if let totalCards = json[CodingKeys.totalCards.rawValue] as? Int {
-                self.totalCards = totalCards
-            }
-            
-            if let warnings = json[CodingKeys.warnings.rawValue] as? [String] {
-                self.warnings = warnings
-            }
-        } catch {
-            print("Error: \(error)")
-            return nil
+extension ListData {
+    init(from decoder: Decoder) throws {
+        if let value = try? [Card].init(from: decoder) {
+            self = .cards(value)
+        } else if let sets = try? [CardSet].init(from: decoder) {
+            self = .sets(sets)
+        } else {
+            let context = DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Cannot decode \([Card].self) or \([CardSet].self)")
+            throw DecodingError.dataCorrupted(context)
         }
     }
+}
+
+
+class List: Decodable {
+    /// An array of the requested objects, in a specific order.
+    var data: ListData
 
     /// True if this List is paginated and there is a page beyond the current page.
     var hasMore: Bool = false
@@ -53,48 +46,10 @@ class List {
     var warnings: [String]?
 
     enum CodingKeys: String, CodingKey {
+        case data       = "data"
         case hasMore    = "has_more"
         case nextPage   = "next_page"
         case totalCards = "total_cards"
         case warnings   = "warnings"
     }
 }
-
-class CardsList: List {
-    override init?(with data: Data) {
-        do {
-            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]  else {
-                return nil
-            }
-            
-            if let cardsData = json[CodingKeys.cards.rawValue] {
-                if let cardsJSONData = try? JSONSerialization.data(withJSONObject: cardsData, options: []) {
-                    let decoder = JSONDecoder()
-                    guard let cards = try? decoder.decode([Card].self, from: cardsJSONData) else { return nil }
-                    self.cards = cards
-                    
-                    super.init(with: data)
-                    return
-                } else {
-                    return nil
-                }
-            }
-        } catch {
-            return nil
-        }
-        return nil
-    }
-    
-    var cards: [Card]
-    
-    enum CodingKeys: String, CodingKey {
-        case cards = "data"
-    }
-}
-
-
-
-
-
-
-
