@@ -116,29 +116,30 @@ class ScryfallSwiftTests: XCTestCase {
     }
     
     func testList() {
-        let url = urlForListTestFile()
+        let urls = urlsForListTestFile()
         
         print(lineBrake)
         print("Started testing List")
-
-        guard let jsonData = try? Data.init(contentsOf: url) else {
-            assertionFailure()
-            return
+        
+        var jsonDatas = [Data]()
+        
+        urls.forEach { url in
+            jsonDatas.append(try! Data(contentsOf: url))
         }
         
         let jsonDecoder = JSONDecoder()
         
         do {
-            let list = try jsonDecoder.decode(List.self, from: jsonData)
-            
-            switch list.data {
-            case .cards(let cards):
-                print("Total cards in list: \(cards.count)")
-            case .sets(let sets):
-                print("Total sets in list: \(sets.count)")
+            try jsonDatas.forEach { data in
+                let list = try jsonDecoder.decode(List.self, from: data)
+                print("List #\(jsonDatas.index(of: data)!)")
+                switch list.data {
+                case .cards(let cards):
+                    print("\tTotal cards in list: \(cards.count)")
+                case .sets(let sets):
+                    print("\tTotal sets in list: \(sets.count)")
+                }
             }
-            
-            print(lineBrake)
         } catch {
             assertionFailure("List should not be nil: \(error)")
         }
@@ -201,11 +202,16 @@ class ScryfallSwiftTests: XCTestCase {
         return fileURL
     }
     
-    func urlForListTestFile() -> URL {
+    func urlsForListTestFile() -> [URL] {
+        var urls = [URL]()
         let bundle = Bundle(for: type(of: self))
         
-        let fileURL = bundle.url(forResource: "ListTest", withExtension: "json")!
+        var i = 0
+        while let fileURL = bundle.url(forResource: "ListTest\(i)", withExtension: "json") {
+            urls.append(fileURL)
+            i += 1
+        }
         
-        return fileURL
+        return urls
     }
 }

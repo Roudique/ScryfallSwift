@@ -293,14 +293,14 @@ struct CardFace: Decodable {
     var typeLine: String
     var oracleText: String?
     var manaCost: String
-    var colors: [CardColor]
+    var colors: [CardColor]?
     var colorIndicator: [CardColor]?
     var power: String?
     var toughness: String?
     var loyalty: String?
     var flavorText: String?
     var illustrationID: String?
-    var imagery: Imagery
+    var imagery: Imagery?
     
     enum CodingKeys: String, CodingKey {
         case name
