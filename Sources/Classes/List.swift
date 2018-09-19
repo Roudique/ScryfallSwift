@@ -11,16 +11,22 @@ import Foundation
 enum ListData: Decodable {
     case cards([Card])
     case sets([CardSet])
+    case rulings([Ruling])
+    case cardSymbols([CardSymbol])
 }
 
 extension ListData {
     init(from decoder: Decoder) throws {
-        if let value = try? [Card].init(from: decoder) {
-            self = .cards(value)
+        if let cards = try? [Card].init(from: decoder) {
+            self = .cards(cards)
         } else if let sets = try? [CardSet].init(from: decoder) {
             self = .sets(sets)
-        } else {
-            let context = DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Cannot decode \([Card].self) or \([CardSet].self)")
+        } else if let rulings = try? [Ruling].init(from:decoder) {
+            self = .rulings(rulings)
+        } else if let cardSymbols = try? [CardSymbol].init(from: decoder) {
+            self = .cardSymbols(cardSymbols)
+        }else {
+            let context = DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Cannot decode \([Card].self) or \([CardSet].self) or \([Ruling].self)")
             throw DecodingError.dataCorrupted(context)
         }
     }

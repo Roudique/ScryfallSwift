@@ -138,6 +138,10 @@ class ScryfallSwiftTests: XCTestCase {
                     print("\tTotal cards in list: \(cards.count)")
                 case .sets(let sets):
                     print("\tTotal sets in list: \(sets.count)")
+                case .rulings(let rulings):
+                    print("\tTotal rulings in list: \(rulings.count)")
+                case .cardSymbols(let symbols):
+                    print("\tTotal symbols in list: \(symbols.count)")
                 }
             }
         } catch {

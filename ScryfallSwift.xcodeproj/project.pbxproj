@@ -50,16 +50,11 @@
 		84525BAB214B4F060088A9E2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84525BA8214B4F060088A9E2 /* List.swift */; };
 		84525BAC214B4F060088A9E2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84525BA8214B4F060088A9E2 /* List.swift */; };
 		84525BAD214B4F060088A9E2 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84525BA8214B4F060088A9E2 /* List.swift */; };
-		84525BB6214B5B300088A9E2 /* ListTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BB5214B5B300088A9E2 /* ListTest0.json */; };
-		84525BB7214B5B300088A9E2 /* ListTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BB5214B5B300088A9E2 /* ListTest0.json */; };
-		84525BB8214B5B300088A9E2 /* ListTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BB5214B5B300088A9E2 /* ListTest0.json */; };
-		84525BB9214B5B300088A9E2 /* ListTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BB5214B5B300088A9E2 /* ListTest0.json */; };
 		84525BBA214B5B300088A9E2 /* ListTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BB5214B5B300088A9E2 /* ListTest0.json */; };
-		84525BBC2151CAF00088A9E2 /* ListTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BBB2151CAF00088A9E2 /* ListTest1.json */; };
-		84525BBD2151CAF00088A9E2 /* ListTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BBB2151CAF00088A9E2 /* ListTest1.json */; };
-		84525BBE2151CAF00088A9E2 /* ListTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BBB2151CAF00088A9E2 /* ListTest1.json */; };
-		84525BBF2151CAF00088A9E2 /* ListTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BBB2151CAF00088A9E2 /* ListTest1.json */; };
 		84525BC02151CAF00088A9E2 /* ListTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BBB2151CAF00088A9E2 /* ListTest1.json */; };
+		84525BC62151D6800088A9E2 /* ListTest2.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BC12151D6800088A9E2 /* ListTest2.json */; };
+		84525BC82151D8DD0088A9E2 /* ListTest3.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BC72151D8DD0088A9E2 /* ListTest3.json */; };
+		84525BCA2151D9340088A9E2 /* ListTest4.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BC92151D9340088A9E2 /* ListTest4.json */; };
 		847D731920A53E1400FDCDBB /* CardTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 847D731320A53C8C00FDCDBB /* CardTest0.json */; };
 		84BF792120B38D6300AB7EC3 /* CardTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84BF792020B38D6300AB7EC3 /* CardTest1.json */; };
 		84D4F99C20FC43FF00EBF4A3 /* Ruling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */; };
@@ -115,6 +110,9 @@
 		84525BA8214B4F060088A9E2 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		84525BB5214B5B300088A9E2 /* ListTest0.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest0.json; sourceTree = "<group>"; };
 		84525BBB2151CAF00088A9E2 /* ListTest1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest1.json; sourceTree = "<group>"; };
+		84525BC12151D6800088A9E2 /* ListTest2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest2.json; sourceTree = "<group>"; };
+		84525BC72151D8DD0088A9E2 /* ListTest3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest3.json; sourceTree = "<group>"; };
+		84525BC92151D9340088A9E2 /* ListTest4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest4.json; sourceTree = "<group>"; };
 		847D731320A53C8C00FDCDBB /* CardTest0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CardTest0.json; path = "ScryfallSwiftTests/Test json files/Cards/CardTest0.json"; sourceTree = SOURCE_ROOT; };
 		84BF792020B38D6300AB7EC3 /* CardTest1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest1.json; sourceTree = "<group>"; };
 		84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruling.swift; sourceTree = "<group>"; };
@@ -245,6 +243,9 @@
 			children = (
 				84525BB5214B5B300088A9E2 /* ListTest0.json */,
 				84525BBB2151CAF00088A9E2 /* ListTest1.json */,
+				84525BC12151D6800088A9E2 /* ListTest2.json */,
+				84525BC72151D8DD0088A9E2 /* ListTest3.json */,
+				84525BC92151D9340088A9E2 /* ListTest4.json */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -482,8 +483,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84525BB6214B5B300088A9E2 /* ListTest0.json in Resources */,
-				84525BBC2151CAF00088A9E2 /* ListTest1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,8 +490,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84525BB7214B5B300088A9E2 /* ListTest0.json in Resources */,
-				84525BBD2151CAF00088A9E2 /* ListTest1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,8 +497,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84525BB8214B5B300088A9E2 /* ListTest0.json in Resources */,
-				84525BBE2151CAF00088A9E2 /* ListTest1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,8 +504,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84525BB9214B5B300088A9E2 /* ListTest0.json in Resources */,
-				84525BBF2151CAF00088A9E2 /* ListTest1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,9 +511,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84525BC82151D8DD0088A9E2 /* ListTest3.json in Resources */,
 				84525B9A214899FB0088A9E2 /* SymbologyTest.json in Resources */,
 				4ABB6C3720B5C95A0077F7BE /* SetsTest.json in Resources */,
 				8445F7D120FC35FA006DA2AC /* CardTest2.json in Resources */,
+				84525BCA2151D9340088A9E2 /* ListTest4.json in Resources */,
+				84525BC62151D6800088A9E2 /* ListTest2.json in Resources */,
 				84525BC02151CAF00088A9E2 /* ListTest1.json in Resources */,
 				847D731920A53E1400FDCDBB /* CardTest0.json in Resources */,
 				84BF792120B38D6300AB7EC3 /* CardTest1.json in Resources */,
