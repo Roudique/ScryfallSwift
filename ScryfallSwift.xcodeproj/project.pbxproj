@@ -14,6 +14,11 @@
 		4A77BE7E20B5C52D00166150 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A77BE7920B5C52D00166150 /* CardSet.swift */; };
 		4ABB6C3720B5C95A0077F7BE /* SetsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB6C3620B5C95A0077F7BE /* SetsTest.json */; };
 		4AC77073211A24F20055D5B3 /* CardTest5.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AC77072211A24F20055D5B3 /* CardTest5.json */; };
+		4AD61BD921556904006C739E /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61BD821556904006C739E /* BaseAPIManager.swift */; };
+		4AD61BDA21556904006C739E /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61BD821556904006C739E /* BaseAPIManager.swift */; };
+		4AD61BDB21556904006C739E /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61BD821556904006C739E /* BaseAPIManager.swift */; };
+		4AD61BDC21556904006C739E /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61BD821556904006C739E /* BaseAPIManager.swift */; };
+		4AD61BDD21556904006C739E /* BaseAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD61BD821556904006C739E /* BaseAPIManager.swift */; };
 		4AE55A4E2113963A00D4A492 /* CardTest4.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE55A4D2113963A00D4A492 /* CardTest4.json */; };
 		840DBB8A21191C5E0001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
 		840DBB8B21191C640001B28E /* Legality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DBB8921191C5E0001B28E /* Legality.swift */; };
@@ -88,6 +93,7 @@
 		4A77BE7920B5C52D00166150 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		4ABB6C3620B5C95A0077F7BE /* SetsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SetsTest.json; sourceTree = "<group>"; };
 		4AC77072211A24F20055D5B3 /* CardTest5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest5.json; sourceTree = "<group>"; };
+		4AD61BD821556904006C739E /* BaseAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIManager.swift; sourceTree = "<group>"; };
 		4AE55A4D2113963A00D4A492 /* CardTest4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest4.json; sourceTree = "<group>"; };
 		840DBB8921191C5E0001B28E /* Legality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legality.swift; sourceTree = "<group>"; };
 		8429B4A4208832D8001B6BB7 /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +177,14 @@
 			path = Sets;
 			sourceTree = "<group>";
 		};
+		4AD61BD7215568EA006C739E /* API Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4AD61BD821556904006C739E /* BaseAPIManager.swift */,
+			);
+			path = "API Managers";
+			sourceTree = "<group>";
+		};
 		8429B498208832CA001B6BB7 = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +246,7 @@
 		84525BA1214B4E020088A9E2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4AD61BD7215568EA006C739E /* API Managers */,
 				84525BA2214B4E240088A9E2 /* ScryfallError.swift */,
 				84525BA8214B4F060088A9E2 /* List.swift */,
 			);
@@ -544,6 +559,7 @@
 				8429B4EA20A27250001B6BB7 /* Card.swift in Sources */,
 				84525B9C21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				84525BA9214B4F060088A9E2 /* List.swift in Sources */,
+				4AD61BD921556904006C739E /* BaseAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +576,7 @@
 				8429B4EB20A27250001B6BB7 /* Card.swift in Sources */,
 				84525B9D21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				84525BAA214B4F060088A9E2 /* List.swift in Sources */,
+				4AD61BDA21556904006C739E /* BaseAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +593,7 @@
 				8429B4EC20A27250001B6BB7 /* Card.swift in Sources */,
 				84525B9E21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				84525BAB214B4F060088A9E2 /* List.swift in Sources */,
+				4AD61BDB21556904006C739E /* BaseAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +610,7 @@
 				8429B4ED20A27250001B6BB7 /* Card.swift in Sources */,
 				84525B9F21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				84525BAC214B4F060088A9E2 /* List.swift in Sources */,
+				4AD61BDC21556904006C739E /* BaseAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD61BDD21556904006C739E /* BaseAPIManager.swift in Sources */,
 				84D4F9A920FD60C400EBF4A3 /* Imagery.swift in Sources */,
 				84525BA7214B4E240088A9E2 /* ScryfallError.swift in Sources */,
 				84D4F9A020FC43FF00EBF4A3 /* Ruling.swift in Sources */,
