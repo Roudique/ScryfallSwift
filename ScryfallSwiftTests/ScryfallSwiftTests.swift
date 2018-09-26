@@ -130,22 +130,26 @@ class ScryfallSwiftTests: XCTestCase {
         let jsonDecoder = JSONDecoder()
         
         do {
-            try jsonDatas.forEach { data in
-                let list = try jsonDecoder.decode(List.self, from: data)
-                print("List #\(jsonDatas.index(of: data)!)")
-                switch list.data {
-                case .cards(let cards):
-                    print("\tTotal cards in list: \(cards.count)")
-                case .sets(let sets):
-                    print("\tTotal sets in list: \(sets.count)")
-                case .rulings(let rulings):
-                    print("\tTotal rulings in list: \(rulings.count)")
-                case .cardSymbols(let symbols):
-                    print("\tTotal symbols in list: \(symbols.count)")
+            for jsonData in jsonDatas {
+                let index = jsonDatas.index(of: jsonData)!
+                if index == 0 || index == 1 {
+                    let list = try jsonDecoder.decode(List<Card>.self, from: jsonData)
+                    print("\tTotal cards in list: \(list.data.count)")
+                } else if index == 2 {
+                    let list = try jsonDecoder.decode(List<CardSet>.self, from: jsonData)
+                    print("\tTotal sets in list: \(list.data.count)")
+                } else if index == 3 {
+                    let list = try jsonDecoder.decode(List<Ruling>.self, from: jsonData)
+                    print("\tTotal rulings in list: \(list.data.count)")
+                } else if index == 4 {
+                    let list = try jsonDecoder.decode(List<CardSymbol>.self, from: jsonData)
+                    print("\tTotal symbologies in list: \(list.data.count)")
                 }
+                
             }
         } catch {
-            assertionFailure("List should not be nil: \(error)")
+            print("Error thrown: \(error)")
+            assertionFailure("Error during decoding the list.")
         }
     }
     

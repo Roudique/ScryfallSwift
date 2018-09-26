@@ -8,34 +8,10 @@
 import Foundation
 
 
-enum ListData: Decodable {
-    case cards([Card])
-    case sets([CardSet])
-    case rulings([Ruling])
-    case cardSymbols([CardSymbol])
-}
 
-extension ListData {
-    init(from decoder: Decoder) throws {
-        if let cards = try? [Card].init(from: decoder) {
-            self = .cards(cards)
-        } else if let sets = try? [CardSet].init(from: decoder) {
-            self = .sets(sets)
-        } else if let rulings = try? [Ruling].init(from:decoder) {
-            self = .rulings(rulings)
-        } else if let cardSymbols = try? [CardSymbol].init(from: decoder) {
-            self = .cardSymbols(cardSymbols)
-        }else {
-            let context = DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Cannot decode \([Card].self) or \([CardSet].self) or \([Ruling].self)")
-            throw DecodingError.dataCorrupted(context)
-        }
-    }
-}
-
-
-class List: Decodable {
+class List<Model: Decodable>: Decodable {
     /// An array of the requested objects, in a specific order.
-    var data: ListData
+    var data: [Model]
 
     /// True if this List is paginated and there is a page beyond the current page.
     var hasMore: Bool = false
