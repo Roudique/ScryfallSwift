@@ -7,6 +7,52 @@
 
 import Foundation
 
+
+enum CardSetType: String, Decodable {
+    /// A yearly Magic core set (Tenth Edition, etc).
+    case core
+    /// A rotational expansion set in a block (Zendikar, etc).
+    case expansion
+    /// A reprint set that contains no new cards (Modern Masters, etc).
+    case masters
+    /// Masterpiece Series premium foil cards.
+    case masterpiece
+    /// From the Vault gift sets.
+    case fromTheVault = "from_the_vault"
+    /// Spellbook series gift sets.
+    case spellbook
+    /// Premium Deck Series decks.
+    case premiumDeck = "premium_deck"
+    /// Duel Decks.
+    case duelDeck = "duel_deck"
+    /// Special draft sets, like Conspiracy and Battlebond.
+    case draftInnovation = "draft_innovation"
+    /// Commander preconstructed decks.
+    case commander
+    /// Planechase sets.
+    case planechase
+    /// Archenemy sets.
+    case archenemy
+    /// Vanguard card sets.
+    case vanguard
+    /// A funny un-set or set with funny promos (Unglued, Happy Holidays, etc).
+    case funny
+    /// A starter/introductory set (Portal, etc).
+    case starter
+    /// A gift box set.
+    case box
+    /// A set that contains purely promotional cards.
+    case promo
+    /// A set made up of tokens and emblems.
+    case token
+    /// A set made up of gold-bordered, oversize, or trophy cards that are not legal.
+    case memorabilia
+    #warning("This one is not documented yet.")
+    /// No info on this one yet.
+    case treasureChest = "treasure_chest"
+ 
+}
+
 /// A **Set** object represents a group of related Magic cards. All Card objects on Scryfall belong to exactly one set.
 ///
 /// Due to Magic’s long and complicated history, Scryfall includes many un-official sets as a way to group promotional or outlier cards together. Such sets will likely have a four-letter **code** that begins with **p** or **t**, such as **pcel** or **tori**.
@@ -23,7 +69,7 @@ class CardSet: Decodable {
     var name: String
     
     /// A computer-readable classification for this set.
-    var setType: String
+    var setType: CardSetType
     
     /// The date the set was released (in GMT-8 Pacific time). Not all sets have a known release date.
     var releasedAt: String?
