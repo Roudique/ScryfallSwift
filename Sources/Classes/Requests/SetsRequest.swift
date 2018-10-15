@@ -27,8 +27,4 @@ struct SetRequest: APIRequest {
             return "/sets/\(self.setCode)"
         }
     }
-    
-//    init(code: String) {
-//        self.setCode = code
-//    }
 }

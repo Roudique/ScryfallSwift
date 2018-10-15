@@ -27,6 +27,7 @@ class BaseAPIClient: NSObject {
             completion(Response.failure(CommonError.invalidURL))
             return
         }
+        print("request url: \(urlRequest.url!)")
         
         let dataTask = self.session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
@@ -44,6 +45,8 @@ class BaseAPIClient: NSObject {
                 let encodedResponse = try JSONDecoder().decode(R.Response.self, from: data)
                 completion(.success(encodedResponse))
             } catch {
+                let dataString = String(data: data, encoding: .utf8)!
+                print(dataString)
                 completion(.failure(error))
             }
             
@@ -56,6 +59,10 @@ class BaseAPIClient: NSObject {
         urlComponents.scheme    = "https"
         urlComponents.host      = self.host
         urlComponents.path      = request.resourceName
+        
+        if let queryableRequest = request as? QueryableAPIRequest {
+            urlComponents.queryItems = queryableRequest.queryItems.map { URLQueryItem(name: $0, value: $1) }
+        }
         
         guard let url           = urlComponents.url else { return nil }
         var request             = URLRequest(url: url)
