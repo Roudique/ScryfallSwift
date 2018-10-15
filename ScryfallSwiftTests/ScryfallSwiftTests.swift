@@ -15,18 +15,20 @@ class ScryfallSwiftTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        print(lineBrake)
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        print(lineBrake)
     }
     
     func testCards() {
         var i = 0
         let urls = urlsForCardTestFiles()
         
-        print("\(lineBrake)\nStarted testing cards")
+        print("\nStarted testing cards")
 
         for url in urls {
             guard let jsonData = try? Data.init(contentsOf: url) else {
@@ -43,14 +45,12 @@ class ScryfallSwiftTests: XCTestCase {
             i += 1
         }
         
-        print("\(lineBrake)\nFinished testing cards. Total cards tested: \(urls.count)")
-        print(lineBrake)
+        print("\nFinished testing cards. Total cards tested: \(urls.count)")
     }
     
     func testSets() {
         let url = urlForSetTestFile()
         
-        print(lineBrake)
         print("Started testing sets")
         
         guard let jsonData = try? Data.init(contentsOf: url) else {
@@ -64,15 +64,12 @@ class ScryfallSwiftTests: XCTestCase {
             return
         }
         
-        print(lineBrake)
         print("Total sets tested: \(sets.count)")
-        print(lineBrake)
     }
     
     func testRulings() {
         let url = urlForRulingsTestFile()
         
-        print(lineBrake)
         print("Started testing rulings")
         
         guard let jsonData = try? Data.init(contentsOf: url) else {
@@ -86,15 +83,12 @@ class ScryfallSwiftTests: XCTestCase {
             return
         }
         
-        print(lineBrake)
         print("Total rulings tested: \(rulings.count)")
-        print(lineBrake)
     }
     
     func testSymbology() {
         let url = urlForSymbologyTestFile()
         
-        print(lineBrake)
         print("Started testing symbology")
         
         guard let jsonData = try? Data.init(contentsOf: url) else {
@@ -107,9 +101,7 @@ class ScryfallSwiftTests: XCTestCase {
         do {
             let symbologies = try jsonDecoder.decode([CardSymbol].self, from: jsonData)
             
-            print(lineBrake)
             print("Total symbologies tested: \(symbologies.count)")
-            print(lineBrake)
         } catch {
             assertionFailure("Symbologies should not be nil. Looks like json wasn't parsed correctly: \(error)")
         }
@@ -118,7 +110,6 @@ class ScryfallSwiftTests: XCTestCase {
     func testList() {
         let urls = urlsForListTestFile()
         
-        print(lineBrake)
         print("Started testing List")
         
         var jsonDatas = [Data]()
@@ -151,6 +142,39 @@ class ScryfallSwiftTests: XCTestCase {
             print("Error thrown: \(error)")
             assertionFailure("Error during decoding the list.")
         }
+    }
+    
+    func testAllSetsRequest() {
+        let apiManager = BaseAPIClient()
+        
+        let allSetsExp  = self.expectation(description: "allSets")
+        let setExp      = self.expectation(description: "set")
+        print("Started testing Sets API requests")
+
+        apiManager.send(request: AllSetsRequest()) { response in
+            switch response {
+            case .success(let scryfallData):
+                print("There is data for all sets: \(scryfallData.data.count) lists returned")
+                print(self.lineBrake)
+            case .failure(let error):
+                assertionFailure("Error during testing all sets request all sets: \(error)")
+            }
+            
+            allSetsExp.fulfill()
+        }
+        
+        apiManager.send(request: SetRequest(setCode: "grn")) { response in
+            switch response {
+            case .success(let set):
+                print("There is set: \(set.name) with \(set.cardCount) cards.")
+            case .failure(let error):
+                assertionFailure("Error during testing set \"grn\": \(error)")
+            }
+            
+            setExp.fulfill()
+        }
+        
+        wait(for: [allSetsExp, setExp], timeout: 8.0)
     }
     
     

@@ -25,3 +25,7 @@ struct ScryfallError: Error, Decodable {
     /// If your input also generated non-failure warnings, they will be provided as human-readable strings in this array.
     var warnings: [String]?
 }
+
+enum CommonError: Error {
+    case invalidURL
+}
