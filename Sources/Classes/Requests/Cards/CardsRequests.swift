@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct AllCardsRequest: APIRequest {
     typealias Response = List<Card>
     
@@ -16,6 +17,7 @@ struct AllCardsRequest: APIRequest {
         }
     }
 }
+
 
 struct FulltextCardSearchRequest: APIRequest {
     typealias Response = List<Card>
@@ -90,7 +92,6 @@ struct FulltextCardSearchRequest: APIRequest {
         }
     }
 }
-
 extension FulltextCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
         var items = ["q": search]

@@ -49,6 +49,16 @@
 		842EE324217442FD007DC1B8 /* CardsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE320217442FD007DC1B8 /* CardsRequests.swift */; };
 		842EE325217442FD007DC1B8 /* CardsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE320217442FD007DC1B8 /* CardsRequests.swift */; };
 		842EE32721744371007DC1B8 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE32621744371007DC1B8 /* APIClientTests.swift */; };
+		842EE329218024B8007DC1B8 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE328218024B8007DC1B8 /* Catalog.swift */; };
+		842EE32A218024B8007DC1B8 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE328218024B8007DC1B8 /* Catalog.swift */; };
+		842EE32B218024B8007DC1B8 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE328218024B8007DC1B8 /* Catalog.swift */; };
+		842EE32C218024B8007DC1B8 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE328218024B8007DC1B8 /* Catalog.swift */; };
+		842EE32D218024B8007DC1B8 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE328218024B8007DC1B8 /* Catalog.swift */; };
+		842EE3302180259C007DC1B8 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */; };
+		842EE3312180259C007DC1B8 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */; };
+		842EE3322180259C007DC1B8 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */; };
+		842EE3332180259C007DC1B8 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */; };
+		842EE3342180259C007DC1B8 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */; };
 		8445F7D020FC35FA006DA2AC /* CardTest3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8445F7CE20FC35FA006DA2AC /* CardTest3.json */; };
 		8445F7D120FC35FA006DA2AC /* CardTest2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8445F7CF20FC35FA006DA2AC /* CardTest2.json */; };
 		84525B9A214899FB0088A9E2 /* SymbologyTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525B99214899FB0088A9E2 /* SymbologyTest.json */; };
@@ -122,6 +132,8 @@
 		842EE31A217441CD007DC1B8 /* BaseAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIClient.swift; sourceTree = "<group>"; };
 		842EE320217442FD007DC1B8 /* CardsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRequests.swift; sourceTree = "<group>"; };
 		842EE32621744371007DC1B8 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		842EE328218024B8007DC1B8 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteRequest.swift; sourceTree = "<group>"; };
 		8445F7CE20FC35FA006DA2AC /* CardTest3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CardTest3.json; sourceTree = "<group>"; };
 		8445F7CF20FC35FA006DA2AC /* CardTest2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CardTest2.json; sourceTree = "<group>"; };
 		84525B99214899FB0088A9E2 /* SymbologyTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SymbologyTest.json; sourceTree = "<group>"; };
@@ -240,10 +252,11 @@
 			children = (
 				8429B4E920A27250001B6BB7 /* Card.swift */,
 				4A77BE7920B5C52D00166150 /* CardSet.swift */,
-				84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */,
+				84525B9B21489A760088A9E2 /* CardSymbol.swift */,
+				842EE328218024B8007DC1B8 /* Catalog.swift */,
 				84D4F9A420FD60C400EBF4A3 /* Imagery.swift */,
 				840DBB8921191C5E0001B28E /* Legality.swift */,
-				84525B9B21489A760088A9E2 /* CardSymbol.swift */,
+				84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,11 +264,20 @@
 		842EE31321743AE3007DC1B8 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				842EE32E2180258D007DC1B8 /* Cards */,
 				842EE30D2173F19F007DC1B8 /* APIRequest.swift */,
 				842EE31421743B09007DC1B8 /* SetsRequest.swift */,
-				842EE320217442FD007DC1B8 /* CardsRequests.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		842EE32E2180258D007DC1B8 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				842EE320217442FD007DC1B8 /* CardsRequests.swift */,
+				842EE32F2180259C007DC1B8 /* AutocompleteRequest.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		84525B98214899E70088A9E2 /* Symbology */ = {
@@ -580,6 +602,7 @@
 				4A77BE7A20B5C52D00166150 /* CardSet.swift in Sources */,
 				842EE321217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31521743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				842EE329218024B8007DC1B8 /* Catalog.swift in Sources */,
 				84D4F99C20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				84D4F9A520FD60C400EBF4A3 /* Imagery.swift in Sources */,
 				8429B4EA20A27250001B6BB7 /* Card.swift in Sources */,
@@ -587,6 +610,7 @@
 				842EE31B217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
 				84525BA9214B4F060088A9E2 /* List.swift in Sources */,
 				842EE30E2173F19F007DC1B8 /* APIRequest.swift in Sources */,
+				842EE3302180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +623,7 @@
 				84D4F99D20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				842EE322217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31621743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				842EE32A218024B8007DC1B8 /* Catalog.swift in Sources */,
 				4A77BE7B20B5C52D00166150 /* CardSet.swift in Sources */,
 				84D4F9A620FD60C400EBF4A3 /* Imagery.swift in Sources */,
 				8429B4EB20A27250001B6BB7 /* Card.swift in Sources */,
@@ -606,6 +631,7 @@
 				842EE31C217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
 				84525BAA214B4F060088A9E2 /* List.swift in Sources */,
 				842EE30F2173F19F007DC1B8 /* APIRequest.swift in Sources */,
+				842EE3312180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +644,7 @@
 				84D4F99E20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				842EE323217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31721743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				842EE32B218024B8007DC1B8 /* Catalog.swift in Sources */,
 				4A77BE7C20B5C52D00166150 /* CardSet.swift in Sources */,
 				84D4F9A720FD60C400EBF4A3 /* Imagery.swift in Sources */,
 				8429B4EC20A27250001B6BB7 /* Card.swift in Sources */,
@@ -625,6 +652,7 @@
 				842EE31D217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
 				84525BAB214B4F060088A9E2 /* List.swift in Sources */,
 				842EE3102173F19F007DC1B8 /* APIRequest.swift in Sources */,
+				842EE3322180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +665,7 @@
 				84D4F99F20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				842EE324217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31821743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				842EE32C218024B8007DC1B8 /* Catalog.swift in Sources */,
 				4A77BE7D20B5C52D00166150 /* CardSet.swift in Sources */,
 				84D4F9A820FD60C400EBF4A3 /* Imagery.swift in Sources */,
 				8429B4ED20A27250001B6BB7 /* Card.swift in Sources */,
@@ -644,6 +673,7 @@
 				842EE31E217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
 				84525BAC214B4F060088A9E2 /* List.swift in Sources */,
 				842EE3112173F19F007DC1B8 /* APIRequest.swift in Sources */,
+				842EE3332180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842EE32D218024B8007DC1B8 /* Catalog.swift in Sources */,
 				842EE31921743B09007DC1B8 /* SetsRequest.swift in Sources */,
 				84D4F9A920FD60C400EBF4A3 /* Imagery.swift in Sources */,
 				842EE31F217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
@@ -665,6 +696,7 @@
 				84E9F98D20A2864000A3DD1D /* Card.swift in Sources */,
 				840DBB8E21191C650001B28E /* Legality.swift in Sources */,
 				4A77BE7E20B5C52D00166150 /* CardSet.swift in Sources */,
+				842EE3342180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

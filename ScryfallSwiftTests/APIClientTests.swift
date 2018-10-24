@@ -105,4 +105,22 @@ class APIClientTests: XCTestCase {
         
         wait(for: [expectation, imageExp, textExp], timeout: 20.0)
     }
+    
+    func testAutocompleteSearch() {
+        let exp = self.expectation(description: "autocomplete")
+        
+        let cardName = "thal"
+        let request = AutocompleteRequest(cardName: cardName)
+        BaseAPIClient().send(request: request) { response in
+            switch response {
+            case .success(let catalog):
+                print("Found \(catalog.total) autocompletes for \(cardName)")
+            case .failure(let error):
+                assertionFailure("Error: \(error)")
+            }
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 5.0)
+    }
 }
