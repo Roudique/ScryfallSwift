@@ -95,17 +95,9 @@ extension FulltextCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
         var items = ["q": search]
         
-        if let unique = self.unique {
-            items["unique"] = unique.rawValue
-        }
-        
-        if let order = self.order {
-            items["order"] = order.rawValue
-        }
-        
-        if let sortDirection = self.sortDirection {
-            items["dir"] = sortDirection.rawValue
-        }
+        items["unique"] = self.unique?.rawValue ?? nil
+        items["order"]  = self.order?.rawValue ?? nil
+        items["dir"]    = self.sortDirection?.rawValue ?? nil
         
         if let extras = self.includeExtras, extras == true {
             items["include_extras"] = "\(true)"
@@ -118,3 +110,142 @@ extension FulltextCardSearchRequest: QueryableAPIRequest {
         return items
     }
 }
+
+
+/// Name for a card to search for, case insensitive.
+///
+/// - exact: Exact card name.
+/// - fuzzy: Fuzzy card name.
+enum Name {
+    case exact(String)
+    case fuzzy(String)
+}
+
+
+struct NamedCardSearchRequest: APIRequest {
+    var resourceName: String {
+        get {
+            return privateRequest.resourceName
+        }
+    }
+    
+    typealias Response = Card
+    
+    let format = Format.json
+    
+    private var privateRequest: NamedSearchRequest
+    
+    init(name: Name, setCode: String?) {
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format, isBackFace: nil, imageVersion: nil)
+    }
+}
+extension NamedCardSearchRequest: QueryableAPIRequest {
+    var queryItems: [String : String] {
+        get {
+            return self.privateRequest.queryItems
+        }
+    }
+}
+
+
+struct NamedTextCardSearchRequest: APIRequest {
+    var resourceName: String {
+        get {
+            return privateRequest.resourceName
+        }
+    }
+    typealias Response  = String
+    let format          = Format.text
+    private var privateRequest: NamedSearchRequest
+    
+    init(name: Name, setCode: String?) {
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format, isBackFace: nil, imageVersion: nil)
+    }
+}
+extension NamedTextCardSearchRequest: QueryableAPIRequest {
+    var queryItems: [String : String] {
+        get {
+            return privateRequest.queryItems
+        }
+    }
+}
+
+
+struct NamedImageCardSearchRequest: APIRequest {
+    var resourceName: String {
+        get {
+            return self.privateRequest.resourceName
+        }
+    }
+    typealias Response  = Data
+    let format          = Format.image
+    private var privateRequest: NamedSearchRequest
+
+    init(name: Name, setCode: String?, backFace: Bool?, imageVersion: Imagery.CodingKeys?) {
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format, isBackFace: backFace, imageVersion: imageVersion)
+    }
+}
+extension NamedImageCardSearchRequest: QueryableAPIRequest {
+    var queryItems: [String: String] {
+        get {
+            return privateRequest.queryItems
+        }
+    }
+}
+
+
+private struct NamedSearchRequest {
+    
+    var resourceName: String {
+        get {
+            return "/cards/named"
+        }
+    }
+    
+    /// Name for a card to search for, case insensitive.
+    var name: Name
+    
+    /// A set code to limit the search to one set.
+    var setCode: String?
+    
+    /// The data format to return: json, text, or image. Defaults to json.
+    var format: Format?
+    
+    /// If using the image format and this parameter has the value back, the back face of the card will be returned. Will return a 404 if this card has no back face.
+    var isBackFace: Bool?
+    
+    /// The image version to return when using the image format: small, normal, large, png, art_crop, or border_crop. Defaults to large.
+    var imageVersion: Imagery.CodingKeys?
+}
+extension NamedSearchRequest: QueryableAPIRequest {
+    var queryItems: [String: String] {
+        get {
+            var items = [String: String]()
+            
+            var name: (String, String)
+            switch self.name {
+            case .exact(let exact):
+                name = ("exact", exact)
+            case .fuzzy(let fuzzy):
+                name = ("fuzzy", fuzzy)
+            }
+            items[name.0] = name.1
+            
+            items["set"] = self.setCode ?? nil
+            items["format"] = self.format?.rawValue ?? nil
+            
+            if let format = self.format, format == .image {
+                if let isBackFace = self.isBackFace, isBackFace {
+                    items["face"] = "back"
+                }
+                
+                if let imageVersion = self.imageVersion {
+                    items["version"] = imageVersion.rawValue
+                }
+            }
+            
+            return items
+        }
+    }
+}
+

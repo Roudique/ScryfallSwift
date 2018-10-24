@@ -7,6 +7,11 @@
 import Foundation
 
 
+enum Format: String, Codable {
+    case json, text, image
+}
+
+
 enum HTTPMethod: String {
     case get, post, put, delete
 }
@@ -35,9 +40,30 @@ class BaseAPIClient: NSObject {
                 return
             }
             
+            // Make sure there is data associated with response.
             guard let data = data else {
                 let error = ScryfallError.init(status: 404, code: "", details: "Server returned empty data.", type: nil, warnings: nil)
                 completion(.failure(error))
+                return
+            }
+            
+            // If request didn't fail but instead server returned 'internal' error
+            if let error = try? JSONDecoder().decode(ScryfallError.self, from: data) {
+                completion(.failure(error))
+                return
+            }
+            
+            // If response should be of type Data - don't decode it into json, simply return.
+            if R.Response.self == Data.self {
+                let data = data as! R.Response
+                completion(.success(data))
+                return
+            }
+            
+            // If response should be of type String - don't decode it into json, return as String
+            if R.Response.self == String.self {
+                let string = String(data: data, encoding: .utf8) as! R.Response
+                completion(.success(string))
                 return
             }
             
@@ -65,9 +91,9 @@ class BaseAPIClient: NSObject {
         }
         
         guard let url           = urlComponents.url else { return nil }
-        var request             = URLRequest(url: url)
-        request.httpMethod      = HTTPMethod.get.rawValue
+        var urlRequest          = URLRequest(url: url)
+        urlRequest.httpMethod   = HTTPMethod.get.rawValue
         
-        return request
+        return urlRequest
     }
 }
