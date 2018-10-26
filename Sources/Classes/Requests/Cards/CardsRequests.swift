@@ -137,7 +137,7 @@ struct NamedCardSearchRequest: APIRequest {
     private var privateRequest: NamedSearchRequest
     
     init(name: Name, setCode: String?) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format, isBackFace: nil, imageVersion: nil)
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format)
     }
 }
 extension NamedCardSearchRequest: QueryableAPIRequest {
@@ -160,7 +160,7 @@ struct NamedTextCardSearchRequest: APIRequest {
     private var privateRequest: NamedSearchRequest
     
     init(name: Name, setCode: String?) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format, isBackFace: nil, imageVersion: nil)
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format)
     }
 }
 extension NamedTextCardSearchRequest: QueryableAPIRequest {
@@ -179,11 +179,10 @@ struct NamedImageCardSearchRequest: APIRequest {
         }
     }
     typealias Response  = Data
-    let format          = Format.image
     private var privateRequest: NamedSearchRequest
 
-    init(name: Name, setCode: String?, backFace: Bool?, imageVersion: Imagery.CodingKeys?) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format, isBackFace: backFace, imageVersion: imageVersion)
+    init(name: Name, setCode: String?, format: Format?) {
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: format)
     }
 }
 extension NamedImageCardSearchRequest: QueryableAPIRequest {
@@ -211,12 +210,6 @@ private struct NamedSearchRequest {
     
     /// The data format to return: json, text, or image. Defaults to json.
     var format: Format?
-    
-    /// If using the image format and this parameter has the value back, the back face of the card will be returned. Will return a 404 if this card has no back face.
-    var isBackFace: Bool?
-    
-    /// The image version to return when using the image format: small, normal, large, png, art_crop, or border_crop. Defaults to large.
-    var imageVersion: Imagery.CodingKeys?
 }
 extension NamedSearchRequest: QueryableAPIRequest {
     var queryItems: [String: String] {
@@ -233,17 +226,16 @@ extension NamedSearchRequest: QueryableAPIRequest {
             items[name.0] = name.1
             
             items["set"] = self.setCode ?? nil
-            items["format"] = self.format?.rawValue ?? nil
             
-            if let format = self.format, format == .image {
-                if let isBackFace = self.isBackFace, isBackFace {
-                    items["face"] = "back"
-                }
-                
-                if let imageVersion = self.imageVersion {
-                    items["version"] = imageVersion.rawValue
-                }
+            guard let format = self.format else { return items }
+            switch format {
+            case .image(let config):
+                items["face"] = config.isBackFace ? "back" : nil
+                items["version"] = config.version.stringValue
+            default:
+                break
             }
+            items["format"] = format.stringRepresentation()
             
             return items
         }

@@ -6,9 +6,21 @@
 //
 import Foundation
 
-
-enum Format: String, Codable {
-    case json, text, image
+typealias ImageConfig = (isBackFace: Bool, version: Imagery.CodingKeys)
+enum Format {
+    case json, text
+    case image(ImageConfig)
+    
+    func stringRepresentation() -> String {
+        switch self {
+        case .json:
+            return "json"
+        case .text:
+            return "text"
+        case .image( _):
+            return "image"
+        }
+    }
 }
 
 

@@ -81,7 +81,7 @@ class APIClientTests: XCTestCase {
             expectation.fulfill()
         }
         
-        let imageRequest = NamedImageCardSearchRequest.init(name: .fuzzy("nicol bolas ravager"), setCode: nil, backFace: true, imageVersion: .png)
+        let imageRequest = NamedImageCardSearchRequest.init(name: .fuzzy("nicol bolas ravager"), setCode: nil, format: Format.image((false, .png)))
         apiClient.send(request: imageRequest) { response in
             switch response {
             case .success(let imageData):
@@ -103,7 +103,7 @@ class APIClientTests: XCTestCase {
             textExp.fulfill()
         }
         
-        wait(for: [expectation, imageExp, textExp], timeout: 20.0)
+        wait(for: [expectation, imageExp, textExp], timeout: 25.0)
     }
     
     func testAutocompleteSearch() {
