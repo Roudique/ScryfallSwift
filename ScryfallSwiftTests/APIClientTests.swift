@@ -123,4 +123,22 @@ class APIClientTests: XCTestCase {
         
         wait(for: [exp], timeout: 5.0)
     }
+    
+    func testRandomCard() {
+        let defRandomRequestExp = self.expectation(description: "defaultRandomRequest")
+        let api                 = BaseAPIClient()
+        let defRequest          = RandomCardRequest()
+        
+        api.send(request: defRequest) { response in
+            switch response {
+            case .success(let card):
+                print(card.name)
+            case .failure(let error):
+                assertionFailure("Error: \(error)")
+            }
+            defRandomRequestExp.fulfill()
+        }
+        
+        wait(for: [defRandomRequestExp], timeout: 20.0)
+    }
 }
