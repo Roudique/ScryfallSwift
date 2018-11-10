@@ -83,8 +83,7 @@ class BaseAPIClient: NSObject {
                 let encodedResponse = try JSONDecoder().decode(R.Response.self, from: data)
                 completion(.success(encodedResponse))
             } catch {
-                let dataString = String(data: data, encoding: .utf8)!
-                print(dataString)
+                print(error)
                 completion(.failure(error))
             }
             

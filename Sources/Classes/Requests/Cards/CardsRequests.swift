@@ -12,9 +12,7 @@ struct AllCardsRequest: APIRequest {
     typealias Response = List<Card>
     
     var resourceName: String {
-        get {
-            return "/cards"
-        }
+        return "/cards"
     }
 }
 
@@ -87,9 +85,7 @@ struct FulltextCardSearchRequest: APIRequest {
     
     
     var resourceName: String {
-        get {
-            return "/cards/search"
-        }
+        return "/cards/search"
     }
 }
 extension FulltextCardSearchRequest: QueryableAPIRequest {
@@ -125,9 +121,7 @@ enum Name {
 
 struct NamedCardSearchRequest: APIRequest {
     var resourceName: String {
-        get {
-            return privateRequest.resourceName
-        }
+        return privateRequest.resourceName
     }
     
     typealias Response = Card
@@ -142,18 +136,14 @@ struct NamedCardSearchRequest: APIRequest {
 }
 extension NamedCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
-        get {
-            return self.privateRequest.queryItems
-        }
+        return self.privateRequest.queryItems
     }
 }
 
 
 struct NamedTextCardSearchRequest: APIRequest {
     var resourceName: String {
-        get {
-            return privateRequest.resourceName
-        }
+        return privateRequest.resourceName
     }
     typealias Response  = String
     let format          = Format.text
@@ -165,18 +155,14 @@ struct NamedTextCardSearchRequest: APIRequest {
 }
 extension NamedTextCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
-        get {
-            return privateRequest.queryItems
-        }
+        return privateRequest.queryItems
     }
 }
 
 
 struct NamedImageCardSearchRequest: APIRequest {
     var resourceName: String {
-        get {
-            return self.privateRequest.resourceName
-        }
+        return self.privateRequest.resourceName
     }
     typealias Response  = Data
     private var privateRequest: NamedSearchRequest
@@ -187,9 +173,7 @@ struct NamedImageCardSearchRequest: APIRequest {
 }
 extension NamedImageCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String: String] {
-        get {
-            return privateRequest.queryItems
-        }
+        return privateRequest.queryItems
     }
 }
 
@@ -197,9 +181,7 @@ extension NamedImageCardSearchRequest: QueryableAPIRequest {
 private struct NamedSearchRequest {
     
     var resourceName: String {
-        get {
-            return "/cards/named"
-        }
+        return "/cards/named"
     }
     
     /// Name for a card to search for, case insensitive.
@@ -213,32 +195,30 @@ private struct NamedSearchRequest {
 }
 extension NamedSearchRequest: QueryableAPIRequest {
     var queryItems: [String: String] {
-        get {
-            var items = [String: String]()
-            
-            var name: (String, String)
-            switch self.name {
-            case .exact(let exact):
-                name = ("exact", exact)
-            case .fuzzy(let fuzzy):
-                name = ("fuzzy", fuzzy)
-            }
-            items[name.0] = name.1
-            
-            items["set"] = self.setCode ?? nil
-            
-            guard let format = self.format else { return items }
-            switch format {
-            case .image(let config):
-                items["face"] = config.isBackFace ? "back" : nil
-                items["version"] = config.version.stringValue
-            default:
-                break
-            }
-            items["format"] = format.stringRepresentation()
-            
-            return items
+        var items = [String: String]()
+        
+        var name: (String, String)
+        switch self.name {
+        case .exact(let exact):
+            name = ("exact", exact)
+        case .fuzzy(let fuzzy):
+            name = ("fuzzy", fuzzy)
         }
+        items[name.0] = name.1
+        
+        items["set"] = self.setCode ?? nil
+        
+        guard let format = self.format else { return items }
+        switch format {
+        case .image(let config):
+            items["face"] = config.isBackFace ? "back" : nil
+            items["version"] = config.version.stringValue
+        default:
+            break
+        }
+        items["format"] = format.stringRepresentation()
+        
+        return items
     }
 }
 

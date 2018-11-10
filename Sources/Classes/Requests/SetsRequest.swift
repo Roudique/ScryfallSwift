@@ -11,9 +11,7 @@ struct AllSetsRequest: APIRequest {
     typealias Response = List<CardSet>
     
     var resourceName: String {
-        get {
-            return "/sets"
-        }
+        return "/sets"
     }
 }
 
@@ -23,8 +21,6 @@ struct SetRequest: APIRequest {
     let setCode: String
     
     var resourceName: String {
-        get {
-            return "/sets/\(self.setCode)"
-        }
+        return "/sets/\(self.setCode)"
     }
 }

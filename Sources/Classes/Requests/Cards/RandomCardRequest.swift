@@ -10,7 +10,7 @@ import Foundation
 
 struct RandomCardRequest: APIRequest {
     var resourceName: String {
-        get { return "/cards/random" }
+         return "/cards/random"
     }
     
     typealias Response = Card

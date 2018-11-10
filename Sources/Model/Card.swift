@@ -373,7 +373,7 @@ enum Layout: String, Decodable {
     case token
     
     /// Tokens with another token printed on the back
-    case doubleFacedToken
+    case doubleFacedToken = "double_faced_token"
     
     /// Emblem cards
     case emblem

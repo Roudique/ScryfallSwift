@@ -25,8 +25,8 @@ class APIClientTests: XCTestCase {
         
         apiClient.send(request: AllCardsRequest()) { response in
             switch response {
-            case .success(let cards):
-                print("Cards fetched: \(cards.totalCards!)")
+            case .success(let list):
+                print("Cards fetched: \(list.totalCards!)")
             case .failure(let error):
                 assertionFailure("Failed to fetch all cards: \(error)")
             }

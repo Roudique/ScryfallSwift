@@ -10,9 +10,7 @@ import Foundation
 
 struct AutocompleteRequest: APIRequest {
     var resourceName: String {
-        get {
-            return "/cards/autocomplete"
-        }
+        return "/cards/autocomplete"
     }
     
     typealias Response = Catalog
@@ -21,8 +19,6 @@ struct AutocompleteRequest: APIRequest {
 }
 extension AutocompleteRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
-        get {
-            return ["q": self.cardName]
-        }
+        return ["q": self.cardName]
     }
 }
