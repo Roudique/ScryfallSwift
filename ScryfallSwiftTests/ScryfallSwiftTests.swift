@@ -177,6 +177,31 @@ class ScryfallSwiftTests: XCTestCase {
         wait(for: [allSetsExp, setExp], timeout: 8.0)
     }
     
+    func testCollectionRequest() {
+        let apiClient = BaseAPIClient()
+        
+        let collectionReqExp = self.expectation(description: "collectionReqExp")
+        
+        let identifiers = [CardIdentifier.id("683a5707-cddb-494d-9b41-51b4584ded69"),
+                           CardIdentifier.name("Ancient Tomb"),
+                           CardIdentifier.collectorNumberAndSet("150", "mrd")]
+        let request = CollectionRequest.init(identifiers: identifiers)
+        apiClient.send(request: request) { response in
+            switch response {
+            case .success(let list):
+                assert(list.cards.count == 3, "There is mismatch in card count returned by collection request.")
+                print("There are \(list.cards.count) card for collectionRequest.")
+                list.cards.forEach { print("Found: \($0.name)") }
+            case .failure(let error):
+                assertionFailure("Error during testing collection request: \(error)")
+            }
+            
+            collectionReqExp.fulfill()
+        }
+        
+        wait(for: [collectionReqExp], timeout: 20.0)
+    }
+    
     
     //MARK: - Utils
     

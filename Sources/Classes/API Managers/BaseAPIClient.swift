@@ -117,7 +117,21 @@ class BaseAPIClient: NSObject {
         
         guard let url           = urlComponents.url else { return nil }
         var urlRequest          = URLRequest(url: url)
-        urlRequest.httpMethod   = HTTPMethod.get.rawValue
+        
+        if let customHTTPRequest = request as? CustomHTTPRequest {
+            urlRequest.httpMethod = customHTTPRequest.httpMethod.rawValue
+        } else {
+            urlRequest.httpMethod   = HTTPMethod.get.rawValue
+        }
+        
+        if let customBodyRequest = request as? CustomBodyRequest {
+            urlRequest.httpBody = customBodyRequest.body
+        }
+        
+        if let customHeadersRequest = request as? CustomHeadersRequest {
+            urlRequest.allHTTPHeaderFields = customHeadersRequest.headers
+        }
+        
         
         return urlRequest
     }

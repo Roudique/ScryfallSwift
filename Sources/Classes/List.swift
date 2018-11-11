@@ -35,3 +35,17 @@ class List<Model: Decodable>: Decodable {
         case warnings   = "warnings"
     }
 }
+
+/// List returned by Card Collection request.
+class CollectionList: Decodable {
+    /// While cards will be returned in the order that they were requested, cards that aren’t found will throw off the mapping of request identifiers to results, so you should not rely on positional index alone while parsing the data.
+    var cards: [Card]
+    
+    /// Identifiers that are not found.
+    var notFoundIdentifiers: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case cards = "data"
+        case notFoundIdentifiers = "not_found"
+    }
+}

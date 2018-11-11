@@ -20,3 +20,15 @@ public protocol QueryableAPIRequest {
     /// Query items for the request.
     var queryItems: [String: String] { get }
 }
+
+protocol CustomHTTPRequest {
+    var httpMethod: HTTPMethod { get }
+}
+
+protocol CustomBodyRequest {
+    var body: Data { get }
+}
+
+protocol CustomHeadersRequest {
+    var headers: [String: String] { get }
+}
