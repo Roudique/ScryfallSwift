@@ -22,6 +22,20 @@ enum Format {
         }
     }
 }
+extension Format: QueryableAPIRequest {
+    var queryItems: [String : String] {
+        var format = [String: String]()
+        switch self {
+        case .image(let config):
+            format["face"] = config.isBackFace ? "back" : nil
+            format["version"] = config.version.stringValue
+        default:
+            break
+        }
+        format["format"] = self.stringRepresentation()
+        return format
+    }
+}
 
 
 enum HTTPMethod: String {

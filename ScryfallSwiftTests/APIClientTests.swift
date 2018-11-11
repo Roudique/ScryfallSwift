@@ -42,7 +42,11 @@ class APIClientTests: XCTestCase {
         
         let expectation = self.expectation(description: "fulltextSearch")
         
-        let request = FulltextCardSearchRequest(search: "Pacifism", unique: .prints, order: .released, sortDirection: .auto, includeExtras: true, includeMultilingual: true)
+        var request = FulltextCardSearchRequest(search: "Pacifism")
+        request.unique = .prints
+        request.order = .released
+        request.includeExtras = true
+        request.includeMultilingual = true
         apiClient.send(request: request) { response in
             switch response {
             case .success(let cards):
@@ -81,7 +85,7 @@ class APIClientTests: XCTestCase {
             expectation.fulfill()
         }
         
-        let imageRequest = NamedImageCardSearchRequest.init(name: .fuzzy("nicol bolas ravager"), setCode: nil, format: Format.image((false, .png)))
+        let imageRequest = NamedImageCardSearchRequest.init(name: .fuzzy("nicol bolas ravager"), setCode: nil, config: (true, .artCrop))
         apiClient.send(request: imageRequest) { response in
             switch response {
             case .success(let imageData):
@@ -96,6 +100,23 @@ class APIClientTests: XCTestCase {
         apiClient.send(request: textNamedRequest) { response in
             switch response {
             case .success(let cardText):
+                assert(cardText == """
+                    Nicol Bolas, the Ravager {1}{U}{B}{R}
+                    Legendary Creature — Elder Dragon
+                    Flying
+                    When Nicol Bolas, the Ravager enters the battlefield, each opponent discards a card.
+                    {4}{U}{B}{R}: Exile Nicol Bolas, the Ravager, then return him to the battlefield transformed under his owner's control. Activate this ability only any time you could cast a sorcery.
+                    4/4
+                    ----
+                    Nicol Bolas, the Arisen
+                    Color Indicator: Blue, Black, and Red
+                    Legendary Planeswalker — Bolas
+                    +2: Draw two cards.
+                    −3: Nicol Bolas, the Arisen deals 10 damage to target creature or planeswalker.
+                    −4: Put target creature or planeswalker card from a graveyard onto the battlefield under your control.
+                    −12: Exile all but the bottom card of target player's library.
+                    Loyalty: 7
+                    """, "Card text doesn't match!")
                 print(cardText)
             case .failure(let error):
                 assertionFailure("Error: \(error)")
@@ -126,8 +147,16 @@ class APIClientTests: XCTestCase {
     
     func testRandomCard() {
         let defRandomRequestExp = self.expectation(description: "defaultRandomRequest")
+        let imageRandomRequestExp = self.expectation(description: "imageRandomRequestExp")
+        let customImageRequestExp = self.expectation(description: "customImageRequestExp")
+
         let api                 = BaseAPIClient()
+        
         let defRequest          = RandomCardRequest()
+        let imageRequest        = RandomCardImageRequest.init(imageConfig: (false, .png))
+        
+        let fulltextRequest     = FulltextCardSearchRequest(search: "s:grn")
+        let customImageRequest  = RandomCardImageRequest.init(imageConfig: (false, .png), fulltextCardRequest: fulltextRequest)
         
         api.send(request: defRequest) { response in
             switch response {
@@ -139,6 +168,26 @@ class APIClientTests: XCTestCase {
             defRandomRequestExp.fulfill()
         }
         
-        wait(for: [defRandomRequestExp], timeout: 20.0)
+        api.send(request: imageRequest) { response in
+            switch response {
+            case .success(let imageData):
+                assert(imageData.count > 0, "Image data is empty")
+            case .failure(let error):
+                assertionFailure("Error: \(error)")
+            }
+            imageRandomRequestExp.fulfill()
+        }
+        
+        api.send(request: customImageRequest) { response in
+            switch response {
+            case .success(let imageData):
+                assert(imageData.count > 0, "Image data is empty")
+            case .failure(let error):
+                assertionFailure("Error: \(error)")
+            }
+            customImageRequestExp.fulfill()
+        }
+        
+        wait(for: [defRandomRequestExp, imageRandomRequestExp, customImageRequestExp], timeout: 20.0)
     }
 }

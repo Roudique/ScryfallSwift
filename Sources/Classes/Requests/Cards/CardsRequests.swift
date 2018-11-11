@@ -83,9 +83,12 @@ struct FulltextCardSearchRequest: APIRequest {
     var includeExtras: Bool?
     var includeMultilingual: Bool?
     
-    
     var resourceName: String {
         return "/cards/search"
+    }
+    
+    init(search query: String) {
+        self.search = query
     }
 }
 extension FulltextCardSearchRequest: QueryableAPIRequest {
@@ -167,8 +170,8 @@ struct NamedImageCardSearchRequest: APIRequest {
     typealias Response  = Data
     private var privateRequest: NamedSearchRequest
 
-    init(name: Name, setCode: String?, format: Format?) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: format)
+    init(name: Name, setCode: String?, config: ImageConfig) {
+        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: Format.image(config))
     }
 }
 extension NamedImageCardSearchRequest: QueryableAPIRequest {
@@ -209,14 +212,10 @@ extension NamedSearchRequest: QueryableAPIRequest {
         items["set"] = self.setCode ?? nil
         
         guard let format = self.format else { return items }
-        switch format {
-        case .image(let config):
-            items["face"] = config.isBackFace ? "back" : nil
-            items["version"] = config.version.stringValue
-        default:
-            break
+        
+        items.merge(format.queryItems) { str1, str2 in
+            return str1
         }
-        items["format"] = format.stringRepresentation()
         
         return items
     }
