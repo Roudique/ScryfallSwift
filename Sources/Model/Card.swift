@@ -205,15 +205,6 @@ public class Card: Decodable {
     /// A URL to this cards’s story article, if any.
     var storySpotlightURI: String?
     
-    /// True if this card is timeshifted.
-    var isTimeshifted: Bool
-    
-    /// True if this card is colorshifted.
-    var isColorshifted: Bool
-    
-    /// True if this card is from the future.
-    var isFutureshifted: Bool
-    
     
     
     // CodingKeys
@@ -279,9 +270,6 @@ public class Card: Decodable {
         case borderColor = "border_color"
         case storySpotlightNumber = "story_spotlight_number"
         case storySpotlightURI = "story_spotlight_uri"
-        case isTimeshifted = "timeshifted"
-        case isColorshifted = "colorshifted"
-        case isFutureshifted = "futureshifted"
     }
 }
 
