@@ -189,12 +189,12 @@ public class Card: Decodable {
     
     /// The localized type line printed on this card.
     var printedTypeLine: String?
-
     
-    // MARK: -
-    // TODO: Add promo
-    // TODO: Add purchase URIs
-    // MARK: -
+    /// True if this card is a promotional print.
+    var isPromo: Bool
+    
+    /// An object providing URIs to this card’s listing on major marketplaces.
+    var purchaseURIs: [String: URL]
     
     /// This card’s rarity. One of common, uncommon, rare, or mythic.
     var rarity: Rarity
@@ -280,6 +280,8 @@ public class Card: Decodable {
         case frameEffect = "frame_effect"
         case prices
         case games
+        case isPromo = "promo"
+        case purchaseURIs = "purchase_uris"
         case set
         case setName = "set_name"
         case collectorNumber = "collector_number"
