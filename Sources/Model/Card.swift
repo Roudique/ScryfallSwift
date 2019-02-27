@@ -157,9 +157,8 @@ public class Card: Decodable {
     /// The flavor text, if any.
     var flavorText: String?
 
-    // MARK: -
-    // TODO: Add frame effect
-    // MARK: -
+    /// This card’s frame effect, if any.
+    var frameEffect: FrameEffect?
     
     /// This card’s frame layout.
     var frame: String
@@ -426,6 +425,35 @@ enum Layout: String, Decodable {
     
     /// Host-type cards
     case host
+}
+
+
+// MARK: -
+/// The frame_effect field tracks additional frame artwork applied over a particular frame. For example, there are both 2003 and 2015-frame cards with the Nyx-touched effect.
+///
+/// - legendary: The legendary crown introduced in Dominaria
+/// - miracle: The miracle frame effect
+/// - nyxtouched: The Nyx-touched frame effect
+/// - draft: The draft-matters frame effect
+/// - devoid: The Devoid frame effect
+/// - tombstone: The Odyssey tombstone mark
+/// - colorshifted: A colorshifted frame
+/// - sunmoondfc: The sun and moon transform marks
+/// - compasslanddfc: The compass and land transform marks
+/// - originpwdfc: The Origins and planeswalker transform marks
+/// - mooneldrazidfc: The moon and Eldrazi transform marks
+enum FrameEffect: String, Decodable {
+    case legendary
+    case miracle
+    case nyxtouched
+    case draft
+    case devoid
+    case tombstone
+    case colorshifted
+    case sunmoondfc
+    case compasslanddfc
+    case originpwdfc
+    case mooneldrazidfc
 }
 
 
