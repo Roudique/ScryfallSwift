@@ -166,9 +166,8 @@ public class Card: Decodable {
     /// True if this card’s artwork is larger than normal.
     var isFullArt: Bool
 
-    // MARK: -
-    // TODO: Add games
-    // MARK: -
+    /// A list of games that this card print is available in.
+    var games: [Game]
     
     /// True if this card’s imagery is high resolution.
     var hasHighresImage: Bool
@@ -179,9 +178,8 @@ public class Card: Decodable {
     /// An object listing available imagery for this card.
     var imagery: Imagery?
 
-    // MARK: -
-    // TODO: Add prices.
-    // MARK: -
+    /// An object containing daily price information for this card.
+    var prices: Price
     
     /// The localized name printed on this card.
     var printedName: String?
@@ -192,6 +190,7 @@ public class Card: Decodable {
     /// The localized type line printed on this card.
     var printedTypeLine: String?
 
+    
     // MARK: -
     // TODO: Add promo
     // TODO: Add purchase URIs
@@ -278,6 +277,9 @@ public class Card: Decodable {
         case edhrecRank = "edhrec_rank"
         
         // Print fields.
+        case frameEffect = "frame_effect"
+        case prices
+        case games
         case set
         case setName = "set_name"
         case collectorNumber = "collector_number"
@@ -463,4 +465,13 @@ enum Rarity: String, Decodable {
     case uncommon
     case rare
     case mythic
+}
+
+
+// MARK: -
+/// Games that card print could be available.
+enum Game: String, Decodable {
+    case paper
+    case arena
+    case mtgo
 }

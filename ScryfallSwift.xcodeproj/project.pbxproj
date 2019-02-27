@@ -97,6 +97,11 @@
 		84525BC62151D6800088A9E2 /* ListTest2.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BC12151D6800088A9E2 /* ListTest2.json */; };
 		84525BC82151D8DD0088A9E2 /* ListTest3.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BC72151D8DD0088A9E2 /* ListTest3.json */; };
 		84525BCA2151D9340088A9E2 /* ListTest4.json in Resources */ = {isa = PBXBuildFile; fileRef = 84525BC92151D9340088A9E2 /* ListTest4.json */; };
+		845FBD0B222637F000F175C5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD0A222637F000F175C5 /* Price.swift */; };
+		845FBD0C222637F000F175C5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD0A222637F000F175C5 /* Price.swift */; };
+		845FBD0D222637F000F175C5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD0A222637F000F175C5 /* Price.swift */; };
+		845FBD0E222637F000F175C5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD0A222637F000F175C5 /* Price.swift */; };
+		845FBD0F222637F000F175C5 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD0A222637F000F175C5 /* Price.swift */; };
 		847D731920A53E1400FDCDBB /* CardTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 847D731320A53C8C00FDCDBB /* CardTest0.json */; };
 		84BF792120B38D6300AB7EC3 /* CardTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84BF792020B38D6300AB7EC3 /* CardTest1.json */; };
 		84D4F99C20FC43FF00EBF4A3 /* Ruling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */; };
@@ -163,6 +168,7 @@
 		84525BC12151D6800088A9E2 /* ListTest2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest2.json; sourceTree = "<group>"; };
 		84525BC72151D8DD0088A9E2 /* ListTest3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest3.json; sourceTree = "<group>"; };
 		84525BC92151D9340088A9E2 /* ListTest4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ListTest4.json; sourceTree = "<group>"; };
+		845FBD0A222637F000F175C5 /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		847D731320A53C8C00FDCDBB /* CardTest0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CardTest0.json; path = "ScryfallSwiftTests/Test json files/Cards/CardTest0.json"; sourceTree = SOURCE_ROOT; };
 		84BF792020B38D6300AB7EC3 /* CardTest1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest1.json; sourceTree = "<group>"; };
 		84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ruling.swift; sourceTree = "<group>"; };
@@ -276,6 +282,7 @@
 				84D4F9A420FD60C400EBF4A3 /* Imagery.swift */,
 				840DBB8921191C5E0001B28E /* Legality.swift */,
 				84D4F99B20FC43FF00EBF4A3 /* Ruling.swift */,
+				845FBD0A222637F000F175C5 /* Price.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -623,6 +630,7 @@
 				4A77BE7A20B5C52D00166150 /* CardSet.swift in Sources */,
 				842EE321217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31521743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				845FBD0B222637F000F175C5 /* Price.swift in Sources */,
 				842EE329218024B8007DC1B8 /* Catalog.swift in Sources */,
 				84D4F99C20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				844A9D732198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
@@ -647,6 +655,7 @@
 				84D4F99D20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				842EE322217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31621743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				845FBD0C222637F000F175C5 /* Price.swift in Sources */,
 				842EE32A218024B8007DC1B8 /* Catalog.swift in Sources */,
 				4A77BE7B20B5C52D00166150 /* CardSet.swift in Sources */,
 				844A9D742198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
@@ -671,6 +680,7 @@
 				84D4F99E20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				842EE323217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31721743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				845FBD0D222637F000F175C5 /* Price.swift in Sources */,
 				842EE32B218024B8007DC1B8 /* Catalog.swift in Sources */,
 				4A77BE7C20B5C52D00166150 /* CardSet.swift in Sources */,
 				844A9D752198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
@@ -695,6 +705,7 @@
 				84D4F99F20FC43FF00EBF4A3 /* Ruling.swift in Sources */,
 				842EE324217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31821743B09007DC1B8 /* SetsRequest.swift in Sources */,
+				845FBD0E222637F000F175C5 /* Price.swift in Sources */,
 				842EE32C218024B8007DC1B8 /* Catalog.swift in Sources */,
 				4A77BE7D20B5C52D00166150 /* CardSet.swift in Sources */,
 				844A9D762198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
@@ -727,6 +738,7 @@
 				84525BAD214B4F060088A9E2 /* List.swift in Sources */,
 				84E9F98420A285F900A3DD1D /* ScryfallSwiftTests.swift in Sources */,
 				84525BA021489A760088A9E2 /* CardSymbol.swift in Sources */,
+				845FBD0F222637F000F175C5 /* Price.swift in Sources */,
 				842EE325217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE3122173F19F007DC1B8 /* APIRequest.swift in Sources */,
 				84E9F98D20A2864000A3DD1D /* Card.swift in Sources */,
