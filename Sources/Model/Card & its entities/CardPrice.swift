@@ -1,5 +1,5 @@
 //
-//  Price.swift
+//  CardPrice.swift
 //  ScryfallSwift
 //
 //  Created by Roudique on 2/26/19.
@@ -9,7 +9,7 @@ import Foundation
 
 
 /// An object containing daily price information for card.
-struct Price: Decodable {
+struct CardPrice: Decodable {
     var usd: Double?
     var usdFoil: Double?
     var eur: Double?

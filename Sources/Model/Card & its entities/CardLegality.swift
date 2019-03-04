@@ -8,7 +8,7 @@
 import Foundation
 
 /// Class describing the legality of this card across play formats.
-class Legality: Decodable {
+class CardLegality: Decodable {
     var standard: LegalityStatus
     var future: LegalityStatus
     var frontier: LegalityStatus

@@ -8,16 +8,6 @@
 import Foundation
 
 
-/// While Magic cards can represent costs and colors using printed symbols, the Comprehensive Rules and Scryfall’s API use a text representation of these values.
-enum CardColor: String, Decodable {
-    case white  = "W"
-    case blue   = "U"
-    case black  = "B"
-    case red    = "R"
-    case green  = "G"
-}
-
-
 /// Card objects represent individual Magic: The Gathering cards that players could obtain and add to their collection (with a few minor exceptions).
 public class Card: Decodable {
     //MARK: - Core fields
@@ -100,7 +90,7 @@ public class Card: Decodable {
     var layout: CardLayout
     
     /// An object describing the legality of this card.
-    var legalities: Legality
+    var legalities: CardLegality
     
     /// This card’s life modifier, if it is Vanguard card. This value will contain a delta, such as +2.
     var lifeModifier: String?
@@ -158,7 +148,7 @@ public class Card: Decodable {
     var flavorText: String?
 
     /// This card’s frame effect, if any.
-    var frameEffect: FrameEffect?
+    var frameEffect: CardFrameEffect?
     
     /// This card’s frame layout.
     var frame: String
@@ -167,7 +157,7 @@ public class Card: Decodable {
     var isFullArt: Bool
 
     /// A list of games that this card print is available in.
-    var games: [Game]
+    var games: [CardGame]
     
     /// True if this card’s imagery is high resolution.
     var hasHighresImage: Bool
@@ -179,7 +169,7 @@ public class Card: Decodable {
     var imagery: Imagery?
 
     /// An object containing daily price information for this card.
-    var prices: Price
+    var prices: CardPrice
     
     /// The localized name printed on this card.
     var printedName: String?
@@ -197,7 +187,7 @@ public class Card: Decodable {
     var purchaseURIs: [String: URL]
     
     /// This card’s rarity. One of common, uncommon, rare, or mythic.
-    var rarity: Rarity
+    var rarity: CardRarity
     
     // MARK: -
     // TODO: Add related_uris
@@ -305,124 +295,4 @@ public class Card: Decodable {
         case storySpotlightNumber = "story_spotlight_number"
         case storySpotlightURI = "story_spotlight_uri"
     }
-}
-
-
-//MARK: -
-/// Multiface cards have a card_faces property containing at least two Card Face objects.
-struct CardFace: Decodable {
-    var artist: String
-    var colorIndicator: [CardColor]?
-    var colors: [CardColor]?
-    var flavorText: String?
-    var illustrationID: String?
-    var imagery: Imagery?
-    var loyalty: String?
-    var manaCost: String
-    var name: String
-    var oracleText: String?
-    var power: String?
-    var printedName: String?
-    var printedText: String?
-    var printedTypeLine: String?
-    var toughness: String?
-    var typeLine: String
-    var watermark: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case artist
-        case colorIndicator = "color_indicator"
-        case colors
-        case flavorText = "flavor_text"
-        case illustrationID = "illustration_id"
-        case imagery = "image_uris"
-        case loyalty
-        case manaCost = "mana_cost"
-        case name
-        case oracleText = "oracle_text"
-        case power
-        case printedName = "printed_name"
-        case printedText = "printed_text"
-        case printedTypeLine = "printed_type_line"
-        case toughness
-        case typeLine = "type_line"
-        case watermark
-    }
-}
-
-
-//MARK: -
-/// Cards that are closely related to other cards (because they call them by name, or generate a token, or meld, etc) have a related_cards property that contains Related Card objects.
-struct RelatedCard: Decodable {
-    /// An unique ID for this card in Scryfall’s database.
-    var id: String
-    
-    // MARK: -
-    // TODO: Add component
-    // MARK: -
-    
-    /// The name of this particular related card.
-    var name: String
-    
-    /// The type line of this card.
-    var typeLine: String
-    
-    /// A URI where you can retrieve a full object describing this card on Scryfall’s API.
-    var uri: URL
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case typeLine = "type_line"
-        case uri
-    }
-}
-
-
-
-
-// MARK: -
-/// The frame_effect field tracks additional frame artwork applied over a particular frame. For example, there are both 2003 and 2015-frame cards with the Nyx-touched effect.
-///
-/// - legendary: The legendary crown introduced in Dominaria
-/// - miracle: The miracle frame effect
-/// - nyxtouched: The Nyx-touched frame effect
-/// - draft: The draft-matters frame effect
-/// - devoid: The Devoid frame effect
-/// - tombstone: The Odyssey tombstone mark
-/// - colorshifted: A colorshifted frame
-/// - sunmoondfc: The sun and moon transform marks
-/// - compasslanddfc: The compass and land transform marks
-/// - originpwdfc: The Origins and planeswalker transform marks
-/// - mooneldrazidfc: The moon and Eldrazi transform marks
-enum FrameEffect: String, Decodable {
-    case legendary
-    case miracle
-    case nyxtouched
-    case draft
-    case devoid
-    case tombstone
-    case colorshifted
-    case sunmoondfc
-    case compasslanddfc
-    case originpwdfc
-    case mooneldrazidfc
-}
-
-
-/// Card's rarity.
-enum Rarity: String, Decodable {
-    case common
-    case uncommon
-    case rare
-    case mythic
-}
-
-
-// MARK: -
-/// Games that card print could be available.
-enum Game: String, Decodable {
-    case paper
-    case arena
-    case mtgo
 }
