@@ -21,10 +21,10 @@ enum CardIdentifier {
     case id(String)
     
     /// Finds a card with the specified mtgo_id or mtgo_foil_id.
-    case mtgoID(String)
+    case mtgoID(Int)
     
     /// Finds a card with the specified value among its multiverse_ids.
-    case multiverseID(String)
+    case multiverseID(Int)
     
     /// Finds the newest edition of a card with the specified name.
     case name(String)
@@ -36,16 +36,16 @@ enum CardIdentifier {
     case collectorNumberAndSet(String, String)
     
     
-    func dict() -> [String: String] {
-        var dict = [String: String]()
+    func dict() -> [String: Any] {
+        var dict = [String: Any]()
         
         switch self {
         case .id(let string):
             dict["id"] = string
-        case .mtgoID(let string):
-            dict["mtgo_id"] = string
-        case .multiverseID(let string):
-            dict["multiverse_id"] = string
+        case .mtgoID(let int):
+            dict["mtgo_id"] = int
+        case .multiverseID(let int):
+            dict["multiverse_id"] = int
         case .name(let string):
             dict["name"] = string
         case .nameAndSet(let name, let set):

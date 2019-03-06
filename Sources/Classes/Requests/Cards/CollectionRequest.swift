@@ -25,16 +25,13 @@ extension CollectionRequest: CustomHTTPRequest {
 }
 extension CollectionRequest: CustomBodyRequest {
     var body: Data {
-        var data = Data()
-        
         let identifiersArray = self.identifiers.map { $0.dict() }
         let identifiersDict = ["identifiers": identifiersArray]
         
-        if let encoded = try? JSONEncoder().encode(identifiersDict) {
-            data.append(encoded)
+        if let data = try? JSONSerialization.data(withJSONObject: identifiersDict, options: []) {
+            return data
         }
-        
-        return data
+        return Data()
     }
 }
 extension CollectionRequest: CustomHeadersRequest {
