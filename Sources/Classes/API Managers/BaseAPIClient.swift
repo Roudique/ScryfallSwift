@@ -94,7 +94,12 @@ class BaseAPIClient: NSObject {
             }
             
             do {
-                let encodedResponse = try JSONDecoder().decode(R.Response.self, from: data)
+                let decoder = JSONDecoder()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+                decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                let encodedResponse = try decoder.decode(R.Response.self, from: data)
                 completion(.success(encodedResponse))
             } catch {
                 print(error)

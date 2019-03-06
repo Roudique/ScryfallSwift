@@ -18,9 +18,7 @@ class CardLegality: Decodable {
     var vintage: LegalityStatus
     var penny: LegalityStatus
     var commander: LegalityStatus
-    var oneVsOne: LegalityStatus
     var duel: LegalityStatus
-    var brawl: LegalityStatus
     
     
     // CodingKeys
@@ -35,9 +33,7 @@ class CardLegality: Decodable {
         case vintage
         case penny
         case commander
-        case oneVsOne = "1v1"
         case duel
-        case brawl
     }
 }
 

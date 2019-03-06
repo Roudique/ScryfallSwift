@@ -78,7 +78,7 @@ class ScryfallSwiftTests: XCTestCase {
         }
         
         let jsonDecoder = JSONDecoder()
-        guard let rulings = try? jsonDecoder.decode([Ruling].self, from: jsonData) else {
+        guard let rulings = try? jsonDecoder.decode([CardRuling].self, from: jsonData) else {
             assertionFailure("Rulings should not be nil. Looks like json wasn't parsed correctly.")
             return
         }
@@ -130,7 +130,7 @@ class ScryfallSwiftTests: XCTestCase {
                     let list = try jsonDecoder.decode(List<CardSet>.self, from: jsonData)
                     print("\tTotal sets in list: \(list.data.count)")
                 } else if index == 3 {
-                    let list = try jsonDecoder.decode(List<Ruling>.self, from: jsonData)
+                    let list = try jsonDecoder.decode(List<CardRuling>.self, from: jsonData)
                     print("\tTotal rulings in list: \(list.data.count)")
                 } else if index == 4 {
                     let list = try jsonDecoder.decode(List<CardSymbol>.self, from: jsonData)
