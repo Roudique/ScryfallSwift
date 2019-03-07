@@ -49,6 +49,11 @@ enum Response<ScryfallData> {
 }
 
 
+enum BaseAPIClientError: Error {
+    case couldNotEncodeString
+}
+
+
 class BaseAPIClient: NSObject {
     private let host = "api.scryfall.com"
     private let session = URLSession(configuration: .default)
@@ -77,6 +82,27 @@ class BaseAPIClient: NSObject {
             if let error = try? JSONDecoder().decode(ScryfallError.self, from: data) {
                 completion(.failure(error))
                 return
+            }
+            
+            //TODO: Fix this. Combine with other handling of Data and String.
+            if request is FormatResponseRequest {
+                let formattedResponseRequest = request as! FormatResponseRequest
+                switch formattedResponseRequest.format {
+                case .text:
+                    guard let string = String(data: data, encoding: .utf8) else {
+                        completion(.failure(BaseAPIClientError.couldNotEncodeString))
+                        return
+                    }
+                    let result = FormatResponse.text(string) as! R.Response
+                    completion(.success(result))
+                    return
+                case .image(_):
+                    let result = FormatResponse.data(data) as! R.Response
+                    completion(.success(result))
+                    return
+                default:
+                    break
+                }
             }
             
             // If response should be of type Data - don't decode it into json, simply return.

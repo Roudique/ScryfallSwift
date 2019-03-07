@@ -17,85 +17,46 @@ enum Name {
     case fuzzy(String)
 }
 
-// MARK: -
-struct NamedCardSearchRequest: APIRequest {
-    var resourceName: String {
-        return privateRequest.resourceName
-    }
-    
-    typealias Response = Card
-    
-    let format = Format.json
-    
-    private var privateRequest: NamedSearchRequest
-    
-    init(name: Name, setCode: String?) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format)
-    }
-}
-extension NamedCardSearchRequest: QueryableAPIRequest {
-    var queryItems: [String : String] {
-        return self.privateRequest.queryItems
-    }
+enum FormatDecodeError: Error {
+    case invalidData
 }
 
-
-// MARK: -
-struct NamedTextCardSearchRequest: APIRequest {
-    var resourceName: String {
-        return privateRequest.resourceName
+enum FormatResponse: Decodable {
+    init(from decoder: Decoder) throws {
+        if let card = try? Card(from: decoder) {
+            self = .card(card)
+        } else if let text = try? String(from: decoder) {
+            self = .text(text)
+        } else if let data = try? Data(from: decoder) {
+            self = .data(data)
+        } else {
+            throw FormatDecodeError.invalidData
+        }
     }
-    typealias Response  = String
-    let format          = Format.text
-    private var privateRequest: NamedSearchRequest
     
-    init(name: Name, setCode: String?) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: self.format)
-    }
-}
-extension NamedTextCardSearchRequest: QueryableAPIRequest {
-    var queryItems: [String : String] {
-        return privateRequest.queryItems
-    }
+    case card(Card)
+    case text(String)
+    case data(Data)
 }
 
+protocol FormatResponseRequest {
+    var format: Format { get }
+}
 
 // MARK: -
-struct NamedImageCardSearchRequest: APIRequest {
-    var resourceName: String {
-        return self.privateRequest.resourceName
-    }
-    typealias Response  = Data
-    private var privateRequest: NamedSearchRequest
-    
-    init(name: Name, setCode: String?, config: ImageConfig) {
-        self.privateRequest = NamedSearchRequest.init(name: name, setCode: setCode, format: Format.image(config))
-    }
-}
-extension NamedImageCardSearchRequest: QueryableAPIRequest {
-    var queryItems: [String: String] {
-        return privateRequest.queryItems
-    }
-}
-
-
-// MARK: -
-private struct NamedSearchRequest {
-    
+struct NamedCardSearchRequest: APIRequest, FormatResponseRequest {
     var resourceName: String {
         return "/cards/named"
     }
     
-    /// Name for a card to search for, case insensitive.
-    var name: Name
+    typealias Response = FormatResponse
     
-    /// A set code to limit the search to one set.
-    var setCode: String?
-    
-    /// The data format to return: json, text, or image. Defaults to json.
-    var format: Format?
+    let format: Format
+    let name: Name
+    let setCode: String?
 }
-extension NamedSearchRequest: QueryableAPIRequest {
+
+extension NamedCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String: String] {
         var items = [String: String]()
         
@@ -110,13 +71,21 @@ extension NamedSearchRequest: QueryableAPIRequest {
         
         items["set"] = self.setCode ?? nil
         
-        guard let format = self.format else { return items }
+        var formatQueryItems = [String: String]()
         
-        items.merge(format.queryItems) { str1, str2 in
+        switch format {
+        case .image(let config):
+            formatQueryItems["face"] = config.isBackFace ? "back" : nil
+            formatQueryItems["version"] = config.version.stringValue
+        default:
+            break
+        }
+        formatQueryItems["format"] = format.stringRepresentation()
+        
+        items.merge(formatQueryItems) { str1, str2 in
             return str1
         }
         
         return items
     }
 }
-
