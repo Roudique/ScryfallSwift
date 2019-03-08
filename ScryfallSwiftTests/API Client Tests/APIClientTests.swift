@@ -131,13 +131,15 @@ class APIClientTests: XCTestCase {
     }
     
     func testNamedCardSearchRequest() {
-        let textCardExp = expectation(description: "TextCardSearchExp")
-        textCardExp.expectedFulfillmentCount = 3
-        
         let textCardSearchReq = NamedCardSearchRequest(format: .text, name: .exact("Hydroid Krasis"), setCode: "rna")
         let jsonCardSearchReq = NamedCardSearchRequest(format: .json, name: .exact("Angel of Grace"), setCode: "rna")
         let imageCardSearchReq = NamedCardSearchRequest(format: .image(ImageConfig(false, .artCrop)), name: .exact("Cry of the Carnarium"), setCode: "rna")
         
+        let requests = [textCardSearchReq, jsonCardSearchReq, imageCardSearchReq]
+        
+        let textCardExp = expectation(description: "TextCardSearchExp")
+        textCardExp.expectedFulfillmentCount = requests.count
+
         let responseHandler: (Response<FormatResponse>) -> Void = { response in
             switch response {
             case .success(let data):
@@ -159,9 +161,43 @@ class APIClientTests: XCTestCase {
             textCardExp.fulfill()
         }
         
-        BaseAPIClient().send(request: textCardSearchReq, completion: responseHandler)
-        BaseAPIClient().send(request: jsonCardSearchReq, completion: responseHandler)
-        BaseAPIClient().send(request: imageCardSearchReq, completion: responseHandler)
+        requests.forEach { BaseAPIClient().send(request: $0, completion: responseHandler) }
+        
+        wait(for: [textCardExp], timeout: 15.0)
+    }
+    
+    func testMultiverseRequest() {
+        let textCardSearchReq = MultiverseCardRequest(id: 409574, format: .text)
+        let jsonCardSearchReq = MultiverseCardRequest(id: 409574, format: .json)
+        let imageCardSearchReq = MultiverseCardRequest(id: 409574, format: .image((false, .artCrop)))
+        
+        let requests = [textCardSearchReq, jsonCardSearchReq, imageCardSearchReq]
+        
+        let textCardExp = expectation(description: "TextCardSearchExp")
+        textCardExp.expectedFulfillmentCount = requests.count
+
+        let responseHandler: (Response<FormatResponse>) -> Void = { response in
+            switch response {
+            case .success(let data):
+                switch data {
+                case .card(let card):
+                    print("Card: \(card.name)")
+                    XCTAssert(card.name.count > 0)
+                case .text(let text):
+                    print("Card text: \(text)")
+                    XCTAssert(text.count > 0)
+                case .data(let data):
+                    print("Data length: \(data.count)")
+                    XCTAssert(data.count > 0)
+                }
+            case .failure(let error):
+                XCTFail("Error: \(error)")
+            }
+            
+            textCardExp.fulfill()
+        }
+        
+        requests.forEach { BaseAPIClient().send(request: $0, completion: responseHandler) }
         
         wait(for: [textCardExp], timeout: 15.0)
     }

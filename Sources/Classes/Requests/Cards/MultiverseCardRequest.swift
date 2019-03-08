@@ -1,28 +1,26 @@
 //
-//  RandomCardRequest.swift
+//  MultiverseCardRequest.swift
 //  ScryfallSwift
 //
-//  Created by Roudique on 10/24/18.
+//  Created by Roudique on 3/7/19.
 //
 
 import Foundation
 
-struct RandomCardRequest: APIRequest, FormatResponseRequest {
+
+struct MultiverseCardRequest: APIRequest, FormatResponseRequest {
+    typealias Response = FormatResponse
+
     var resourceName: String {
-        return "/cards/random"
+        return "/cards/multiverse/\(id)"
     }
     
-    typealias Response = FormatResponse
-    
-    var search: String?
+    let id: Int
     let format: Format
 }
-extension RandomCardRequest: QueryableAPIRequest {
+extension MultiverseCardRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
-        var queryItems = [String: String]()
-        if let search = search {
-            queryItems["q"] = search
-        }
+        var queryItems = ["format": format.stringRepresentation()]
         
         if case let Format.image(imageConfig) = format {
             var formatQueryItems = [String: String]()
@@ -32,9 +30,7 @@ extension RandomCardRequest: QueryableAPIRequest {
                 return str1
             }
         }
-        
-        queryItems["format"] = format.stringRepresentation()
-        
+
         return queryItems
     }
 }

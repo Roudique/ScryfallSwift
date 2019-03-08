@@ -71,20 +71,16 @@ extension NamedCardSearchRequest: QueryableAPIRequest {
         
         items["set"] = self.setCode ?? nil
         
-        var formatQueryItems = [String: String]()
-        
-        switch format {
-        case .image(let config):
-            formatQueryItems["face"] = config.isBackFace ? "back" : nil
-            formatQueryItems["version"] = config.version.stringValue
-        default:
-            break
+        if case let Format.image(imageConfig) = format {
+            var formatQueryItems = [String: String]()
+            formatQueryItems["face"] = imageConfig.isBackFace ? "back" : nil
+            formatQueryItems["version"] = imageConfig.version.stringValue
+            items.merge(formatQueryItems) { str1, str2 in
+                return str1
+            }
         }
-        formatQueryItems["format"] = format.stringRepresentation()
-        
-        items.merge(formatQueryItems) { str1, str2 in
-            return str1
-        }
+
+        items["format"] = format.stringRepresentation()
         
         return items
     }
