@@ -86,49 +86,48 @@ class APIClientTests: XCTestCase {
     }
     
     func testRandomCard() {
-        let defRandomRequestExp = self.expectation(description: "defaultRandomRequest")
-        let imageRandomRequestExp = self.expectation(description: "imageRandomRequestExp")
-        let customImageRequestExp = self.expectation(description: "customImageRequestExp")
+        let api = BaseAPIClient()
+        
+        let defRequest              = RandomCardRequest(search: nil, format: .json)
+        let imageRequest            = RandomCardRequest(search: nil, format: .image((false, .png)))
+        let textRequest             = RandomCardRequest(search: nil, format: .text)
+        
+        let search                  = "s:rna"
+        let customImageRequest      = RandomCardRequest(search: search, format: .image((false, .png)))
+        let customFulltextRequest   = RandomCardRequest(search: search, format: .text)
+        
+        
+        let requests = [defRequest, imageRequest, customImageRequest, textRequest, customFulltextRequest]
+        
+        let exp = self.expectation(description: "testRandomCardExt")
+        exp.expectedFulfillmentCount = requests.count
+        
 
-        let api                 = BaseAPIClient()
-        
-        let defRequest          = RandomCardRequest()
-        let imageRequest        = RandomCardImageRequest.init(imageConfig: (false, .png))
-        
-        let fulltextRequest     = FulltextCardSearchRequest(search: "s:grn")
-        let customImageRequest  = RandomCardImageRequest.init(imageConfig: (false, .png), fulltextCardRequest: fulltextRequest)
-        
-        api.send(request: defRequest) { response in
+        let responseHandler: (Response<FormatResponse>) -> Void = { response in
             switch response {
-            case .success(let card):
-                print(card.name)
+            case .success(let data):
+                switch data {
+                case .card(let card):
+                    print("Card: \(card.name)")
+                    XCTAssert(card.name.count > 0)
+                case .text(let text):
+                    print("Card text: \(text)")
+                    XCTAssert(text.count > 0)
+                case .data(let data):
+                    print("Data length: \(data.count)")
+                    XCTAssert(data.count > 0)
+                }
             case .failure(let error):
-                assertionFailure("Error: \(error)")
+                XCTFail("Error: \(error)")
             }
-            defRandomRequestExp.fulfill()
+            
+            exp.fulfill()
         }
         
-        api.send(request: imageRequest) { response in
-            switch response {
-            case .success(let imageData):
-                assert(imageData.count > 0, "Image data is empty")
-            case .failure(let error):
-                assertionFailure("Error: \(error)")
-            }
-            imageRandomRequestExp.fulfill()
-        }
+        requests.forEach  { api.send(request: $0, completion: responseHandler) }
+
         
-        api.send(request: customImageRequest) { response in
-            switch response {
-            case .success(let imageData):
-                assert(imageData.count > 0, "Image data is empty")
-            case .failure(let error):
-                assertionFailure("Error: \(error)")
-            }
-            customImageRequestExp.fulfill()
-        }
-        
-        wait(for: [defRandomRequestExp, imageRandomRequestExp, customImageRequestExp], timeout: 20.0)
+        wait(for: [exp], timeout: 20.0)
     }
     
     func testNamedCardSearchRequest() {
