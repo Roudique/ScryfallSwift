@@ -313,4 +313,39 @@ class APIClientTests: XCTestCase {
         
         wait(for: [exp], timeout: 10.0)
     }
+    
+    func testCatalogRequest() {
+        let requests = [
+            CatalogRequest(type: .cardNames),
+            CatalogRequest(type: .artistNames),
+            CatalogRequest(type: .wordBank),
+            CatalogRequest(type: .creatureTypes),
+            CatalogRequest(type: .planeswalkerTypes),
+            CatalogRequest(type: .landTypes),
+            CatalogRequest(type: .artifactTypes),
+            CatalogRequest(type: .enchantmentTypes),
+            CatalogRequest(type: .spellTypes),
+            CatalogRequest(type: .powers),
+            CatalogRequest(type: .toughnesses),
+            CatalogRequest(type: .loyalties),
+            CatalogRequest(type: .watermarks),
+        ]
+        let exp = expectation(description: "testCatalogRequestExp")
+        exp.expectedFulfillmentCount = requests.count
+        
+        let responseHandler: (Response<Catalog>) -> Void = { response in
+            switch response {
+            case .success(let catalog):
+                print("Catalog with \(catalog.total) entries.")
+            case .failure(let error):
+                XCTFail("Error: \(error)")
+            }
+            
+            exp.fulfill()
+        }
+        
+        requests.forEach { BaseAPIClient().send(request: $0, completion: responseHandler) }
+        
+        wait(for: [exp], timeout: Double(requests.count) * 3.0)
+    }
 }
