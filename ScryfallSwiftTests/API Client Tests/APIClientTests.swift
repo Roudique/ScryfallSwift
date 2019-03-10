@@ -337,6 +337,8 @@ class APIClientTests: XCTestCase {
             switch response {
             case .success(let catalog):
                 print("Catalog with \(catalog.total) entries.")
+                XCTAssert(catalog.total > 0)
+                XCTAssert(catalog.data.count == catalog.total)
             case .failure(let error):
                 XCTFail("Error: \(error)")
             }
