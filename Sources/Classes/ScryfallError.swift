@@ -27,5 +27,13 @@ struct ScryfallError: Error, Decodable {
 }
 
 enum CommonError: Error {
-    case invalidURL
+    case invalidURL(String)
+    
+    var localizedDescription: String {
+        if case let CommonError.invalidURL(path) = self {
+            return "Invalid path: \(path)"
+        }
+        
+        return ""
+    }
 }

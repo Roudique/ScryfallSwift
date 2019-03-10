@@ -256,4 +256,43 @@ class APIClientTests: XCTestCase {
         
         wait(for: [exp], timeout: 30.0)
     }
+    
+    func testRulingsRequest() {
+        let requests = [
+            // Fetch rulings for Lion’s Eye Diamond
+            RulingsRequest(identifier: .multiverse(3255)),
+            // Fetch rulings for Demonic Pact
+            RulingsRequest(identifier: .mtgo(57934)),
+            // Fetch rulings for Song of Freyalise
+            RulingsRequest(identifier: .arena(67462)),
+            // Retrieve rulings for Mana Drain
+            RulingsRequest(identifier: .setCodeCollectorNumberAndLang("ima", 65, nil)),
+            // Fetch rulings for Falling Star
+            RulingsRequest(identifier: .scryfall("f2b9983e-20d4-4d12-9e2c-ec6d9a345787")),
+            // Fetch rulings for Unmoored Ego (should be zero)
+            RulingsRequest(identifier: .scryfall("95aecc12-3363-41f7-9b58-277c81859670")),
+        ]
+        
+        let exp = expectation(description: "testRulingsRequestExp")
+        exp.expectedFulfillmentCount = requests.count
+        
+        let responseHandler: (Response<List<CardRuling>>) -> Void = { response in
+            switch response {
+            case .success(let rulings):
+                print("Rulings count: \(rulings.data.count)")
+                for ruling in rulings.data {
+                    print("\t \(ruling.comment)")
+                }
+                print("\n")
+            case .failure(let error):
+                XCTFail("Error: \(error)")
+            }
+            
+            exp.fulfill()
+        }
+        
+        requests.forEach { BaseAPIClient().send(request: $0, completion: responseHandler) }
+        
+        wait(for: [exp], timeout: 30.0)
+    }
 }

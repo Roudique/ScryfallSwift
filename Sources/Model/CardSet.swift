@@ -77,21 +77,8 @@ class CardSet: Decodable {
     var setType: CardSetType
     
     /// The date the set was released (in GMT-8 Pacific time). Not all sets have a known release date.
-    var releasedAt: String?
-    
-    static let dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
-        return dateFormatter
-    }()
-    
-    /// Release date as an object of **Date** class.
-    lazy var releaseDate: Date? = {
-        guard let value = releasedAt else { return nil }
-
-        return CardSet.dateFormatter.date(from: value)
-    }()
-    
+    var releasedAt: Date?
+        
     /// The block code for this set, if any.
     var blockCode: String?
     

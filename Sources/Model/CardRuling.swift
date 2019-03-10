@@ -18,17 +18,7 @@ class CardRuling: Decodable {
     var source: String
     
     /// The date when the ruling or note was published.
-    var publishedAt: String
-    
-    static var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-mm-dd"
-        return dateFormatter
-    }()
-    
-    lazy var publishedDate: Date? = {
-        return CardRuling.dateFormatter.date(from: publishedAt)
-    }()
+    var publishedAt: Date
     
     /// The text of the ruling.
     var comment: String

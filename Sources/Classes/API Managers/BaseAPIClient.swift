@@ -60,7 +60,7 @@ class BaseAPIClient: NSObject {
     
     func send<R: APIRequest>(request: R, completion: @escaping (Response<R.Response>) -> ()) {
         guard let urlRequest = self.urlRequest(for: request) else {
-            completion(Response.failure(CommonError.invalidURL))
+            completion(Response.failure(CommonError.invalidURL(request.resourceName)))
             return
         }
         print("request url: \(urlRequest.url!)")

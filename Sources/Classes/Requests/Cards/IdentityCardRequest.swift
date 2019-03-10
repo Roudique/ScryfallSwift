@@ -8,16 +8,6 @@
 import Foundation
 
 
-enum Identifier {
-    case setCodeCollectorNumberAndLang(String, Int, String?)
-    case multiverse(Int)
-    case mtgo(Int)
-    case arena(Int)
-    case tcgplayer(Int)
-    case scryfall(String)
-}
-
-
 struct IdentityCardRequest: APIRequest, FormatResponseRequest {
     var resourceName: String {
         return identifier.resourceName
@@ -25,7 +15,7 @@ struct IdentityCardRequest: APIRequest, FormatResponseRequest {
     
     typealias Response = FormatResponse
     
-    let identifier: Identifier
+    let identifier: SearchIdentifier
     let format: Format
 }
 extension IdentityCardRequest: QueryableAPIRequest {
@@ -35,7 +25,7 @@ extension IdentityCardRequest: QueryableAPIRequest {
 }
 
 
-private extension Identifier {
+private extension SearchIdentifier {
     var resourceName: String {
         switch self {
         case .setCodeCollectorNumberAndLang(let setCode, let collectorNumber, let lang):
