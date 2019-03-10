@@ -39,7 +39,7 @@ enum FormatResponse: Decodable {
     case data(Data)
 }
 
-protocol FormatResponseRequest {
+protocol FormatResponseRequest: QueryableAPIRequest {
     var format: Format { get }
 }
 

@@ -201,4 +201,95 @@ class APIClientTests: XCTestCase {
         
         wait(for: [textCardExp], timeout: 15.0)
     }
+    
+    func testIdentityCardRequest() {
+        let codeNumberCardRequests = [
+            IdentityCardRequest(identifier: .setCodeCollectorNumberAndLang("xln", 96, nil), format: .json),
+            IdentityCardRequest(identifier: .setCodeCollectorNumberAndLang("xln", 96, nil), format: .text),
+            IdentityCardRequest(identifier: .setCodeCollectorNumberAndLang("xln", 96, nil), format: .image((false, .png))),
+            IdentityCardRequest(identifier: .setCodeCollectorNumberAndLang("xln", 250, "ru"), format: .json),
+            IdentityCardRequest(identifier: .setCodeCollectorNumberAndLang("xln", 250, "ru"), format: .text),
+            IdentityCardRequest(identifier: .setCodeCollectorNumberAndLang("xln", 250, "ru"), format: .image((true, .png)))
+        ]
+        
+        let multiverseCardRequests = [
+            IdentityCardRequest(identifier: .multiverse(435244), format: .json),
+            IdentityCardRequest(identifier: .multiverse(435244), format: .text),
+            IdentityCardRequest(identifier: .multiverse(435244), format: .image((false, .png)))
+        ]
+        
+        let mtgoCardRequests = [
+            IdentityCardRequest(identifier: .mtgo(67845), format: .json),
+            IdentityCardRequest(identifier: .mtgo(67845), format: .text),
+            IdentityCardRequest(identifier: .mtgo(67845), format: .image((false, .png)))
+        ]
+        
+        let arenaCardRequests = [
+            IdentityCardRequest(identifier: .arena(68806), format: .json),
+            IdentityCardRequest(identifier: .arena(68806), format: .text),
+            IdentityCardRequest(identifier: .arena(68806), format: .image((false, .png))),
+            IdentityCardRequest(identifier: .arena(64533), format: .json),
+            IdentityCardRequest(identifier: .arena(64533), format: .text),
+            IdentityCardRequest(identifier: .arena(64533), format: .image((false, .png)))
+        ]
+        
+        let tcgplayerCardRequests = [
+            // Fetch Rona, Disciple of Gix, from Dominaria
+            IdentityCardRequest(identifier: .tcgplayer(162145), format: .json),
+            IdentityCardRequest(identifier: .tcgplayer(162145), format: .text),
+            IdentityCardRequest(identifier: .tcgplayer(162145), format: .image((false, .png))),
+            // Fetch Treasure Map, from Ixalan
+            IdentityCardRequest(identifier: .tcgplayer(144537), format: .image((true, .png))),
+        ]
+        
+        let scryfallCardRequests = [
+            // Fetch Forest, from MagicFest 2019
+            IdentityCardRequest(identifier: .scryfall("7704ed07-aae8-4796-931c-a071aee1e8a4"), format: .json),
+            IdentityCardRequest(identifier: .scryfall("7704ed07-aae8-4796-931c-a071aee1e8a4"), format: .text),
+            IdentityCardRequest(identifier: .scryfall("7704ed07-aae8-4796-931c-a071aee1e8a4"), format: .image((false, .png))),
+            // Fetch Treasure Map, from Ixalan (back)
+            IdentityCardRequest(identifier: .scryfall("c0f9c733-0818-4a03-8f0c-a163d09e0fff"), format: .image((true, .png)))
+        ]
+        
+        let requests = [codeNumberCardRequests,
+                        multiverseCardRequests,
+                        mtgoCardRequests,
+                        arenaCardRequests,
+                        tcgplayerCardRequests,
+                        scryfallCardRequests]
+            .flatMap { $0 }
+
+        
+        let exp = expectation(description: "IdentityCardRequestExp")
+        exp.expectedFulfillmentCount = requests.count
+
+        let responseHandler: (Response<FormatResponse>) -> Void = { response in
+            switch response {
+            case .success(let data):
+                switch data {
+                case .card(let card):
+                    if let printedName = card.printedName {
+                        print("\tPrinted card name: \(printedName)")
+                    } else {
+                        print("\tCard: \(card.name)")
+                    }
+                    XCTAssert(card.name.count > 0)
+                case .text(let text):
+                    print("\tCard text: \(text)")
+                    XCTAssert(text.count > 0)
+                case .data(let data):
+                    print("\tData length: \(data.count)")
+                    XCTAssert(data.count > 0)
+                }
+            case .failure(let error):
+                XCTFail("Error: \(error)")
+            }
+            
+            exp.fulfill()
+        }
+
+        requests.forEach { BaseAPIClient().send(request: $0, completion: responseHandler) }
+        
+        wait(for: [exp], timeout: 30.0)
+    }
 }

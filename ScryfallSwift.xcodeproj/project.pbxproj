@@ -145,11 +145,11 @@
 		849DB731222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB72E222F815E00DF3C88 /* NamedCardSearchRequests.swift */; };
 		849DB732222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB72E222F815E00DF3C88 /* NamedCardSearchRequests.swift */; };
 		849DB733222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB72E222F815E00DF3C88 /* NamedCardSearchRequests.swift */; };
-		849DB7352232214000DF3C88 /* MultiverseCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */; };
-		849DB7362232214000DF3C88 /* MultiverseCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */; };
-		849DB7372232214000DF3C88 /* MultiverseCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */; };
-		849DB7382232214000DF3C88 /* MultiverseCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */; };
-		849DB7392232214000DF3C88 /* MultiverseCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */; };
+		849DB73B22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */; };
+		849DB73C22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */; };
+		849DB73D22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */; };
+		849DB73E22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */; };
+		849DB73F22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */; };
 		84BF792120B38D6300AB7EC3 /* CardTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84BF792020B38D6300AB7EC3 /* CardTest1.json */; };
 		84D4F99C20FC43FF00EBF4A3 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4F99B20FC43FF00EBF4A3 /* CardRuling.swift */; };
 		84D4F99D20FC43FF00EBF4A3 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4F99B20FC43FF00EBF4A3 /* CardRuling.swift */; };
@@ -225,7 +225,7 @@
 		849DB725222F671200DF3C88 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		849DB72C222F7B1F00DF3C88 /* CollectionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRequestTests.swift; sourceTree = "<group>"; };
 		849DB72E222F815E00DF3C88 /* NamedCardSearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedCardSearchRequests.swift; sourceTree = "<group>"; };
-		849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiverseCardRequest.swift; sourceTree = "<group>"; };
+		849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityCardRequest.swift; sourceTree = "<group>"; };
 		84BF792020B38D6300AB7EC3 /* CardTest1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest1.json; sourceTree = "<group>"; };
 		84D4F99B20FC43FF00EBF4A3 /* CardRuling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRuling.swift; sourceTree = "<group>"; };
 		84D4F9A220FC465900EBF4A3 /* RulingsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RulingsTest.json; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 				844A9D722198EDDA00F19E2E /* CollectionRequest.swift */,
 				849DB72E222F815E00DF3C88 /* NamedCardSearchRequests.swift */,
 				842EE335218028C5007DC1B8 /* RandomCardRequest.swift */,
-				849DB7342232214000DF3C88 /* MultiverseCardRequest.swift */,
+				849DB73A22343FCD00DF3C88 /* IdentityCardRequest.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -712,6 +712,7 @@
 				845FBD2F222CA27200F175C5 /* CardFace.swift in Sources */,
 				845FBD23222CA25200F175C5 /* CardRarity.swift in Sources */,
 				845FBD29222CA26200F175C5 /* RelatedCard.swift in Sources */,
+				849DB73B22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */,
 				4A77BE7A20B5C52D00166150 /* CardSet.swift in Sources */,
 				842EE321217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31521743B09007DC1B8 /* SetsRequest.swift in Sources */,
@@ -722,7 +723,6 @@
 				844A9D732198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
 				842EE336218028C5007DC1B8 /* RandomCardRequest.swift in Sources */,
 				84D4F9A520FD60C400EBF4A3 /* Imagery.swift in Sources */,
-				849DB7352232214000DF3C88 /* MultiverseCardRequest.swift in Sources */,
 				84525B9C21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				845FBD11222C92FD00F175C5 /* CardLayout.swift in Sources */,
 				842EE31B217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
@@ -746,6 +746,7 @@
 				845FBD30222CA27200F175C5 /* CardFace.swift in Sources */,
 				845FBD24222CA25200F175C5 /* CardRarity.swift in Sources */,
 				845FBD2A222CA26200F175C5 /* RelatedCard.swift in Sources */,
+				849DB73C22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */,
 				84D4F99D20FC43FF00EBF4A3 /* CardRuling.swift in Sources */,
 				842EE322217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31621743B09007DC1B8 /* SetsRequest.swift in Sources */,
@@ -756,7 +757,6 @@
 				844A9D742198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
 				842EE337218028C5007DC1B8 /* RandomCardRequest.swift in Sources */,
 				84D4F9A620FD60C400EBF4A3 /* Imagery.swift in Sources */,
-				849DB7362232214000DF3C88 /* MultiverseCardRequest.swift in Sources */,
 				84525B9D21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				845FBD12222CA19E00F175C5 /* CardLayout.swift in Sources */,
 				842EE31C217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
@@ -780,6 +780,7 @@
 				845FBD31222CA27200F175C5 /* CardFace.swift in Sources */,
 				845FBD25222CA25200F175C5 /* CardRarity.swift in Sources */,
 				845FBD2B222CA26200F175C5 /* RelatedCard.swift in Sources */,
+				849DB73D22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */,
 				84D4F99E20FC43FF00EBF4A3 /* CardRuling.swift in Sources */,
 				842EE323217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31721743B09007DC1B8 /* SetsRequest.swift in Sources */,
@@ -790,7 +791,6 @@
 				844A9D752198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
 				842EE338218028C5007DC1B8 /* RandomCardRequest.swift in Sources */,
 				84D4F9A720FD60C400EBF4A3 /* Imagery.swift in Sources */,
-				849DB7372232214000DF3C88 /* MultiverseCardRequest.swift in Sources */,
 				84525B9E21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				845FBD13222CA19E00F175C5 /* CardLayout.swift in Sources */,
 				842EE31D217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
@@ -814,6 +814,7 @@
 				845FBD32222CA27200F175C5 /* CardFace.swift in Sources */,
 				845FBD26222CA25200F175C5 /* CardRarity.swift in Sources */,
 				845FBD2C222CA26200F175C5 /* RelatedCard.swift in Sources */,
+				849DB73E22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */,
 				84D4F99F20FC43FF00EBF4A3 /* CardRuling.swift in Sources */,
 				842EE324217442FD007DC1B8 /* CardsRequests.swift in Sources */,
 				842EE31821743B09007DC1B8 /* SetsRequest.swift in Sources */,
@@ -824,7 +825,6 @@
 				844A9D762198EDDA00F19E2E /* CollectionRequest.swift in Sources */,
 				842EE339218028C5007DC1B8 /* RandomCardRequest.swift in Sources */,
 				84D4F9A820FD60C400EBF4A3 /* Imagery.swift in Sources */,
-				849DB7382232214000DF3C88 /* MultiverseCardRequest.swift in Sources */,
 				84525B9F21489A760088A9E2 /* CardSymbol.swift in Sources */,
 				845FBD14222CA19F00F175C5 /* CardLayout.swift in Sources */,
 				842EE31E217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
@@ -852,7 +852,6 @@
 				842EE31F217441CD007DC1B8 /* BaseAPIClient.swift in Sources */,
 				842EE32721744371007DC1B8 /* APIClientTests.swift in Sources */,
 				842EE33A218028C5007DC1B8 /* RandomCardRequest.swift in Sources */,
-				849DB7392232214000DF3C88 /* MultiverseCardRequest.swift in Sources */,
 				84525BA7214B4E240088A9E2 /* ScryfallError.swift in Sources */,
 				844A9D7D2198EE1200F19E2E /* CardIdentifier.swift in Sources */,
 				84D4F9A020FC43FF00EBF4A3 /* CardRuling.swift in Sources */,
@@ -862,6 +861,7 @@
 				845FBD15222CA19F00F175C5 /* CardLayout.swift in Sources */,
 				84E9F98420A285F900A3DD1D /* ScryfallSwiftTests.swift in Sources */,
 				84525BA021489A760088A9E2 /* CardSymbol.swift in Sources */,
+				849DB73F22343FCE00DF3C88 /* IdentityCardRequest.swift in Sources */,
 				845FBD0F222637F000F175C5 /* CardPrice.swift in Sources */,
 				845FBD27222CA25200F175C5 /* CardRarity.swift in Sources */,
 				842EE325217442FD007DC1B8 /* CardsRequests.swift in Sources */,
