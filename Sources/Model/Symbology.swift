@@ -10,7 +10,7 @@ import Foundation
 
 
 /// A Card Symbol object represents an illustrated symbol that may appear in card’s mana cost or Oracle text. Symbols are based on the notation used in the Comprehensive Rules.
-class Symbololy: Decodable {
+class Symbology: Decodable {
     /// The plaintext symbol. Often surrounded with curly braces {}. Note that not all symbols are ASCII text (for example, {∞}).
     var symbol: String
     
@@ -27,7 +27,7 @@ class Symbololy: Decodable {
     var representsMana: Bool
     
     /// A decimal number representing this symbol’s converted mana cost. Note that mana symbols from funny sets can have fractional converted mana costs.
-    var cmc: Double
+    var cmc: Double?
     
     /// True if this symbol appears in a mana cost on any Magic card. For example {20} has this field set to false because {20} only appears in Oracle text, not mana costs.
     var appearsInManaCosts: Bool

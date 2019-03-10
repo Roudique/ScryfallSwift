@@ -180,6 +180,11 @@
 		849DB7632234C51400DF3C88 /* Symbology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7602234C51400DF3C88 /* Symbology.swift */; };
 		849DB7642234C51400DF3C88 /* Symbology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7602234C51400DF3C88 /* Symbology.swift */; };
 		849DB7652234C51400DF3C88 /* Symbology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7602234C51400DF3C88 /* Symbology.swift */; };
+		849DB7682234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */; };
+		849DB7692234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */; };
+		849DB76A2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */; };
+		849DB76B2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */; };
+		849DB76C2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */; };
 		84BF792120B38D6300AB7EC3 /* CardTest1.json in Resources */ = {isa = PBXBuildFile; fileRef = 84BF792020B38D6300AB7EC3 /* CardTest1.json */; };
 		84D4F99C20FC43FF00EBF4A3 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4F99B20FC43FF00EBF4A3 /* CardRuling.swift */; };
 		84D4F99D20FC43FF00EBF4A3 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4F99B20FC43FF00EBF4A3 /* CardRuling.swift */; };
@@ -262,6 +267,7 @@
 		849DB7532234B41B00DF3C88 /* SearchIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIdentifier.swift; sourceTree = "<group>"; };
 		849DB75A2234B43E00DF3C88 /* RulingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulingsRequest.swift; sourceTree = "<group>"; };
 		849DB7602234C51400DF3C88 /* Symbology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbology.swift; sourceTree = "<group>"; };
+		849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSymbologyRequest.swift; sourceTree = "<group>"; };
 		84BF792020B38D6300AB7EC3 /* CardTest1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CardTest1.json; sourceTree = "<group>"; };
 		84D4F99B20FC43FF00EBF4A3 /* CardRuling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRuling.swift; sourceTree = "<group>"; };
 		84D4F9A220FC465900EBF4A3 /* RulingsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RulingsTest.json; sourceTree = "<group>"; };
@@ -380,6 +386,7 @@
 		842EE31321743AE3007DC1B8 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				849DB7662234C69A00DF3C88 /* Symbology */,
 				849DB7592234B43000DF3C88 /* Rulings */,
 				849DB740223490EC00DF3C88 /* Sets */,
 				842EE32E2180258D007DC1B8 /* Cards */,
@@ -490,6 +497,14 @@
 				849DB75A2234B43E00DF3C88 /* RulingsRequest.swift */,
 			);
 			path = Rulings;
+			sourceTree = "<group>";
+		};
+		849DB7662234C69A00DF3C88 /* Symbology */ = {
+			isa = PBXGroup;
+			children = (
+				849DB7672234C6AD00DF3C88 /* AllSymbologyRequest.swift */,
+			);
+			path = Symbology;
 			sourceTree = "<group>";
 		};
 		84BF791F20B38D3B00AB7EC3 /* Test json files */ = {
@@ -794,6 +809,7 @@
 				849DB7482234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB72F222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
 				842EE3302180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
+				849DB7682234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7422234926B00DF3C88 /* SetRequest.swift in Sources */,
 				845FBD17222CA22200F175C5 /* CardFrameEffect.swift in Sources */,
 				844A9D792198EE1200F19E2E /* CollectionCardIdentifier.swift in Sources */,
@@ -834,6 +850,7 @@
 				849DB7492234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB730222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
 				842EE3312180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
+				849DB7692234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7432234926B00DF3C88 /* SetRequest.swift in Sources */,
 				845FBD18222CA22200F175C5 /* CardFrameEffect.swift in Sources */,
 				844A9D7A2198EE1200F19E2E /* CollectionCardIdentifier.swift in Sources */,
@@ -874,6 +891,7 @@
 				849DB74A2234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB731222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
 				842EE3322180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
+				849DB76A2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7442234926B00DF3C88 /* SetRequest.swift in Sources */,
 				845FBD19222CA22200F175C5 /* CardFrameEffect.swift in Sources */,
 				844A9D7B2198EE1200F19E2E /* CollectionCardIdentifier.swift in Sources */,
@@ -914,6 +932,7 @@
 				849DB74B2234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB732222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
 				842EE3332180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
+				849DB76B2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7452234926B00DF3C88 /* SetRequest.swift in Sources */,
 				845FBD1A222CA22200F175C5 /* CardFrameEffect.swift in Sources */,
 				844A9D7C2198EE1200F19E2E /* CollectionCardIdentifier.swift in Sources */,
@@ -959,6 +978,7 @@
 				849DB733222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
 				845FBD21222CA24200F175C5 /* CardGame.swift in Sources */,
 				849DB72A222F671200DF3C88 /* Card.swift in Sources */,
+				849DB76C2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7522234A74400DF3C88 /* FormatResponse.swift in Sources */,
 				849DB74C2234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 			);

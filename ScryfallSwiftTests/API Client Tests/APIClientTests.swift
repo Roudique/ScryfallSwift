@@ -295,4 +295,22 @@ class APIClientTests: XCTestCase {
         
         wait(for: [exp], timeout: 30.0)
     }
+    
+    func testAllSymbologyRequest() {
+        let request = AllSymbologyRequest()
+        let exp = expectation(description: "testAllSymbologyRequestExp")
+        
+        BaseAPIClient().send(request: request) { response in
+            switch response {
+            case .success(let symbologyList):
+                print("Total symbologies: \(symbologyList.data.count)")
+            case .failure(let error):
+                XCTFail("Error: \(error)")
+            }
+            
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10.0)
+    }
 }
