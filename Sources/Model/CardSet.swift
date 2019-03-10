@@ -47,8 +47,7 @@ enum CardSetType: String, Decodable {
     case token
     /// A set made up of gold-bordered, oversize, or trophy cards that are not legal.
     case memorabilia
-    #warning("This one is not documented yet.")
-    /// No info on this one yet.
+    /// Magic Online treasure chest prize sets.
     case treasureChest = "treasure_chest"
  
 }
@@ -59,11 +58,17 @@ enum CardSetType: String, Decodable {
 ///
 /// Official sets always have a three-letter set code, such as **zen**.
 class CardSet: Decodable {
+    ///  unique ID for this set on Scryfall that will not change.
+    var id: String
+    
     /// The unique three or four-letter code for this set.
     var code: String
     
     /// The unique code for this set on MTGO, which may differ from the regular code.
     var mtgoCode: String?
+    
+    /// This set’s ID on TCGplayer’s API, also known as the groupId.
+    var tcgplayerID: Int?
     
     /// The English name of the set.
     var name: String
@@ -105,6 +110,9 @@ class CardSet: Decodable {
     /// True if this set contains only foil cards.
     var isFoilOnly: Bool
     
+    /// A link to this set’s permapage on Scryfall’s website.
+    var scryfallURI: URL
+
     /// A URI to an SVG file for this set’s icon on Scryfall’s CDN.
     ///
     /// Hotlinking this image isn’t recommended, because it may change slightly over time. You should download it and use it locally for your particular user interface needs.
@@ -114,8 +122,10 @@ class CardSet: Decodable {
     var searchURI: URL
     
     enum CodingKeys: String, CodingKey {
+        case id
         case code
         case mtgoCode       = "mtgo_code"
+        case tcgplayerID    = "tcgplayer_id"
         case name
         case setType        = "set_type"
         case releasedAt     = "released_at"
@@ -125,6 +135,7 @@ class CardSet: Decodable {
         case cardCount      = "card_count"
         case isDigital      = "digital"
         case isFoilOnly     = "foil_only"
+        case scryfallURI    = "scryfall_uri"
         case iconURI        = "icon_svg_uri"
         case searchURI      = "search_uri"
     }

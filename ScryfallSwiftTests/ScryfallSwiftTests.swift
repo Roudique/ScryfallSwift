@@ -146,10 +146,8 @@ class ScryfallSwiftTests: XCTestCase {
     
     func testAllSetsRequest() {
         let apiManager = BaseAPIClient()
-        
-        let allSetsExp  = self.expectation(description: "allSets")
-        let setExp      = self.expectation(description: "set")
-        print("Started testing Sets API requests")
+
+        let exp  = expectation(description: "testAllSetsRequestExp")
 
         apiManager.send(request: AllSetsRequest()) { response in
             switch response {
@@ -159,22 +157,43 @@ class ScryfallSwiftTests: XCTestCase {
             case .failure(let error):
                 assertionFailure("Error during testing all sets request all sets: \(error)")
             }
-            
-            allSetsExp.fulfill()
+
+            exp.fulfill()
         }
+
+        wait(for: [exp], timeout: 8.0)
+    }
+    
+    func testSetRequest() {
+        let setRequests = [
+            // Fetch Ravnica Allegiances
+            SetRequest(identifier: .code("rna")),
+            // Fetch Ultimate Masters Tokens
+            SetRequest(identifier: .scryfallID("804240d7-957c-4860-a684-d3d51dfe1c77")),
+            // Fetch You Make The Cube (pz2)
+            SetRequest(identifier: .scryfallID("2661b143-8eac-4c73-9d93-549fe928bd96")),
+            //Fetch HarperPrism Book Promos (PHPR)
+            SetRequest(identifier: .code("PHPR")),
+            // Fetch Amonkhet Invocations
+            SetRequest(identifier: .tcgplayerID(1909))
+        ]
         
-        apiManager.send(request: SetRequest(setCode: "grn")) { response in
+        let exp = expectation(description: "testSetRequestExp")
+        exp.expectedFulfillmentCount = setRequests.count
+        
+        let responseHandler: (Response<CardSet>) -> Void = { response in
             switch response {
             case .success(let set):
                 print("There is set: \(set.name) with \(set.cardCount) cards.")
             case .failure(let error):
-                assertionFailure("Error during testing set \"grn\": \(error)")
+                XCTFail("Error: \(error)")
             }
-            
-            setExp.fulfill()
+            exp.fulfill()
         }
         
-        wait(for: [allSetsExp, setExp], timeout: 8.0)
+        setRequests.forEach { BaseAPIClient().send(request: $0, completion: responseHandler) }
+        
+        wait(for: [exp], timeout: 15.0)
     }
     
     func testCollectionRequest() {
@@ -182,9 +201,9 @@ class ScryfallSwiftTests: XCTestCase {
         
         let collectionReqExp = self.expectation(description: "collectionReqExp")
         
-        let identifiers = [CardIdentifier.id("683a5707-cddb-494d-9b41-51b4584ded69"),
-                           CardIdentifier.name("Ancient Tomb"),
-                           CardIdentifier.collectorNumberAndSet("150", "mrd")]
+        let identifiers = [CollectionCardIdentifier.id("683a5707-cddb-494d-9b41-51b4584ded69"),
+                           CollectionCardIdentifier.name("Ancient Tomb"),
+                           CollectionCardIdentifier.collectorNumberAndSet("150", "mrd")]
         let request = CollectionRequest.init(identifiers: identifiers)
         apiClient.send(request: request) { response in
             switch response {

@@ -16,7 +16,7 @@ struct CollectionRequest: APIRequest {
     
     typealias Response = CollectionList
     
-    let identifiers: [CardIdentifier]
+    let identifiers: [CollectionCardIdentifier]
 }
 extension CollectionRequest: CustomHTTPRequest {
     var httpMethod: HTTPMethod {

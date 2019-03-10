@@ -14,13 +14,3 @@ struct AllSetsRequest: APIRequest {
         return "/sets"
     }
 }
-
-struct SetRequest: APIRequest {
-    typealias Response = CardSet
-    
-    let setCode: String
-    
-    var resourceName: String {
-        return "/sets/\(self.setCode)"
-    }
-}
