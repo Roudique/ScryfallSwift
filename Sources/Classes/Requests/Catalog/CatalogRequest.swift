@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum CatalogType {
+public enum CatalogType {
     case cardNames
     case artistNames
     case wordBank
@@ -25,14 +25,18 @@ enum CatalogType {
 }
 
 
-struct CatalogRequest: APIRequest {
-    typealias Response = Catalog
+public struct CatalogRequest: APIRequest {
+    public typealias Response = Catalog
     
-    var resourceName: String {
+    public var resourceName: String {
         return type.resourceName
     }
     
-    let type: CatalogType
+    public let type: CatalogType
+    
+    public init(type: CatalogType) {
+        self.type = type
+    }
 }
 private extension CatalogType {
     var resourceName: String {

@@ -8,22 +8,27 @@
 import Foundation
 
 
-struct IdentityCardRequest: APIRequest, FormatResponseRequest {
-    var resourceName: String {
+public struct IdentityCardRequest: APIRequest, FormatResponseRequest {
+    public var resourceName: String {
         return identifier.resourceName
     }
     
-    typealias Response = FormatResponse
+    public typealias Response = FormatResponse
     
-    let identifier: SearchIdentifier
-    let format: Format
+    public let identifier: SearchIdentifier
+    public let format: Format
+    
+    public init(identifier: SearchIdentifier, format: Format) {
+        self.identifier = identifier
+        self.format = format
+    }
 }
+
 extension IdentityCardRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
         return format.queryItems
     }
 }
-
 
 private extension SearchIdentifier {
     var resourceName: String {
@@ -45,6 +50,5 @@ private extension SearchIdentifier {
         case .scryfall(let id):
             return "/cards/\(id)"
         }
-
     }
 }

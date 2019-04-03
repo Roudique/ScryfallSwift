@@ -22,7 +22,7 @@ import Foundation
 /// - compasslanddfc: The compass and land transform marks
 /// - originpwdfc: The Origins and planeswalker transform marks
 /// - mooneldrazidfc: The moon and Eldrazi transform marks
-enum CardFrameEffect: String, Decodable {
+public enum CardFrameEffect: String, Decodable {
     case legendary
     case miracle
     case nyxtouched

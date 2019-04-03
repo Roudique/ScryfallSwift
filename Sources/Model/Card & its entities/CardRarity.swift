@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Card's rarity.
-enum CardRarity: String, Decodable {
+public enum CardRarity: String, Decodable {
     case common
     case uncommon
     case rare

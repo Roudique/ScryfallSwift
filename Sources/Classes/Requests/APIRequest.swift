@@ -16,7 +16,7 @@ public protocol APIRequest {
     var resourceName: String { get }
 }
 
-public protocol QueryableAPIRequest {
+protocol QueryableAPIRequest {
     /// Query items for the request.
     var queryItems: [String: String] { get }
 }

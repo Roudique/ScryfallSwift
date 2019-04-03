@@ -8,20 +8,24 @@
 import Foundation
 
 
-enum SetIdentifier {
+public enum SetIdentifier {
     case code(String)
     case tcgplayerID(Int)
     case scryfallID(String)
 }
 
 
-struct SetRequest: APIRequest {
-    typealias Response = CardSet
+public struct SetRequest: APIRequest {
+    public typealias Response = CardSet
     
-    let identifier: SetIdentifier
-    
-    var resourceName: String {
+    public let identifier: SetIdentifier
+
+    public var resourceName: String {
         return identifier.resourceName
+    }
+    
+    public init(identifier: SetIdentifier) {
+        self.identifier = identifier
     }
 }
 

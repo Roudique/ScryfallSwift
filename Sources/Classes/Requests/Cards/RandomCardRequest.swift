@@ -7,15 +7,20 @@
 
 import Foundation
 
-struct RandomCardRequest: APIRequest, FormatResponseRequest {
-    var resourceName: String {
+public struct RandomCardRequest: APIRequest, FormatResponseRequest {
+    public var resourceName: String {
         return "/cards/random"
     }
     
-    typealias Response = FormatResponse
+    public typealias Response = FormatResponse
     
-    var search: String?
-    let format: Format
+    public var search: String?
+    public let format: Format
+    
+    public init(format: Format = .json, search: String? = nil) {
+        self.format = format
+        self.search = search
+    }
 }
 extension RandomCardRequest: QueryableAPIRequest {
     var queryItems: [String : String] {

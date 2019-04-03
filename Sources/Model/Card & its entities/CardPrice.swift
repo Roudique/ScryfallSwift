@@ -9,11 +9,11 @@ import Foundation
 
 
 /// An object containing daily price information for card.
-struct CardPrice: Decodable {
-    var usd: String?
-    var usdFoil: String?
-    var eur: String?
-    var tix: String?
+public struct CardPrice: Decodable {
+    public var usd: String?
+    public var usdFoil: String?
+    public var eur: String?
+    public var tix: String?
     
     enum CodingKeys: String, CodingKey {
         case usd

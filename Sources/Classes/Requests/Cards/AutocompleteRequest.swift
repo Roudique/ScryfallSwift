@@ -8,17 +8,21 @@
 import Foundation
 
 
-struct AutocompleteRequest: APIRequest {
-    var resourceName: String {
+public struct AutocompleteRequest: APIRequest {
+    public var resourceName: String {
         return "/cards/autocomplete"
     }
     
-    typealias Response = Catalog
+    public typealias Response = Catalog
     
-    let cardName: String
+    public let cardName: String
+    
+    public init(cardName: String) {
+        self.cardName = cardName
+    }
 }
 extension AutocompleteRequest: QueryableAPIRequest {
-    var queryItems: [String : String] {
+    public var queryItems: [String : String] {
         return ["q": self.cardName]
     }
 }

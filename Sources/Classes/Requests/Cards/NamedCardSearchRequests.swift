@@ -12,23 +12,28 @@ import Foundation
 ///
 /// - exact: Exact card name.
 /// - fuzzy: Fuzzy card name.
-enum Name {
+public enum Name {
     case exact(String)
     case fuzzy(String)
 }
 
-
 // MARK: -
-struct NamedCardSearchRequest: APIRequest, FormatResponseRequest {
-    var resourceName: String {
+public struct NamedCardSearchRequest: APIRequest, FormatResponseRequest {
+    public var resourceName: String {
         return "/cards/named"
     }
     
-    typealias Response = FormatResponse
+    public typealias Response = FormatResponse
     
-    let format: Format
-    let name: Name
-    let setCode: String?
+    public let format: Format
+    public let name: Name
+    public let setCode: String?
+    
+    public init(format: Format, name: Name, setCode: String?) {
+        self.format = format
+        self.name = name
+        self.setCode = setCode
+    }
 }
 
 extension NamedCardSearchRequest: QueryableAPIRequest {

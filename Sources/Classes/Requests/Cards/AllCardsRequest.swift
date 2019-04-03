@@ -8,10 +8,12 @@
 import Foundation
 
 
-struct AllCardsRequest: APIRequest {
-    typealias Response = List<Card>
+public struct AllCardsRequest: APIRequest {
+    public typealias Response = List<Card>
     
-    var resourceName: String {
+    public var resourceName: String {
         return "/cards"
     }
+    
+    public init() {}
 }

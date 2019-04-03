@@ -8,12 +8,12 @@
 import Foundation
 
 
-enum FormatDecodeError: Error {
+public enum FormatDecodeError: Error {
     case invalidData
 }
 
-enum FormatResponse: Decodable {
-    init(from decoder: Decoder) throws {
+public enum FormatResponse: Decodable {
+    public init(from decoder: Decoder) throws {
         if let card = try? Card(from: decoder) {
             self = .card(card)
         } else if let text = try? String(from: decoder) {

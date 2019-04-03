@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum CardSetType: String, Decodable {
+public enum CardSetType: String, Decodable {
     /// A yearly Magic core set (Tenth Edition, etc).
     case core
     /// A rotational expansion set in a block (Zendikar, etc).
@@ -57,56 +57,56 @@ enum CardSetType: String, Decodable {
 /// Due to Magic’s long and complicated history, Scryfall includes many un-official sets as a way to group promotional or outlier cards together. Such sets will likely have a four-letter **code** that begins with **p** or **t**, such as **pcel** or **tori**.
 ///
 /// Official sets always have a three-letter set code, such as **zen**.
-class CardSet: Decodable {
+public class CardSet: Decodable {
     ///  unique ID for this set on Scryfall that will not change.
-    var id: String
+    public var id: String
     
     /// The unique three or four-letter code for this set.
-    var code: String
+    public var code: String
     
     /// The unique code for this set on MTGO, which may differ from the regular code.
-    var mtgoCode: String?
+    public var mtgoCode: String?
     
     /// This set’s ID on TCGplayer’s API, also known as the groupId.
-    var tcgplayerID: Int?
+    public var tcgplayerID: Int?
     
     /// The English name of the set.
-    var name: String
+    public var name: String
     
     /// A computer-readable classification for this set.
-    var setType: CardSetType
+    public var setType: CardSetType
     
     /// The date the set was released (in GMT-8 Pacific time). Not all sets have a known release date.
-    var releasedAt: Date?
+    public var releasedAt: Date?
         
     /// The block code for this set, if any.
-    var blockCode: String?
+    public var blockCode: String?
     
     /// The block or group name code for this set, if any.
-    var block: String?
+    public var block: String?
     
     /// The set code for the parent set, if any. **promo** and **token** sets often have a parent set.
-    var parentSetCode: String?
+    public var parentSetCode: String?
     
     /// The number of cards in this set.
-    var cardCount: Int
+    public var cardCount: Int
     
     /// True if this set was only released on Magic Online.
-    var isDigital: Bool
+    public var isDigital: Bool
     
     /// True if this set contains only foil cards.
-    var isFoilOnly: Bool
+    public var isFoilOnly: Bool
     
     /// A link to this set’s permapage on Scryfall’s website.
-    var scryfallURI: URL
+    public var scryfallURI: URL
 
     /// A URI to an SVG file for this set’s icon on Scryfall’s CDN.
     ///
     /// Hotlinking this image isn’t recommended, because it may change slightly over time. You should download it and use it locally for your particular user interface needs.
-    var iconURI: URL
+    public var iconURI: URL
     
     /// A Scryfall API URI that you can request to begin paginating over the cards in this set.
-    var searchURI: URL
+    public var searchURI: URL
     
     enum CodingKeys: String, CodingKey {
         case id

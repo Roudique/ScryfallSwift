@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct AllSetsRequest: APIRequest {
-    typealias Response = List<CardSet>
+public struct AllSetsRequest: APIRequest {
+    public typealias Response = List<CardSet>
     
-    var resourceName: String {
+    public var resourceName: String {
         return "/sets"
     }
 }

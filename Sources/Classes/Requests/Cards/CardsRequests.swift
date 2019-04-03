@@ -8,22 +8,24 @@
 import Foundation
 
 
-struct FulltextCardSearchRequest: APIRequest {
-    typealias Response = List<Card>
+public struct FulltextCardSearchRequest: APIRequest, FormatResponseRequest {
+    public typealias Response = List<Card>
     
-    let search: String
+    public let search: String
     
+    public var format: Format
+
     /// The strategy for omitting similar cards.
     ///
     /// - cards: Default. Removes duplicate gameplay objects (cards that share a name and have the same functionality). For example, if your search matches more than one print of Pacifism, only one copy of Pacifism will be returned.
     /// - art: Returns only one copy of each unique artwork for matching cards. For example, if your search matches more than one print of Pacifism, one card with each different illustration for Pacifism will be returned, but any cards that duplicate artwork already in the results will be omitted.
     /// - print: Returns all prints for all cards matched (disables rollup). For example, if your search matches more than one print of Pacifism, all matching prints will be returned.
-    enum CardSearchUniqueness: String, Decodable {
+    public enum CardSearchUniqueness: String, Decodable {
         case cards
         case art
         case prints
     }
-    var unique: CardSearchUniqueness?
+    public var unique: CardSearchUniqueness?
     
     
     /// The method to sort returned cards.
@@ -41,7 +43,7 @@ struct FulltextCardSearchRequest: APIRequest {
     /// - toughness: Sort cards by their toughness: null → highest
     /// - edhrec: Sort cards by their EDHREC ranking: lowest → highest
     /// - artist: Sort cards by their front-side artist name: A → Z*/
-    enum CardSearchOrder: String, Decodable {
+    public enum CardSearchOrder: String, Decodable {
         case name
         case set
         case released
@@ -56,7 +58,7 @@ struct FulltextCardSearchRequest: APIRequest {
         case edhrec
         case artist
     }
-    var order: CardSearchOrder?
+    public var order: CardSearchOrder?
     
     
     /// The direction to sort cards.
@@ -64,22 +66,34 @@ struct FulltextCardSearchRequest: APIRequest {
     /// - auto: Scryfall will automatically choose the most inuitive direction to sort
     /// - asc: Sort ascending (the direction of the arrows in the CardSearchOrder)
     /// - desc: Sort descending (flip the direction of the arrows in the CardSearchOrder)
-    enum SortDirection: String, Decodable {
+    public enum SortDirection: String, Decodable {
         case auto
         case asc
         case desc
     }
-    var sortDirection: SortDirection?
+    public var sortDirection: SortDirection?
     
-    var includeExtras: Bool?
-    var includeMultilingual: Bool?
+    public var includeExtras: Bool?
+    public var includeMultilingual: Bool?
     
-    var resourceName: String {
+    public var resourceName: String {
         return "/cards/search"
     }
     
-    init(search query: String) {
+    public init(query: String,
+                format: Format? = .json,
+                unique: CardSearchUniqueness? = .cards,
+                sortOrder: CardSearchOrder? = .name,
+                sortDirection: SortDirection? = .auto,
+                includeExtras: Bool? = false,
+                includeMultilingual: Bool? = false) {
         self.search = query
+        self.format = format ?? .json
+        self.unique = unique
+        self.order = sortOrder
+        self.sortDirection = sortDirection
+        self.includeExtras = includeExtras
+        self.includeMultilingual = includeMultilingual
     }
 }
 extension FulltextCardSearchRequest: QueryableAPIRequest {

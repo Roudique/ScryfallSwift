@@ -6,8 +6,8 @@
 //
 import Foundation
 
-typealias ImageConfig = (isBackFace: Bool, version: Imagery.CodingKeys)
-enum Format {
+public typealias ImageConfig = (isBackFace: Bool, version: Imagery.CodingKeys)
+public enum Format {
     case json, text
     case image(ImageConfig)
     
@@ -23,7 +23,7 @@ enum Format {
     }
 }
 extension Format: QueryableAPIRequest {
-    var queryItems: [String : String] {
+    public var queryItems: [String : String] {
         var format = [String: String]()
         switch self {
         case .image(let config):
@@ -38,32 +38,34 @@ extension Format: QueryableAPIRequest {
 }
 
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case get, post, put, delete
 }
 
 
-enum Response<ScryfallData> {
+public enum Response<ScryfallData> {
     case success(ScryfallData)
     case failure(Error)
 }
 
 
-enum BaseAPIClientError: Error {
+public enum BaseAPIClientError: Error {
     case couldNotEncodeString
 }
 
 
-class BaseAPIClient: NSObject {
+public class BaseAPIClient: NSObject {
     private let host = "api.scryfall.com"
     private let session = URLSession(configuration: .default)
     
-    func send<R: APIRequest>(request: R, completion: @escaping (Response<R.Response>) -> ()) {
+    public var debugLogLevel = false
+    
+    public func send<R: APIRequest>(request: R, completion: @escaping (Response<R.Response>) -> ()) {
         guard let urlRequest = self.urlRequest(for: request) else {
             completion(Response.failure(CommonError.invalidURL(request.resourceName)))
             return
         }
-        print("request url: \(urlRequest.url!)")
+        if debugLogLevel { print("request url: \(urlRequest.url!)") }
         
         let dataTask = self.session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
@@ -128,7 +130,7 @@ class BaseAPIClient: NSObject {
                 let encodedResponse = try decoder.decode(R.Response.self, from: data)
                 completion(.success(encodedResponse))
             } catch {
-                print(error)
+                if self.debugLogLevel { print(error) }
                 completion(.failure(error))
             }
             

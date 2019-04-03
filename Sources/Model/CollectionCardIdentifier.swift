@@ -16,7 +16,7 @@ import Foundation
 /// - name: Finds the newest edition of a card with the specified name.
 /// - nameAndSet: Finds a card matching the specified name and set.
 /// - collectorNumberAndSet: Finds a card with the specified collector_number and set. Note that collector numbers are strings.
-enum CollectionCardIdentifier {
+public enum CollectionCardIdentifier {
     /// Finds a card with the specified Scryfall id.
     case id(String)
     

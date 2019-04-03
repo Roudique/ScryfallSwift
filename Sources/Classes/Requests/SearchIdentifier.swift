@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-enum SearchIdentifier {
+public enum SearchIdentifier {
     case setCodeCollectorNumberAndLang(String, Int, String?)
     case multiverse(Int)
     case mtgo(Int)

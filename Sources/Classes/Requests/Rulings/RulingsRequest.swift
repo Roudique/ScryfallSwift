@@ -8,14 +8,18 @@
 import Foundation
 
 
-struct RulingsRequest: APIRequest {
-    typealias Response = List<CardRuling>
+public struct RulingsRequest: APIRequest {
+    public typealias Response = List<CardRuling>
     
-    var resourceName: String {
+    public var resourceName: String {
         return identifier.resourceName
     }
     
-    let identifier: SearchIdentifier
+    public let identifier: SearchIdentifier
+    
+    public init(identifier: SearchIdentifier) {
+        self.identifier = identifier
+    }
 }
 
 private extension SearchIdentifier {

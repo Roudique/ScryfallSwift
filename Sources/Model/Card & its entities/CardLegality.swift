@@ -8,17 +8,17 @@
 import Foundation
 
 /// Class describing the legality of this card across play formats.
-class CardLegality: Decodable {
-    var standard: LegalityStatus
-    var future: LegalityStatus
-    var frontier: LegalityStatus
-    var modern: LegalityStatus
-    var legacy: LegalityStatus
-    var pauper: LegalityStatus
-    var vintage: LegalityStatus
-    var penny: LegalityStatus
-    var commander: LegalityStatus
-    var duel: LegalityStatus
+public class CardLegality: Decodable {
+    public var standard: LegalityStatus
+    public var future: LegalityStatus
+    public var frontier: LegalityStatus
+    public var modern: LegalityStatus
+    public var legacy: LegalityStatus
+    public var pauper: LegalityStatus
+    public var vintage: LegalityStatus
+    public var penny: LegalityStatus
+    public var commander: LegalityStatus
+    public var duel: LegalityStatus
     
     
     // CodingKeys
@@ -37,7 +37,7 @@ class CardLegality: Decodable {
     }
 }
 
-enum LegalityStatus: String, Decodable {
+public enum LegalityStatus: String, Decodable {
     case legal
     case notLegal = "not_legal"
     case restricted

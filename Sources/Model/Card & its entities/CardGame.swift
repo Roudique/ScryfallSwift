@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: -
 /// Games that card print could be available in.
-enum CardGame: String, Decodable {
+public enum CardGame: String, Decodable {
     case paper
     case arena
     case mtgo

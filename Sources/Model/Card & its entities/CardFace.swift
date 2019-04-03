@@ -10,24 +10,24 @@ import Foundation
 
 //MARK: -
 /// Multiface cards have a card_faces property containing at least two Card Face objects.
-struct CardFace: Decodable {
-    var artist: String
-    var colorIndicator: [CardColor]?
-    var colors: [CardColor]?
-    var flavorText: String?
-    var illustrationID: String?
-    var imagery: Imagery?
-    var loyalty: String?
-    var manaCost: String
-    var name: String
-    var oracleText: String?
-    var power: String?
-    var printedName: String?
-    var printedText: String?
-    var printedTypeLine: String?
-    var toughness: String?
-    var typeLine: String
-    var watermark: String?
+public struct CardFace: Decodable {
+    public var artist: String
+    public var colorIndicator: [CardColor]?
+    public var colors: [CardColor]?
+    public var flavorText: String?
+    public var illustrationID: String?
+    public var imagery: Imagery?
+    public var loyalty: String?
+    public var manaCost: String
+    public var name: String
+    public var oracleText: String?
+    public var power: String?
+    public var printedName: String?
+    public var printedText: String?
+    public var printedTypeLine: String?
+    public var toughness: String?
+    public var typeLine: String
+    public var watermark: String?
     
     enum CodingKeys: String, CodingKey {
         case artist

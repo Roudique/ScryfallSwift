@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ScryfallError: Error, Decodable {
+public struct ScryfallError: Error, Decodable {
     /// An integer HTTP status code for this error.
     var status: Int
     
@@ -26,7 +26,7 @@ struct ScryfallError: Error, Decodable {
     var warnings: [String]?
 }
 
-enum CommonError: Error {
+public enum CommonError: Error {
     case invalidURL(String)
     
     var localizedDescription: String {

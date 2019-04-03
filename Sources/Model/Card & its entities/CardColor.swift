@@ -9,7 +9,7 @@ import Foundation
 
 
 /// While Magic cards can represent costs and colors using printed symbols, the Comprehensive Rules and Scryfall’s API use a text representation of these values.
-enum CardColor: String, Decodable {
+public enum CardColor: String, Decodable {
     case white  = "W"
     case blue   = "U"
     case black  = "B"
