@@ -134,6 +134,11 @@
 		845FBD38222CA28D00F175C5 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD34222CA28D00F175C5 /* CardColor.swift */; };
 		845FBD39222CA28D00F175C5 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FBD34222CA28D00F175C5 /* CardColor.swift */; };
 		847D731920A53E1400FDCDBB /* CardTest0.json in Resources */ = {isa = PBXBuildFile; fileRef = 847D731320A53C8C00FDCDBB /* CardTest0.json */; };
+		848C9C4723331CAD00506095 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C9C4623331CAD00506095 /* CardPreview.swift */; };
+		848C9C4823331D8600506095 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C9C4623331CAD00506095 /* CardPreview.swift */; };
+		848C9C4923331D8700506095 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C9C4623331CAD00506095 /* CardPreview.swift */; };
+		848C9C4A23331D8700506095 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C9C4623331CAD00506095 /* CardPreview.swift */; };
+		848C9C4B23331D8900506095 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848C9C4623331CAD00506095 /* CardPreview.swift */; };
 		849DB726222F671200DF3C88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB725222F671200DF3C88 /* Card.swift */; };
 		849DB727222F671200DF3C88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB725222F671200DF3C88 /* Card.swift */; };
 		849DB728222F671200DF3C88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DB725222F671200DF3C88 /* Card.swift */; };
@@ -262,6 +267,7 @@
 		845FBD2E222CA27200F175C5 /* CardFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFace.swift; sourceTree = "<group>"; };
 		845FBD34222CA28D00F175C5 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
 		847D731320A53C8C00FDCDBB /* CardTest0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = CardTest0.json; path = "ScryfallSwiftTests/Test json files/Cards/CardTest0.json"; sourceTree = SOURCE_ROOT; };
+		848C9C4623331CAD00506095 /* CardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
 		849DB725222F671200DF3C88 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		849DB72C222F7B1F00DF3C88 /* CollectionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRequestTests.swift; sourceTree = "<group>"; };
 		849DB72E222F815E00DF3C88 /* NamedCardSearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedCardSearchRequests.swift; sourceTree = "<group>"; };
@@ -459,6 +465,7 @@
 				845FBD1C222CA24200F175C5 /* CardGame.swift */,
 				845FBD10222C92FD00F175C5 /* CardLayout.swift */,
 				840DBB8921191C5E0001B28E /* CardLegality.swift */,
+				848C9C4623331CAD00506095 /* CardPreview.swift */,
 				845FBD0A222637F000F175C5 /* CardPrice.swift */,
 				845FBD22222CA25200F175C5 /* CardRarity.swift */,
 				84525B9B21489A760088A9E2 /* CardSymbol.swift */,
@@ -823,6 +830,7 @@
 				842EE30E2173F19F007DC1B8 /* APIRequest.swift in Sources */,
 				849DB7482234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB72F222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
+				848C9C4723331CAD00506095 /* CardPreview.swift in Sources */,
 				842EE3302180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 				849DB7682234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7422234926B00DF3C88 /* SetRequest.swift in Sources */,
@@ -865,6 +873,7 @@
 				842EE30F2173F19F007DC1B8 /* APIRequest.swift in Sources */,
 				849DB7492234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB730222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
+				848C9C4823331D8600506095 /* CardPreview.swift in Sources */,
 				842EE3312180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 				849DB7692234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7432234926B00DF3C88 /* SetRequest.swift in Sources */,
@@ -907,6 +916,7 @@
 				842EE3102173F19F007DC1B8 /* APIRequest.swift in Sources */,
 				849DB74A2234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB731222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
+				848C9C4923331D8700506095 /* CardPreview.swift in Sources */,
 				842EE3322180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 				849DB76A2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7442234926B00DF3C88 /* SetRequest.swift in Sources */,
@@ -949,6 +959,7 @@
 				842EE3112173F19F007DC1B8 /* APIRequest.swift in Sources */,
 				849DB74B2234A68D00DF3C88 /* AllCardsRequest.swift in Sources */,
 				849DB732222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
+				848C9C4A23331D8700506095 /* CardPreview.swift in Sources */,
 				842EE3332180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 				849DB76B2234C6AD00DF3C88 /* AllSymbologyRequest.swift in Sources */,
 				849DB7452234926B00DF3C88 /* SetRequest.swift in Sources */,
@@ -994,6 +1005,7 @@
 				849DB7582234B41B00DF3C88 /* SearchIdentifier.swift in Sources */,
 				842EE3342180259C007DC1B8 /* AutocompleteRequest.swift in Sources */,
 				845FBD39222CA28D00F175C5 /* CardColor.swift in Sources */,
+				848C9C4B23331D8900506095 /* CardPreview.swift in Sources */,
 				849DB7732234C8FC00DF3C88 /* CatalogRequest.swift in Sources */,
 				849DB733222F815E00DF3C88 /* NamedCardSearchRequests.swift in Sources */,
 				845FBD21222CA24200F175C5 /* CardGame.swift in Sources */,

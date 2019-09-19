@@ -132,8 +132,8 @@ public class Card: Decodable {
 	/// The flavor text, if any.
 	public var flavorText: String?
 
-	/// This card’s frame effect, if any.
-	public var frameEffect: String?
+	/// This card’s frame effects, if any.
+	public var frameEffects: [String]?
 
 	/// This card’s frame layout.
 	public var frame: String
@@ -167,6 +167,8 @@ public class Card: Decodable {
 
 	/// True if this card is a promotional print.
 	public var isPromo: Bool
+    
+    public var promoTypes: [String]?
 
 	/// An object providing URIs to this card’s listing on major marketplaces.
     public var purchaseURIs: [String: URL]
@@ -203,6 +205,9 @@ public class Card: Decodable {
 
 	/// This card’s watermark, if any.
 	public var watermark: String?
+    
+    /// This card's preview info.
+    public var preview: CardPreview?
 
 
 	// CodingKeys
@@ -255,7 +260,7 @@ public class Card: Decodable {
 		case collectorNumber = "collector_number"
 		case isDigital = "digital"
 		case flavorText = "flavor_text"
-		case frameEffect = "frame_effect"
+		case frameEffects = "frame_effects"
 		case frame
 		case isFullArt = "full_art"
 		case games
@@ -267,6 +272,7 @@ public class Card: Decodable {
 		case printedText = "printed_text"
 		case printedTypeLine = "printed_type_line"
 		case isPromo = "promo"
+        case promoTypes = "promo_types"
 		case purchaseURIs = "purchase_uris"
 		case rarity
 		case relatedURIs = "related_uris"
@@ -279,5 +285,6 @@ public class Card: Decodable {
 		case set
 		case isStorySpotlight = "story_spotlight"
 		case watermark
+        case preview
 	}
 }

@@ -35,6 +35,9 @@ public enum CardLayout: String, Decodable {
     /// Saga-type cards
     case saga
     
+    /// Cards with an Adventure spell part
+    case adventure
+    
     /// Plane and Phenomenon-type cards
     case planar
     
@@ -58,4 +61,10 @@ public enum CardLayout: String, Decodable {
     
     /// Host-type cards
     case host
+    
+    /// Art Series collectable double-faced cards
+    case artSeries = "art_series"
+    
+    /// A Magic card with two sides that are unrelated
+    case doubleSided = "double_sided"
 }

@@ -86,7 +86,7 @@ class APIClientTests: XCTestCase {
         let imageRequest            = RandomCardRequest(search: nil, format: .image((false, .png)))
         let textRequest             = RandomCardRequest(search: nil, format: .text)
         
-        let search                  = "s:rna"
+        let search                  = "s:eld"
         let customImageRequest      = RandomCardRequest(search: search, format: .image((false, .png)))
         let customFulltextRequest   = RandomCardRequest(search: search, format: .text)
         
