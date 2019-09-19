@@ -42,21 +42,15 @@ class APIClientTests: XCTestCase {
         
         let expectation = self.expectation(description: "fulltextSearch")
         
-        var request = FulltextCardSearchRequest(search: "Pacifism")
+        var request = FulltextCardSearchRequest(query: "s:rna")
         request.unique = .prints
         request.order = .released
-        request.includeExtras = true
-        request.includeMultilingual = true
+
         apiClient.send(request: request) { response in
             switch response {
             case .success(let cards):
                 print("Cards fetched: \(cards.totalCards!)")
-                
-                cards.data.forEach {
-                    let type    = $0.typeLine ?? ""
-                    let flavor  = $0.flavorText ?? ""
-                    print("Card: \($0.name) [\(type)] \(flavor)")
-                }
+                assert(cards.totalCards! > 0)
             case .failure(let error):
                 assertionFailure("Failed to fetch all cards: \(error)")
             }
@@ -88,14 +82,13 @@ class APIClientTests: XCTestCase {
     func testRandomCard() {
         let api = BaseAPIClient()
         
-        let defRequest              = RandomCardRequest(search: nil, format: .json)
+        let defRequest              = RandomCardRequest()
         let imageRequest            = RandomCardRequest(search: nil, format: .image((false, .png)))
         let textRequest             = RandomCardRequest(search: nil, format: .text)
         
         let search                  = "s:rna"
         let customImageRequest      = RandomCardRequest(search: search, format: .image((false, .png)))
         let customFulltextRequest   = RandomCardRequest(search: search, format: .text)
-        
         
         let requests = [defRequest, imageRequest, customImageRequest, textRequest, customFulltextRequest]
         

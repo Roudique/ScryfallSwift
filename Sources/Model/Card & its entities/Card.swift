@@ -172,7 +172,7 @@ public class Card: Decodable {
     public var purchaseURIs: [String: URL]
 
 	/// This card’s rarity. One of common, uncommon, rare, or mythic.
-	public var rarity: String
+	public var rarity: CardRarity
 
 	/// An object providing URIs to this card’s listing on other Magic: The Gathering online resources.
     public var relatedURIs: [String: URL]

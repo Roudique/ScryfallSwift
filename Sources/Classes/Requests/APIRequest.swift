@@ -32,3 +32,7 @@ protocol CustomBodyRequest {
 protocol CustomHeadersRequest {
     var headers: [String: String] { get }
 }
+
+protocol BasicAPIRequest {
+    var basicURL: URL? { get }
+}

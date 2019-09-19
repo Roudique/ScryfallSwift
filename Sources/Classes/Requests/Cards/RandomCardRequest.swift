@@ -17,7 +17,7 @@ public struct RandomCardRequest: APIRequest, FormatResponseRequest {
     public var search: String?
     public let format: Format
     
-    public init(format: Format = .json, search: String? = nil) {
+    public init(search: String? = nil, format: Format = .json) {
         self.format = format
         self.search = search
     }

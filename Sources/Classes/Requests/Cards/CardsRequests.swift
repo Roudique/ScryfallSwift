@@ -8,12 +8,14 @@
 import Foundation
 
 
-public struct FulltextCardSearchRequest: APIRequest, FormatResponseRequest {
+public struct FulltextCardSearchRequest: APIRequest, BasicAPIRequest {
     public typealias Response = List<Card>
+    
+    var basicURL: URL?
     
     public let search: String
     
-    public var format: Format
+//    public var format: Format
 
     /// The strategy for omitting similar cards.
     ///
@@ -57,6 +59,7 @@ public struct FulltextCardSearchRequest: APIRequest, FormatResponseRequest {
         case toughness
         case edhrec
         case artist
+        case spoiled
     }
     public var order: CardSearchOrder?
     
@@ -82,22 +85,30 @@ public struct FulltextCardSearchRequest: APIRequest, FormatResponseRequest {
     
     public init(query: String,
                 format: Format? = .json,
-                unique: CardSearchUniqueness? = .cards,
-                sortOrder: CardSearchOrder? = .name,
-                sortDirection: SortDirection? = .auto,
-                includeExtras: Bool? = false,
-                includeMultilingual: Bool? = false) {
+                unique: CardSearchUniqueness? = nil,
+                sortOrder: CardSearchOrder? = nil,
+                sortDirection: SortDirection? = nil,
+                includeExtras: Bool? = nil,
+                includeMultilingual: Bool? = nil) {
         self.search = query
-        self.format = format ?? .json
         self.unique = unique
         self.order = sortOrder
         self.sortDirection = sortDirection
         self.includeExtras = includeExtras
         self.includeMultilingual = includeMultilingual
     }
+    
+    init(basicURL: URL) {
+        self.basicURL = basicURL
+        self.search = ""
+    }
 }
 extension FulltextCardSearchRequest: QueryableAPIRequest {
     var queryItems: [String : String] {
+        if basicURL != nil {
+            return [String: String]()
+        }
+        
         var items = ["q": search]
         
         items["unique"] = self.unique?.rawValue ?? nil
