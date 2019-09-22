@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import ScryfallSwift
 
 class CollectionRequestTests: XCTestCase {
     let lineBrake = "======================================================================================"

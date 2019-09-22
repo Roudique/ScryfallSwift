@@ -14,4 +14,6 @@ public struct AllSymbologyRequest: APIRequest {
     public var resourceName: String {
         return "/symbology"
     }
+    
+    public init() {}
 }
