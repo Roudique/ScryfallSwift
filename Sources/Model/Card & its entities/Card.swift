@@ -119,9 +119,14 @@ public class Card: Decodable {
 
 	/// The name of the illustrator of this card. Newly spoiled cards may not have this field yet.
 	public var artist: String?
+    
+    public var isFoundInBoosters: Bool
 
 	/// This card’s border color: black, borderless, gold, silver, or white.
-	public var borderColor: String
+	public var borderColor: CardBorderColor
+    
+    /// The Scryfall ID for the card back design present on this card.
+    public var cardBackID: String
 
 	/// This card’s collector number. Note that collector numbers can contain non-numeric characters, such as letters or ★.
 	public var collectorNumber: String
@@ -133,7 +138,7 @@ public class Card: Decodable {
 	public var flavorText: String?
 
 	/// This card’s frame effects, if any.
-	public var frameEffects: [String]?
+	public var frameEffects: [CardFrameEffect]?
 
 	/// This card’s frame layout.
 	public var frame: String
@@ -168,6 +173,7 @@ public class Card: Decodable {
 	/// True if this card is a promotional print.
 	public var isPromo: Bool
     
+    /// An array of strings describing what categories of promo cards this card falls into.
     public var promoTypes: [String]?
 
 	/// An object providing URIs to this card’s listing on major marketplaces.
@@ -193,6 +199,9 @@ public class Card: Decodable {
 
 	/// A link to where you can begin paginating this card’s set on the Scryfall API.
 	public var setSearchURI: URL
+    
+    /// The type of set this printing is in.
+    public var setType: String
 
 	/// A link to this card’s set object on Scryfall’s API.
 	public var setURI: URL
@@ -202,6 +211,15 @@ public class Card: Decodable {
 
 	/// True if this card is a Story Spotlight.
 	public var isStorySpotlight: Bool
+    
+    /// True if the card is printed without text.
+    public var isTextless: Bool
+    
+    /// Whether this card is a variation of another printing.
+    public var isVariation: Bool
+    
+    /// The printing ID of the printing this card is a variation of.
+    public var variationOf: String?
 
 	/// This card’s watermark, if any.
 	public var watermark: String?
@@ -256,7 +274,9 @@ public class Card: Decodable {
 		// Print Fields
 
 		case artist
+        case isFoundInBoosters = "booster"
 		case borderColor = "border_color"
+        case cardBackID = "card_back_id"
 		case collectorNumber = "collector_number"
 		case isDigital = "digital"
 		case flavorText = "flavor_text"
@@ -281,9 +301,13 @@ public class Card: Decodable {
 		case scryfallSetURI = "scryfall_set_uri"
 		case setName = "set_name"
 		case setSearchURI = "set_search_uri"
+        case setType = "set_type"
 		case setURI = "set_uri"
 		case set
 		case isStorySpotlight = "story_spotlight"
+        case isTextless = "textless"
+        case isVariation = "variation"
+        case variationOf = "variation_of"
 		case watermark
         case preview
 	}

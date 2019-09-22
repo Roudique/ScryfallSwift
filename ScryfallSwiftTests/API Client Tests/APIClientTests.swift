@@ -124,8 +124,8 @@ class APIClientTests: XCTestCase {
     }
     
     func testNamedCardSearchRequest() {
-        let textCardSearchReq = NamedCardSearchRequest(format: .text, name: .exact("Hydroid Krasis"), setCode: "rna")
-        let jsonCardSearchReq = NamedCardSearchRequest(format: .json, name: .exact("Angel of Grace"), setCode: "rna")
+        let textCardSearchReq = NamedCardSearchRequest(format: .text, name: .exact("Domri's Nodorog"), setCode: "rna")
+        let jsonCardSearchReq = NamedCardSearchRequest(format: .json, name: .exact("The Haunt of Hightower"), setCode: "rna")
         let imageCardSearchReq = NamedCardSearchRequest(format: .image(ImageConfig(false, .artCrop)), name: .exact("Cry of the Carnarium"), setCode: "rna")
         
         let requests = [textCardSearchReq, jsonCardSearchReq, imageCardSearchReq]
