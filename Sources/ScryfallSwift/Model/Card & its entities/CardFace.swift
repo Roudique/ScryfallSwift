@@ -26,7 +26,7 @@ public struct CardFace: Decodable {
     public var printedText: String?
     public var printedTypeLine: String?
     public var toughness: String?
-    public var typeLine: String
+    public var typeLine: String?
     public var watermark: String?
     
     enum CodingKeys: String, CodingKey {
