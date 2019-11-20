@@ -1,0 +1,713 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"ScryfallSwift::ScryfallSwiftPackageTests::ProductTarget" /* ScryfallSwiftPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_116 /* Build configuration list for PBXAggregateTarget "ScryfallSwiftPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_119 /* PBXTargetDependency */,
+			);
+			name = ScryfallSwiftPackageTests;
+			productName = ScryfallSwiftPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		OBJ_100 /* CardSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* CardSymbol.swift */; };
+		OBJ_101 /* RelatedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* RelatedCard.swift */; };
+		OBJ_102 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* CardRuling.swift */; };
+		OBJ_103 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* CardSet.swift */; };
+		OBJ_104 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* Catalog.swift */; };
+		OBJ_105 /* CollectionCardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* CollectionCardIdentifier.swift */; };
+		OBJ_106 /* Imagery.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* Imagery.swift */; };
+		OBJ_107 /* Symbology.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* Symbology.swift */; };
+		OBJ_114 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_125 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* APIClientTests.swift */; };
+		OBJ_126 /* CollectionRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* CollectionRequestTests.swift */; };
+		OBJ_127 /* ScryfallSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* ScryfallSwiftTests.swift */; };
+		OBJ_128 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* XCTestManifests.swift */; };
+		OBJ_130 /* ScryfallSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ScryfallSwift::ScryfallSwift::Product" /* ScryfallSwift.framework */; };
+		OBJ_71 /* BaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* BaseAPIClient.swift */; };
+		OBJ_72 /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* FormatResponse.swift */; };
+		OBJ_73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* List.swift */; };
+		OBJ_74 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* APIRequest.swift */; };
+		OBJ_75 /* AllCardsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* AllCardsRequest.swift */; };
+		OBJ_76 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* AutocompleteRequest.swift */; };
+		OBJ_77 /* CardsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* CardsRequests.swift */; };
+		OBJ_78 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* CollectionRequest.swift */; };
+		OBJ_79 /* IdentityCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* IdentityCardRequest.swift */; };
+		OBJ_80 /* NamedCardSearchRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* NamedCardSearchRequests.swift */; };
+		OBJ_81 /* RandomCardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* RandomCardRequest.swift */; };
+		OBJ_82 /* CatalogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* CatalogRequest.swift */; };
+		OBJ_83 /* RulingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* RulingsRequest.swift */; };
+		OBJ_84 /* SearchIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* SearchIdentifier.swift */; };
+		OBJ_85 /* AllSetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* AllSetsRequest.swift */; };
+		OBJ_86 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* SetRequest.swift */; };
+		OBJ_87 /* AllSymbologyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* AllSymbologyRequest.swift */; };
+		OBJ_88 /* ScryfallError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* ScryfallError.swift */; };
+		OBJ_89 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Card.swift */; };
+		OBJ_90 /* CardBorderColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* CardBorderColor.swift */; };
+		OBJ_91 /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* CardColor.swift */; };
+		OBJ_92 /* CardFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* CardFace.swift */; };
+		OBJ_93 /* CardFrameEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* CardFrameEffect.swift */; };
+		OBJ_94 /* CardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* CardGame.swift */; };
+		OBJ_95 /* CardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* CardLayout.swift */; };
+		OBJ_96 /* CardLegality.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* CardLegality.swift */; };
+		OBJ_97 /* CardPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* CardPreview.swift */; };
+		OBJ_98 /* CardPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* CardPrice.swift */; };
+		OBJ_99 /* CardRarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* CardRarity.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84DDF8BF2341954B00383861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ScryfallSwift::ScryfallSwiftTests";
+			remoteInfo = ScryfallSwiftTests;
+		};
+		84DDF8C02341954B00383861 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "ScryfallSwift::ScryfallSwift";
+			remoteInfo = ScryfallSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		OBJ_11 /* BaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIClient.swift; sourceTree = "<group>"; };
+		OBJ_12 /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
+		OBJ_13 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		OBJ_15 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		OBJ_17 /* AllCardsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCardsRequest.swift; sourceTree = "<group>"; };
+		OBJ_18 /* AutocompleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteRequest.swift; sourceTree = "<group>"; };
+		OBJ_19 /* CardsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRequests.swift; sourceTree = "<group>"; };
+		OBJ_20 /* CollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
+		OBJ_21 /* IdentityCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityCardRequest.swift; sourceTree = "<group>"; };
+		OBJ_22 /* NamedCardSearchRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedCardSearchRequests.swift; sourceTree = "<group>"; };
+		OBJ_23 /* RandomCardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCardRequest.swift; sourceTree = "<group>"; };
+		OBJ_25 /* CatalogRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRequest.swift; sourceTree = "<group>"; };
+		OBJ_27 /* RulingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulingsRequest.swift; sourceTree = "<group>"; };
+		OBJ_28 /* SearchIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIdentifier.swift; sourceTree = "<group>"; };
+		OBJ_30 /* AllSetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSetsRequest.swift; sourceTree = "<group>"; };
+		OBJ_31 /* SetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRequest.swift; sourceTree = "<group>"; };
+		OBJ_33 /* AllSymbologyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSymbologyRequest.swift; sourceTree = "<group>"; };
+		OBJ_34 /* ScryfallError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallError.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		OBJ_38 /* CardBorderColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBorderColor.swift; sourceTree = "<group>"; };
+		OBJ_39 /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
+		OBJ_40 /* CardFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFace.swift; sourceTree = "<group>"; };
+		OBJ_41 /* CardFrameEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrameEffect.swift; sourceTree = "<group>"; };
+		OBJ_42 /* CardGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGame.swift; sourceTree = "<group>"; };
+		OBJ_43 /* CardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayout.swift; sourceTree = "<group>"; };
+		OBJ_44 /* CardLegality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLegality.swift; sourceTree = "<group>"; };
+		OBJ_45 /* CardPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPreview.swift; sourceTree = "<group>"; };
+		OBJ_46 /* CardPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrice.swift; sourceTree = "<group>"; };
+		OBJ_47 /* CardRarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRarity.swift; sourceTree = "<group>"; };
+		OBJ_48 /* CardSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSymbol.swift; sourceTree = "<group>"; };
+		OBJ_49 /* RelatedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedCard.swift; sourceTree = "<group>"; };
+		OBJ_50 /* CardRuling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRuling.swift; sourceTree = "<group>"; };
+		OBJ_51 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
+		OBJ_52 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		OBJ_53 /* CollectionCardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCardIdentifier.swift; sourceTree = "<group>"; };
+		OBJ_54 /* Imagery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagery.swift; sourceTree = "<group>"; };
+		OBJ_55 /* Symbology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbology.swift; sourceTree = "<group>"; };
+		OBJ_58 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
+		OBJ_59 /* CollectionRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRequestTests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_60 /* ScryfallSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScryfallSwiftTests.swift; sourceTree = "<group>"; };
+		OBJ_61 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		OBJ_65 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		"ScryfallSwift::ScryfallSwift::Product" /* ScryfallSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ScryfallSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ScryfallSwift::ScryfallSwiftTests::Product" /* ScryfallSwiftTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = ScryfallSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_129 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_130 /* ScryfallSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* API Managers */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* BaseAPIClient.swift */,
+			);
+			path = "API Managers";
+			sourceTree = "<group>";
+		};
+		OBJ_14 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* APIRequest.swift */,
+				OBJ_16 /* Cards */,
+				OBJ_24 /* Catalog */,
+				OBJ_26 /* Rulings */,
+				OBJ_28 /* SearchIdentifier.swift */,
+				OBJ_29 /* Sets */,
+				OBJ_32 /* Symbology */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		OBJ_16 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_17 /* AllCardsRequest.swift */,
+				OBJ_18 /* AutocompleteRequest.swift */,
+				OBJ_19 /* CardsRequests.swift */,
+				OBJ_20 /* CollectionRequest.swift */,
+				OBJ_21 /* IdentityCardRequest.swift */,
+				OBJ_22 /* NamedCardSearchRequests.swift */,
+				OBJ_23 /* RandomCardRequest.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		OBJ_24 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_25 /* CatalogRequest.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		OBJ_26 /* Rulings */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_27 /* RulingsRequest.swift */,
+			);
+			path = Rulings;
+			sourceTree = "<group>";
+		};
+		OBJ_29 /* Sets */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_30 /* AllSetsRequest.swift */,
+				OBJ_31 /* SetRequest.swift */,
+			);
+			path = Sets;
+			sourceTree = "<group>";
+		};
+		OBJ_32 /* Symbology */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_33 /* AllSymbologyRequest.swift */,
+			);
+			path = Symbology;
+			sourceTree = "<group>";
+		};
+		OBJ_35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_36 /* Card & its entities */,
+				OBJ_50 /* CardRuling.swift */,
+				OBJ_51 /* CardSet.swift */,
+				OBJ_52 /* Catalog.swift */,
+				OBJ_53 /* CollectionCardIdentifier.swift */,
+				OBJ_54 /* Imagery.swift */,
+				OBJ_55 /* Symbology.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		OBJ_36 /* Card & its entities */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_37 /* Card.swift */,
+				OBJ_38 /* CardBorderColor.swift */,
+				OBJ_39 /* CardColor.swift */,
+				OBJ_40 /* CardFace.swift */,
+				OBJ_41 /* CardFrameEffect.swift */,
+				OBJ_42 /* CardGame.swift */,
+				OBJ_43 /* CardLayout.swift */,
+				OBJ_44 /* CardLegality.swift */,
+				OBJ_45 /* CardPreview.swift */,
+				OBJ_46 /* CardPrice.swift */,
+				OBJ_47 /* CardRarity.swift */,
+				OBJ_48 /* CardSymbol.swift */,
+				OBJ_49 /* RelatedCard.swift */,
+			);
+			path = "Card & its entities";
+			sourceTree = "<group>";
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_56 /* Tests */,
+				OBJ_62 /* Products */,
+				OBJ_65 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_56 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_57 /* ScryfallSwiftTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_57 /* ScryfallSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_58 /* APIClientTests.swift */,
+				OBJ_59 /* CollectionRequestTests.swift */,
+				OBJ_60 /* ScryfallSwiftTests.swift */,
+				OBJ_61 /* XCTestManifests.swift */,
+			);
+			name = ScryfallSwiftTests;
+			path = Tests/ScryfallSwiftTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"ScryfallSwift::ScryfallSwiftTests::Product" /* ScryfallSwiftTests.xctest */,
+				"ScryfallSwift::ScryfallSwift::Product" /* ScryfallSwift.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* ScryfallSwift */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* ScryfallSwift */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* API */,
+				OBJ_35 /* Model */,
+			);
+			name = ScryfallSwift;
+			path = Sources/ScryfallSwift;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_10 /* API Managers */,
+				OBJ_12 /* FormatResponse.swift */,
+				OBJ_13 /* List.swift */,
+				OBJ_14 /* Requests */,
+				OBJ_34 /* ScryfallError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"ScryfallSwift::ScryfallSwift" /* ScryfallSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_67 /* Build configuration list for PBXNativeTarget "ScryfallSwift" */;
+			buildPhases = (
+				OBJ_70 /* Sources */,
+				OBJ_108 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScryfallSwift;
+			productName = ScryfallSwift;
+			productReference = "ScryfallSwift::ScryfallSwift::Product" /* ScryfallSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"ScryfallSwift::ScryfallSwiftTests" /* ScryfallSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_121 /* Build configuration list for PBXNativeTarget "ScryfallSwiftTests" */;
+			buildPhases = (
+				OBJ_124 /* Sources */,
+				OBJ_129 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_131 /* PBXTargetDependency */,
+			);
+			name = ScryfallSwiftTests;
+			productName = ScryfallSwiftTests;
+			productReference = "ScryfallSwift::ScryfallSwiftTests::Product" /* ScryfallSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"ScryfallSwift::SwiftPMPackageDescription" /* ScryfallSwiftPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_110 /* Build configuration list for PBXNativeTarget "ScryfallSwiftPackageDescription" */;
+			buildPhases = (
+				OBJ_113 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScryfallSwiftPackageDescription;
+			productName = ScryfallSwiftPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "ScryfallSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"ScryfallSwift::ScryfallSwift" /* ScryfallSwift */,
+				"ScryfallSwift::SwiftPMPackageDescription" /* ScryfallSwiftPackageDescription */,
+				"ScryfallSwift::ScryfallSwiftPackageTests::ProductTarget" /* ScryfallSwiftPackageTests */,
+				"ScryfallSwift::ScryfallSwiftTests" /* ScryfallSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_114 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_125 /* APIClientTests.swift in Sources */,
+				OBJ_126 /* CollectionRequestTests.swift in Sources */,
+				OBJ_127 /* ScryfallSwiftTests.swift in Sources */,
+				OBJ_128 /* XCTestManifests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_71 /* BaseAPIClient.swift in Sources */,
+				OBJ_72 /* FormatResponse.swift in Sources */,
+				OBJ_73 /* List.swift in Sources */,
+				OBJ_74 /* APIRequest.swift in Sources */,
+				OBJ_75 /* AllCardsRequest.swift in Sources */,
+				OBJ_76 /* AutocompleteRequest.swift in Sources */,
+				OBJ_77 /* CardsRequests.swift in Sources */,
+				OBJ_78 /* CollectionRequest.swift in Sources */,
+				OBJ_79 /* IdentityCardRequest.swift in Sources */,
+				OBJ_80 /* NamedCardSearchRequests.swift in Sources */,
+				OBJ_81 /* RandomCardRequest.swift in Sources */,
+				OBJ_82 /* CatalogRequest.swift in Sources */,
+				OBJ_83 /* RulingsRequest.swift in Sources */,
+				OBJ_84 /* SearchIdentifier.swift in Sources */,
+				OBJ_85 /* AllSetsRequest.swift in Sources */,
+				OBJ_86 /* SetRequest.swift in Sources */,
+				OBJ_87 /* AllSymbologyRequest.swift in Sources */,
+				OBJ_88 /* ScryfallError.swift in Sources */,
+				OBJ_89 /* Card.swift in Sources */,
+				OBJ_90 /* CardBorderColor.swift in Sources */,
+				OBJ_91 /* CardColor.swift in Sources */,
+				OBJ_92 /* CardFace.swift in Sources */,
+				OBJ_93 /* CardFrameEffect.swift in Sources */,
+				OBJ_94 /* CardGame.swift in Sources */,
+				OBJ_95 /* CardLayout.swift in Sources */,
+				OBJ_96 /* CardLegality.swift in Sources */,
+				OBJ_97 /* CardPreview.swift in Sources */,
+				OBJ_98 /* CardPrice.swift in Sources */,
+				OBJ_99 /* CardRarity.swift in Sources */,
+				OBJ_100 /* CardSymbol.swift in Sources */,
+				OBJ_101 /* RelatedCard.swift in Sources */,
+				OBJ_102 /* CardRuling.swift in Sources */,
+				OBJ_103 /* CardSet.swift in Sources */,
+				OBJ_104 /* Catalog.swift in Sources */,
+				OBJ_105 /* CollectionCardIdentifier.swift in Sources */,
+				OBJ_106 /* Imagery.swift in Sources */,
+				OBJ_107 /* Symbology.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ScryfallSwift::ScryfallSwiftTests" /* ScryfallSwiftTests */;
+			targetProxy = 84DDF8BF2341954B00383861 /* PBXContainerItemProxy */;
+		};
+		OBJ_131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "ScryfallSwift::ScryfallSwift" /* ScryfallSwift */;
+			targetProxy = 84DDF8C02341954B00383861 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 4";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 4";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ScryfallSwift.xcodeproj/ScryfallSwiftTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = ScryfallSwiftTests;
+			};
+			name = Debug;
+		};
+		OBJ_123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ScryfallSwift.xcodeproj/ScryfallSwiftTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = ScryfallSwiftTests;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ScryfallSwift.xcodeproj/ScryfallSwift_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MARKETING_VERSION = 0.1.1;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ScryfallSwift;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ScryfallSwift;
+			};
+			name = Debug;
+		};
+		OBJ_69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ScryfallSwift.xcodeproj/ScryfallSwift_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MARKETING_VERSION = 0.1.1;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = ScryfallSwift;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = ScryfallSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_110 /* Build configuration list for PBXNativeTarget "ScryfallSwiftPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_111 /* Debug */,
+				OBJ_112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_116 /* Build configuration list for PBXAggregateTarget "ScryfallSwiftPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_117 /* Debug */,
+				OBJ_118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_121 /* Build configuration list for PBXNativeTarget "ScryfallSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_122 /* Debug */,
+				OBJ_123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "ScryfallSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_67 /* Build configuration list for PBXNativeTarget "ScryfallSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_68 /* Debug */,
+				OBJ_69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
