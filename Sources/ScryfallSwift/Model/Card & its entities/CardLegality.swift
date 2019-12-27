@@ -7,47 +7,73 @@
 
 import Foundation
 
+public typealias FormatLegality = (format: CardLegality.Kind, status: LegalityStatus)
+
 /// Class describing the legality of this card across play formats.
 public class CardLegality: Decodable {
     public var standard: LegalityStatus
+    public var future: LegalityStatus
+    public var historic: LegalityStatus
+    public var pioneer: LegalityStatus
     public var modern: LegalityStatus
     public var legacy: LegalityStatus
     public var pauper: LegalityStatus
     public var vintage: LegalityStatus
     public var penny: LegalityStatus
     public var commander: LegalityStatus
+    public var brawl: LegalityStatus
     public var duel: LegalityStatus
-    public var future: LegalityStatus
+    public var oldschool: LegalityStatus
     
     public enum Kind {
-        case standard, frontier, modern, legacy, pauper, vintage, penny, commander, duel, future
+        case standard, future, historic, pioneer, frontier, modern, legacy, pauper, vintage, penny, commander, brawl, duel, oldschool
     }
     
-    public var statuses: [(kind: Kind, status: LegalityStatus)] {
+    public var allStatuses: [FormatLegality] {
         return [(.standard, standard),
+                (.future, future),
+                (.historic, historic),
+                (.pioneer, pioneer),
                 (.modern, modern),
                 (.legacy, legacy),
                 (.pauper, pauper),
                 (.vintage, vintage),
                 (.penny, penny),
                 (.commander, commander),
+                (.brawl, brawl),
                 (.duel, duel),
-                (.future, future)]
+                (.oldschool, oldschool)]
     }
-
+    
+    public var mainStatuses: [FormatLegality] {
+        return [(.standard, standard),
+                (.brawl, brawl),
+                (.pioneer, pioneer),
+                (.historic, historic),
+                (.modern, modern),
+                (.pauper, pauper),
+                (.legacy, legacy),
+                (.penny, penny),
+                (.vintage, vintage),
+                (.commander, commander)]
+    }
     
     // CodingKeys
     
     enum CodingKeys: String, CodingKey, CaseIterable {
         case standard
+        case future
+        case historic
+        case pioneer
         case modern
         case legacy
         case pauper
         case vintage
         case penny
         case commander
+        case brawl
         case duel
-        case future
+        case oldschool
     }
 }
 
