@@ -60,18 +60,30 @@ public class BaseAPIClient: NSObject {
     
     public var debugLogLevel = true
     
-    public func send<R: APIRequest>(request: R, completion: @escaping (Response<R.Response>) -> ()) {
-        send(request: request, cached: nil, withoutPagination: false, completion: completion)
+    @discardableResult
+    public func send<R: APIRequest>(
+        request: R,
+        completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
+        return send(request: request, cached: nil, withoutPagination: false, completion: completion)
     }
     
-    public func send<R: APIRequest>(request: R, withoutPagination: Bool, completion: @escaping (Response<R.Response>) -> ()) {
-        send(request: request, cached: nil, withoutPagination: withoutPagination, completion: completion)
+    @discardableResult
+    public func send<R: APIRequest>(
+        request: R,
+        withoutPagination: Bool,
+        completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
+        return send(request: request, cached: nil, withoutPagination: withoutPagination, completion: completion)
     }
     
-    private func send<R: APIRequest>(request: R, cached: [Decodable]?, withoutPagination: Bool, completion: @escaping (Response<R.Response>) -> ()) {
+    @discardableResult
+    private func send<R: APIRequest>(
+        request: R,
+        cached: [Decodable]?,
+        withoutPagination: Bool,
+        completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
         guard var urlRequest = self.urlRequest(for: request) else {
             completion(Response.failure(CommonError.invalidURL(request.resourceName)))
-            return
+            return nil
         }
         
         if let basicRequest = request as? BasicAPIRequest, let basicURL = basicRequest.basicURL {
@@ -82,6 +94,13 @@ public class BaseAPIClient: NSObject {
         
         let dataTask = self.session.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
+                
+                let nsError = error as NSError
+                if nsError.domain == NSURLErrorDomain,
+                nsError.code == -999 {
+                    return
+                }
+                
                 completion(.failure(error))
                 return
             }
@@ -165,7 +184,9 @@ public class BaseAPIClient: NSObject {
             }
             
         }
+        
         dataTask.resume()
+        return dataTask
     }
     
     public func url<T: APIRequest>(for request: T) -> URL? {

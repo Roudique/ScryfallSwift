@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		845E16C5245BE8F200B20F88 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E16C4245BE8F200B20F88 /* Cancellable.swift */; };
+		845E16C7245BEA1800B20F88 /* CancellableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E16C6245BEA1800B20F88 /* CancellableTests.swift */; };
 		OBJ_100 /* CardSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* CardSymbol.swift */; };
 		OBJ_101 /* RelatedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* RelatedCard.swift */; };
 		OBJ_102 /* CardRuling.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* CardRuling.swift */; };
@@ -84,6 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		845E16C4245BE8F200B20F88 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		845E16C6245BEA1800B20F88 /* CancellableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableTests.swift; sourceTree = "<group>"; };
 		OBJ_11 /* BaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIClient.swift; sourceTree = "<group>"; };
 		OBJ_12 /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		OBJ_13 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -150,6 +154,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		845E16C3245BE8C900B20F88 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				845E16C4245BE8F200B20F88 /* Cancellable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* API Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +291,7 @@
 				OBJ_59 /* CollectionRequestTests.swift */,
 				OBJ_60 /* ScryfallSwiftTests.swift */,
 				OBJ_61 /* XCTestManifests.swift */,
+				845E16C6245BEA1800B20F88 /* CancellableTests.swift */,
 			);
 			name = ScryfallSwiftTests;
 			path = Tests/ScryfallSwiftTests;
@@ -304,6 +317,7 @@
 		OBJ_8 /* ScryfallSwift */ = {
 			isa = PBXGroup;
 			children = (
+				845E16C3245BE8C900B20F88 /* Protocols */,
 				OBJ_9 /* API */,
 				OBJ_35 /* Model */,
 			);
@@ -417,6 +431,7 @@
 			files = (
 				OBJ_125 /* APIClientTests.swift in Sources */,
 				OBJ_126 /* CollectionRequestTests.swift in Sources */,
+				845E16C7245BEA1800B20F88 /* CancellableTests.swift in Sources */,
 				OBJ_127 /* ScryfallSwiftTests.swift in Sources */,
 				OBJ_128 /* XCTestManifests.swift in Sources */,
 			);
@@ -436,6 +451,7 @@
 				OBJ_78 /* CollectionRequest.swift in Sources */,
 				OBJ_79 /* IdentityCardRequest.swift in Sources */,
 				OBJ_80 /* NamedCardSearchRequests.swift in Sources */,
+				845E16C5245BE8F200B20F88 /* Cancellable.swift in Sources */,
 				OBJ_81 /* RandomCardRequest.swift in Sources */,
 				OBJ_82 /* CatalogRequest.swift in Sources */,
 				OBJ_83 /* RulingsRequest.swift in Sources */,
@@ -608,7 +624,7 @@
 		OBJ_68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -618,7 +634,7 @@
 				INFOPLIST_FILE = ScryfallSwift.xcodeproj/ScryfallSwift_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 2;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -635,7 +651,7 @@
 		OBJ_69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -645,7 +661,7 @@
 				INFOPLIST_FILE = ScryfallSwift.xcodeproj/ScryfallSwift_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 2;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
