@@ -59,6 +59,7 @@ public class BaseAPIClient: NSObject {
     private let session = URLSession(configuration: .default)
     
     public var debugLogLevel = true
+    public var completionQueue: DispatchQueue = DispatchQueue.main
     
     @discardableResult
     public func send<R: APIRequest>(
@@ -82,7 +83,7 @@ public class BaseAPIClient: NSObject {
         withoutPagination: Bool,
         completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
         guard var urlRequest = self.urlRequest(for: request) else {
-            completion(Response.failure(CommonError.invalidURL(request.resourceName)))
+            completionQueue.async { completion(Response.failure(CommonError.invalidURL(request.resourceName))) }
             return nil
         }
         
@@ -101,20 +102,20 @@ public class BaseAPIClient: NSObject {
                     return
                 }
                 
-                completion(.failure(error))
+                self.completionQueue.async { completion(.failure(error)) }
                 return
             }
             
             // Make sure there is data associated with response.
             guard let data = data else {
                 let error = ScryfallError.init(status: 404, code: "", details: "Server returned empty data.", type: nil, warnings: nil)
-                completion(.failure(error))
+                self.completionQueue.async { completion(.failure(error)) }
                 return
             }
             
             // If request didn't fail but instead server returned 'internal' error
             if let error = try? JSONDecoder().decode(ScryfallError.self, from: data) {
-                completion(.failure(error))
+                self.completionQueue.async { completion(.failure(error)) }
                 return
             }
             
@@ -124,15 +125,15 @@ public class BaseAPIClient: NSObject {
                 switch formattedResponseRequest.format {
                 case .text:
                     guard let string = String(data: data, encoding: .utf8) else {
-                        completion(.failure(BaseAPIClientError.couldNotEncodeString))
+                        self.completionQueue.async { completion(.failure(BaseAPIClientError.couldNotEncodeString)) }
                         return
                     }
                     let result = FormatResponse.text(string) as! R.Response
-                    completion(.success(result))
+                    self.completionQueue.async { completion(.success(result)) }
                     return
                 case .image(_):
                     let result = FormatResponse.data(data) as! R.Response
-                    completion(.success(result))
+                    self.completionQueue.async { completion(.success(result)) }
                     return
                 default:
                     break
@@ -142,14 +143,14 @@ public class BaseAPIClient: NSObject {
             // If response should be of type Data - don't decode it into json, simply return.
             if R.Response.self == Data.self {
                 let data = data as! R.Response
-                completion(.success(data))
+                self.completionQueue.async { completion(.success(data)) }
                 return
             }
             
             // If response should be of type String - don't decode it into json, return as String
             if R.Response.self == String.self {
                 let string = String(data: data, encoding: .utf8) as! R.Response
-                completion(.success(string))
+                self.completionQueue.async { completion(.success(string)) }
                 return
             }
             
@@ -177,10 +178,10 @@ public class BaseAPIClient: NSObject {
                     }
                 }
                 
-                completion(.success(encodedResponse))
+                self.completionQueue.async { completion(.success(encodedResponse)) }
             } catch {
                 if self.debugLogLevel { print(error) }
-                completion(.failure(error))
+                self.completionQueue.async { completion(.failure(error)) }
             }
             
         }
