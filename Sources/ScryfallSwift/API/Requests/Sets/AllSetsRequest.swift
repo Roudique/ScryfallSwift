@@ -13,4 +13,6 @@ public struct AllSetsRequest: APIRequest {
     public var resourceName: String {
         return "/sets"
     }
+    
+    public init() {}
 }
