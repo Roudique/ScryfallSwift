@@ -37,5 +37,6 @@ public enum CardFrameEffect: String, Decodable {
     case moonreversemoondfc
     case showcase
     case extendedart
+    case companion
     case none = "" // This is a workaround for server's behaviour: if there are no frame effects it returns an array with an empty string.
 }
