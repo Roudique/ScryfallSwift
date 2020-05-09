@@ -8,6 +8,6 @@
 import Foundation
 
 
-public enum CardBorderColor: String, Decodable {
+public enum CardBorderColor: String, Decodable, CaseIterable {
     case black, borderless, gold, silver, white
 }

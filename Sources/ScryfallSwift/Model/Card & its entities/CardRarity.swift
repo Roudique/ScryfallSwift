@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Card's rarity.
-public enum CardRarity: String, Decodable, Comparable {
+public enum CardRarity: String, Decodable, Comparable, CaseIterable {
     public static func < (lhs: CardRarity, rhs: CardRarity) -> Bool {
         if lhs == .common, rhs != .common { return true }
         if lhs == .uncommon, rhs != .uncommon, rhs != .common { return true }

@@ -13,7 +13,7 @@ import Foundation
 ///
 /// - cards with the layouts **split**, **flip**, **transform**, and **doubleFacedToken** will always have a **cardFaces** property describing the distinct faces.
 ///  - cards with the layout **meld** will always have a **relatedCards** property pointing to the other meld parts.
-public enum CardLayout: String, Decodable {
+public enum CardLayout: String, Decodable, CaseIterable {
     /// A standard Magic card with one face
     case normal
     

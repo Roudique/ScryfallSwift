@@ -77,7 +77,7 @@ public class CardLegality: Decodable {
     }
 }
 
-public enum LegalityStatus: String, Decodable {
+public enum LegalityStatus: String, Decodable, CaseIterable {
     case legal
     case notLegal = "not_legal"
     case restricted

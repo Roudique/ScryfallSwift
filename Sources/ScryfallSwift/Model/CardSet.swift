@@ -8,7 +8,7 @@
 import Foundation
 
 
-public enum CardSetType: String, Decodable {
+public enum CardSetType: String, Decodable, CaseIterable {
     /// A yearly Magic core set (Tenth Edition, etc).
     case core
     /// A rotational expansion set in a block (Zendikar, etc).
