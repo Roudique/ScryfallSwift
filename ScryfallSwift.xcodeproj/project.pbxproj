@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		8409B7492471DA5E003DE5BF /* MockCard_search-no-rarity.json in Resources */ = {isa = PBXBuildFile; fileRef = 8409B7472471D9FC003DE5BF /* MockCard_search-no-rarity.json */; };
 		845E16C5245BE8F200B20F88 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E16C4245BE8F200B20F88 /* Cancellable.swift */; };
 		845E16C7245BEA1800B20F88 /* CancellableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E16C6245BEA1800B20F88 /* CancellableTests.swift */; };
 		OBJ_100 /* CardSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* CardSymbol.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8409B7472471D9FC003DE5BF /* MockCard_search-no-rarity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "MockCard_search-no-rarity.json"; sourceTree = "<group>"; };
 		845E16C4245BE8F200B20F88 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		845E16C6245BEA1800B20F88 /* CancellableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableTests.swift; sourceTree = "<group>"; };
 		OBJ_11 /* BaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIClient.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8409B7442471D800003DE5BF /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				8409B7472471D9FC003DE5BF /* MockCard_search-no-rarity.json */,
+			);
+			path = "Mock Data";
+			sourceTree = "<group>";
+		};
 		845E16C3245BE8C900B20F88 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +297,7 @@
 		OBJ_57 /* ScryfallSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				8409B7442471D800003DE5BF /* Mock Data */,
 				OBJ_58 /* APIClientTests.swift */,
 				OBJ_59 /* CollectionRequestTests.swift */,
 				OBJ_60 /* ScryfallSwiftTests.swift */,
@@ -362,6 +373,7 @@
 			buildPhases = (
 				OBJ_124 /* Sources */,
 				OBJ_129 /* Frameworks */,
+				8409B7482471DA55003DE5BF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -415,6 +427,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8409B7482471DA55003DE5BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8409B7492471DA5E003DE5BF /* MockCard_search-no-rarity.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_113 /* Sources */ = {

@@ -5,10 +5,25 @@
 //  Created by Roudique on 10/14/18.
 //
 
+import Foundation
 import XCTest
-import ScryfallSwift
+@testable import ScryfallSwift
+
+class MockSession: URLSessionProtocol {
+    var mockURL: URL?
+    private let session = URLSession(configuration: .default)
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        if let mockURL = mockURL {
+            let mockRequest = URLRequest(url: mockURL)
+            return session.dataTask(with: mockRequest, completionHandler: completionHandler)
+        }
+        return session.dataTask(with: request, completionHandler: completionHandler)
+    }
+}
 
 class APIClientTests: XCTestCase {
+    let session = MockSession()
     let lineBrake = "======================================================================================"
 
     override func setUp() {
@@ -17,6 +32,42 @@ class APIClientTests: XCTestCase {
 
     override func tearDown() {
         print(lineBrake)
+    }
+    
+    func testWeirdSet() {
+        let api = BaseAPIClient()
+        let exp = expectation(description: "weird")
+        
+        let req = FulltextCardSearchRequest(query: "s:cmb1")
+        api.send(request: req) { result in
+            switch result {
+            case .success(_):
+                exp.fulfill()
+            case .failure(_):
+                XCTFail()
+            }
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
+    func testNoRarityCard() {
+        let exp = expectation(description: "weird")
+        let url = Bundle(for: type(of: self)).url(forResource: "MockCard_search-no-rarity", withExtension: "json")
+        session.mockURL = url!
+        
+        let api = BaseAPIClient(session: session)
+        let request = FulltextCardSearchRequest(query: "")
+        api.send(request: request) { result in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(_):
+                exp.fulfill()
+            }
+        }
+        
+        wait(for: [exp], timeout: 5)
     }
 
     func testAllCardsRequest() {
