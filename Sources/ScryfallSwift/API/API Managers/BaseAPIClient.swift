@@ -53,13 +53,29 @@ public enum BaseAPIClientError: Error {
     case couldNotEncodeString
 }
 
+protocol URLSessionProtocol {
+    func dataTask(
+        with request: URLRequest,
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+extension URLSession: URLSessionProtocol {}
 
 public class BaseAPIClient: NSObject {
     private let host = "api.scryfall.com"
-    private let session = URLSession(configuration: .default)
+    private let session: URLSessionProtocol
     
     public var debugLogLevel = true
     public var completionQueue: DispatchQueue = DispatchQueue.main
+    
+    override public init() {
+        self.session = URLSession(configuration: .default)
+        super.init()
+    }
+    
+    init(session: URLSessionProtocol) {
+        self.session = session
+        super.init()
+    }
     
     @discardableResult
     public func send<R: APIRequest>(
@@ -179,6 +195,10 @@ public class BaseAPIClient: NSObject {
                 }
                 
                 self.completionQueue.async { completion(.success(encodedResponse)) }
+            } catch let DecodingError.keyNotFound(key, context) {
+                print("Decoding error, key not found. Key: \(key)\ncontext: \(context)")
+                print(self.log(key: key, in: context, data: data))
+                self.completionQueue.async { completion(.failure(DecodingError.keyNotFound(key, context))) }
             } catch {
                 if self.debugLogLevel { print(error) }
                 self.completionQueue.async { completion(.failure(error)) }
@@ -223,5 +243,52 @@ public class BaseAPIClient: NSObject {
         
         
         return urlRequest
+    }
+    
+    private func log(key: CodingKey, in context: DecodingError.Context, data: Data) -> String {
+        var pathItem = context.codingPath.first
+        var currentJsonObject: Any?
+        var i = 0
+        var log = "\nPath:"
+        
+        while let currentPathItem = pathItem {
+            log += " -> "
+            
+            if currentJsonObject == nil {
+                if currentPathItem.intValue == nil {
+                    currentJsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                } else {
+                    currentJsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [Any]
+                }
+            }
+            
+            if let array = currentJsonObject as? [Any], let index = currentPathItem.intValue {
+                currentJsonObject = array[index]
+            } else if let dict = currentJsonObject as? [String: Any] {
+                currentJsonObject = dict[currentPathItem.stringValue]
+                if let object = dict["object"] as? String {
+                    var name: String?
+                    if object == "card", let cardName = dict["name"] as? String {
+                        name = " [\(cardName)]"
+                    }
+                    log += object + "\(name ?? ""): "
+                }
+            } else {
+                log += "\nFailed to decode failed coding path: path component is neither dictionary nor array."
+                break
+            }
+            
+            i += 1
+            
+            log += currentPathItem.stringValue
+            if context.codingPath.count > i {
+                pathItem = context.codingPath[i]
+            } else {
+                pathItem = nil
+            }
+        }
+        log += ". [\(key.stringValue)] is missing."
+        
+        return log
     }
 }
