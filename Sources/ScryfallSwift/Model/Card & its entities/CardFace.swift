@@ -11,7 +11,7 @@ import Foundation
 //MARK: -
 /// Multiface cards have a card_faces property containing at least two Card Face objects.
 public struct CardFace: Decodable {
-    public var artist: String
+    public var artist: String?
     public var colorIndicator: [CardColor]?
     public var colors: [CardColor]?
     public var flavorText: String?
