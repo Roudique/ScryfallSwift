@@ -69,26 +69,23 @@ class APIClientTests: XCTestCase {
         
         wait(for: [exp], timeout: 5)
     }
-
-    func testAllCardsRequest() {
-        let apiClient = BaseAPIClient()
-        
-        let expectation = self.expectation(description: "allCards")
-        
-        apiClient.send(request: AllCardsRequest()) { response in
-            switch response {
-            case .success(let list):
-                print("Cards fetched: \(list.totalCards!)")
-            case .failure(let error):
-                assertionFailure("Failed to fetch all cards: \(error)")
-            }
-            
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 15.0)
-    }
     
+    func testAllSetsRequest() {
+        let api = BaseAPIClient()
+        let exp = expectation(description: "All Sets")
+        
+        api.send(request: AllSetsRequest()) { result in
+            switch result {
+            case .success(let list):
+                XCTAssert(list.data.count > 0)
+                exp.fulfill()
+            default:
+                XCTFail()
+            }
+        }
+        wait(for: [exp], timeout: 10)
+    }
+
     func testFulltextSearch() {
         let apiClient = BaseAPIClient()
         
@@ -237,9 +234,10 @@ class APIClientTests: XCTestCase {
             IdentityCardRequest(identifier: .arena(68806), format: .json),
             IdentityCardRequest(identifier: .arena(68806), format: .text),
             IdentityCardRequest(identifier: .arena(68806), format: .image((false, .png))),
-            IdentityCardRequest(identifier: .arena(64533), format: .json),
-            IdentityCardRequest(identifier: .arena(64533), format: .text),
-            IdentityCardRequest(identifier: .arena(64533), format: .image((false, .png)))
+            // Abrade from Amonkhet Remastered
+            IdentityCardRequest(identifier: .arena(73914), format: .json),
+            IdentityCardRequest(identifier: .arena(73914), format: .text),
+            IdentityCardRequest(identifier: .arena(73914), format: .image((false, .png)))
         ]
         
         let tcgplayerCardRequests = [

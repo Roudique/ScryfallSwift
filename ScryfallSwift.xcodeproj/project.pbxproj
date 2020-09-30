@@ -42,7 +42,6 @@
 		OBJ_72 /* FormatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* FormatResponse.swift */; };
 		OBJ_73 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* List.swift */; };
 		OBJ_74 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* APIRequest.swift */; };
-		OBJ_75 /* AllCardsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* AllCardsRequest.swift */; };
 		OBJ_76 /* AutocompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* AutocompleteRequest.swift */; };
 		OBJ_77 /* CardsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* CardsRequests.swift */; };
 		OBJ_78 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* CollectionRequest.swift */; };
@@ -94,7 +93,6 @@
 		OBJ_12 /* FormatResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatResponse.swift; sourceTree = "<group>"; };
 		OBJ_13 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		OBJ_15 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		OBJ_17 /* AllCardsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCardsRequest.swift; sourceTree = "<group>"; };
 		OBJ_18 /* AutocompleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutocompleteRequest.swift; sourceTree = "<group>"; };
 		OBJ_19 /* CardsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRequests.swift; sourceTree = "<group>"; };
 		OBJ_20 /* CollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 		OBJ_16 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_17 /* AllCardsRequest.swift */,
 				OBJ_18 /* AutocompleteRequest.swift */,
 				OBJ_19 /* CardsRequests.swift */,
 				OBJ_20 /* CollectionRequest.swift */,
@@ -468,7 +465,6 @@
 				OBJ_72 /* FormatResponse.swift in Sources */,
 				OBJ_73 /* List.swift in Sources */,
 				OBJ_74 /* APIRequest.swift in Sources */,
-				OBJ_75 /* AllCardsRequest.swift in Sources */,
 				OBJ_76 /* AutocompleteRequest.swift in Sources */,
 				OBJ_77 /* CardsRequests.swift in Sources */,
 				OBJ_78 /* CollectionRequest.swift in Sources */,

@@ -12,7 +12,7 @@ class CancellableTests: XCTestCase {
     var api = BaseAPIClient()
 
     func testCancellableNoResponseIfCancelled() {
-        let request = AllCardsRequest()
+        let request = RandomCardRequest()
         let exp = expectation(description: "exp")
         var didFinishRequest = false
         
