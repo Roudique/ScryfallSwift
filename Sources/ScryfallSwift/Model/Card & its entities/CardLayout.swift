@@ -26,6 +26,9 @@ public enum CardLayout: String, Decodable, CaseIterable {
     /// Double-sided cards that transform
     case transform
     
+    /// Double-sided cards that can be played either-side
+    case modalDFC = "modal_dfc"
+    
     /// Cards with meld parts printed on the back
     case meld
     

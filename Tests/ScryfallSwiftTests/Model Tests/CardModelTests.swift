@@ -127,4 +127,16 @@ class CardModelTests: XCTestCase {
         
         wait(for: [exp1, exp2], timeout: 10)
     }
+    
+    func testModalDFCLayout() {
+        let exp = expectation(description: "exp")
+        
+        fetchCard(named: "Spikefield Hazard") { card in
+            XCTAssertEqual(card?.cardFaces?.count, 2)
+            XCTAssertEqual(card?.layout, CardLayout.modalDFC)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
 }
