@@ -106,6 +106,9 @@ public class Card: Decodable {
 
 	/// This card’s power, if any. Note that some cards have powers that are not numeric, such as *.
 	public var power: String?
+    
+    /// Colors of mana that this card could produce.
+    public var producedMana: [CardColor]?
 
 	/// True if this card is on the Reserved List.
 	public var isReserved: Bool
@@ -141,6 +144,9 @@ public class Card: Decodable {
 	/// True if this is a digital card on Magic Online.
 	public var isDigital: Bool
 
+    /// The just-for-fun name printed on the card (such as for Godzilla series cards).
+    public var flavorName: String?
+    
 	/// The flavor text, if any.
 	public var flavorText: String?
 
@@ -275,6 +281,7 @@ public class Card: Decodable {
 		case oracleText = "oracle_text"
 		case isOversized = "oversized"
 		case power
+        case producedMana = "produced_mana"
 		case isReserved = "reserved"
 		case toughness
 		case typeLine = "type_line"
@@ -288,6 +295,7 @@ public class Card: Decodable {
 		case collectorNumber = "collector_number"
         case contentWarning = "content_warning"
 		case isDigital = "digital"
+        case flavorName = "flavor_name"
 		case flavorText = "flavor_text"
 		case frameEffects = "frame_effects"
 		case frame
