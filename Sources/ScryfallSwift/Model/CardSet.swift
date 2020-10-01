@@ -94,8 +94,14 @@ public class CardSet: Decodable {
     /// True if this set was only released on Magic Online.
     public var isDigital: Bool
     
+    /// The denominator for the set’s printed collector numbers.
+    public var printedSize: Int?
+    
     /// True if this set contains only foil cards.
     public var isFoilOnly: Bool
+    
+    /// True if this set contains only nonfoil cards.
+    public var isNonfoilOnly: Bool
     
     /// A link to this set’s permapage on Scryfall’s website.
     public var scryfallURI: URL
@@ -121,7 +127,9 @@ public class CardSet: Decodable {
         case parentSetCode  = "parent_set_code"
         case cardCount      = "card_count"
         case isDigital      = "digital"
+        case printedSize    = "printed_size"
         case isFoilOnly     = "foil_only"
+        case isNonfoilOnly  = "nonfoil_only"
         case scryfallURI    = "scryfall_uri"
         case iconURI        = "icon_svg_uri"
         case searchURI      = "search_uri"
