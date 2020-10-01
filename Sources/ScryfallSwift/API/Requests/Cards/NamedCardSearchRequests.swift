@@ -29,7 +29,7 @@ public struct NamedCardSearchRequest: APIRequest, FormatResponseRequest {
     public let name: Name
     public let setCode: String?
     
-    public init(format: Format, name: Name, setCode: String?) {
+    public init(format: Format, name: Name, setCode: String? = nil) {
         self.format = format
         self.name = name
         self.setCode = setCode

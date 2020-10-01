@@ -73,6 +73,9 @@ public class Card: Decodable {
 
 	/// This card’s hand modifier, if it is Vanguard card. This value will contain a delta, such as -1.
 	public var handModifier: String?
+    
+    /// An array of keywords that this card uses, such as 'Flying' and 'Cumulative upkeep'.
+    public var keywords: [String]
 
 	/// A code for this card’s layout.
 	public var layout: CardLayout
@@ -130,6 +133,10 @@ public class Card: Decodable {
 
 	/// This card’s collector number. Note that collector numbers can contain non-numeric characters, such as letters or ★.
 	public var collectorNumber: String
+    
+    /// True if you should consider avoiding use of this print downstream.
+    /// https://scryfall.com/blog/regarding-wotc-s-recent-statement-on-depictions-of-racism-220
+    public var contentWarning: Bool?
 
 	/// True if this is a digital card on Magic Online.
 	public var isDigital: Bool
@@ -177,7 +184,7 @@ public class Card: Decodable {
     public var promoTypes: [String]?
 
 	/// An object providing URIs to this card’s listing on major marketplaces.
-    public var purchaseURIs: [String: URL]
+    public var purchaseURIs: [String: URL]?
 
 	/// This card’s rarity. One of common, uncommon, rare, or mythic.
 	public var rarity: CardRarity
@@ -257,6 +264,7 @@ public class Card: Decodable {
 		case edhrecRank = "edhrec_rank"
 		case isFoil = "foil"
 		case handModifier = "hand_modifier"
+        case keywords
 		case layout
 		case legalities
 		case lifeModifier = "life_modifier"
@@ -278,6 +286,7 @@ public class Card: Decodable {
 		case borderColor = "border_color"
         case cardBackID = "card_back_id"
 		case collectorNumber = "collector_number"
+        case contentWarning = "content_warning"
 		case isDigital = "digital"
 		case flavorText = "flavor_text"
 		case frameEffects = "frame_effects"
