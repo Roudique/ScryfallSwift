@@ -64,6 +64,7 @@ class CardModelTests: XCTestCase {
         let exp3 = expectation(description: "exp 3")
         let exp4 = expectation(description: "exp 4")
         let exp5 = expectation(description: "exp 5")
+        let exp6 = expectation(description: "exp 6")
         
         fetchCard(named: "Lotus Cobra") { card in
             XCTAssertEqual(card!.producedMana?.count, 5)
@@ -92,7 +93,12 @@ class CardModelTests: XCTestCase {
             exp5.fulfill()
         }
         
-        wait(for: [exp1, exp2, exp3, exp4, exp5], timeout: 25)
+        fetchCard(named: "Throne of Makindi") { card in
+            XCTAssertEqual(card!.producedMana?.count, CardColor.allCases.count)
+            exp6.fulfill()
+        }
+        
+        wait(for: [exp1, exp2, exp3, exp4, exp5, exp6], timeout: 25)
     }
 
     func testFlavorName() {
