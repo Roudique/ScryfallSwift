@@ -145,4 +145,33 @@ class CardModelTests: XCTestCase {
         
         wait(for: [exp], timeout: 10)
     }
+    
+    // At the moment we only test 'inverted' frame effects.
+    func testCardFrameEffects() {
+        let exp0 = expectation(description: "exp 0")
+        
+        let api = BaseAPIClient()
+        let request = FulltextCardSearchRequest(query: "frame:inverted")
+        api.send(request: request) { response in
+            switch response {
+            case .success(let result):
+                guard !result.data.isEmpty else {
+                    XCTFail()
+                    return
+                }
+                
+                for card in result.data {
+                    guard card.frameEffects!.contains(.inverted) else {
+                        XCTFail()
+                        return
+                    }
+                }
+                exp0.fulfill()
+            case .failure:
+                XCTFail()
+            }
+        }
+        
+        wait(for: [exp0], timeout: 10)
+    }
 }
