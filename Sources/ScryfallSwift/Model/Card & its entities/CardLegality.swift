@@ -25,7 +25,7 @@ public class CardLegality: Decodable {
     public var duel: LegalityStatus
     public var oldschool: LegalityStatus
     
-    public enum Kind {
+    public enum Kind: CaseIterable {
         case standard, future, historic, pioneer, frontier, modern, legacy, pauper, vintage, penny, commander, brawl, duel, oldschool
     }
     
