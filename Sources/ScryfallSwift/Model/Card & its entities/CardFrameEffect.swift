@@ -22,6 +22,7 @@ import Foundation
 /// - compasslanddfc: The compass and land transform marks
 /// - originpwdfc: The Origins and planeswalker transform marks
 /// - mooneldrazidfc: The moon and Eldrazi transform marks
+/// - etched: The cards have an etched foil treatment
 public enum CardFrameEffect: String, Decodable, CaseIterable {
     case legendary
     case miracle
@@ -40,5 +41,6 @@ public enum CardFrameEffect: String, Decodable, CaseIterable {
     case extendedart
     case companion
     case fullart
+    case etched
     case none = "" // This is a workaround for server's behaviour: if there are no frame effects it returns an array with an empty string.
 }
