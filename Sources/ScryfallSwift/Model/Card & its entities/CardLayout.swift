@@ -32,6 +32,9 @@ public enum CardLayout: String, Decodable, CaseIterable {
     /// Cards with meld parts printed on the back
     case meld
     
+    /// Class-type enchantment cards
+    case `class`
+    
     /// Cards with Level Up
     case leveler
     
