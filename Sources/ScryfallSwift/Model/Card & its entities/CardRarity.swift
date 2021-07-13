@@ -32,5 +32,7 @@ public enum CardRarity: String, Decodable, Comparable, CaseIterable {
     case rare
     case mythic
     
+    case special
+    case bonus
 }
 
