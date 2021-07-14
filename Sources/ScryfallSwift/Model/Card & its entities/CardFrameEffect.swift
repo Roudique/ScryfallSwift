@@ -37,6 +37,7 @@ public enum CardFrameEffect: String, Decodable, CaseIterable {
     case originpwdfc
     case mooneldrazidfc
     case moonreversemoondfc
+    case waxingandwaningmoondfc
     case showcase
     case extendedart
     case companion
