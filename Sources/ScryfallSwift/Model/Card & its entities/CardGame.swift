@@ -15,4 +15,5 @@ public enum CardGame: String, Decodable, CaseIterable {
     case arena
     case mtgo
     case astral
+    case sega
 }
