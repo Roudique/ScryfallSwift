@@ -81,23 +81,6 @@ public class BaseAPIClient: NSObject {
     public func send<R: APIRequest>(
         request: R,
         completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
-        return send(request: request, cached: nil, withoutPagination: false, completion: completion)
-    }
-    
-    @discardableResult
-    public func send<R: APIRequest>(
-        request: R,
-        withoutPagination: Bool,
-        completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
-        return send(request: request, cached: nil, withoutPagination: withoutPagination, completion: completion)
-    }
-    
-    @discardableResult
-    private func send<R: APIRequest>(
-        request: R,
-        cached: [Decodable]?,
-        withoutPagination: Bool,
-        completion: @escaping (Response<R.Response>) -> ()) -> Cancellable? {
         guard var urlRequest = self.urlRequest(for: request) else {
             completionQueue.async { completion(Response.failure(CommonError.invalidURL(request.resourceName))) }
             return nil
@@ -178,22 +161,6 @@ public class BaseAPIClient: NSObject {
                 decoder.dateDecodingStrategy = .formatted(dateFormatter)
                 let encodedResponse = try decoder.decode(R.Response.self, from: data)
 
-                if withoutPagination, let list = encodedResponse as? List<Card>, list.nextPage != nil || cached != nil {
-                    var cards = list.data
-
-                    if let cachedCards = cached as? [Card] {
-                        cards = cachedCards + cards
-                        list.data = cachedCards + list.data
-                    }
-                    
-                    if let nextPageURL = list.nextPage {
-                        let basicRequest = FulltextCardSearchRequest(basicURL: nextPageURL)
-                        
-                        self.send(request: basicRequest, cached: cards, withoutPagination: true, completion: completion as! (Response<List<Card>>) -> ())
-                        return
-                    }
-                }
-                
                 self.completionQueue.async { completion(.success(encodedResponse)) }
             } catch let DecodingError.keyNotFound(key, context) {
                 print("Decoding error, key not found. Key: \(key)\ncontext: \(context)")
