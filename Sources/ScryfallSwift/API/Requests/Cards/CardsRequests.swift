@@ -98,7 +98,7 @@ public struct FulltextCardSearchRequest: APIRequest, BasicAPIRequest {
         self.includeMultilingual = includeMultilingual
     }
     
-    init(basicURL: URL) {
+    public init(basicURL: URL) {
         self.basicURL = basicURL
         self.search = ""
     }
