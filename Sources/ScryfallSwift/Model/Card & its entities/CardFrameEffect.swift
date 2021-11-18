@@ -23,6 +23,8 @@ import Foundation
 /// - originpwdfc: The Origins and planeswalker transform marks
 /// - mooneldrazidfc: The moon and Eldrazi transform marks
 /// - etched: The cards have an etched foil treatment
+/// - snow: The cards have the snowy frame effect
+/// - lesson: The cards have the Lesson frame effect
 public enum CardFrameEffect: String, Decodable, CaseIterable {
     case legendary
     case miracle
@@ -41,8 +43,8 @@ public enum CardFrameEffect: String, Decodable, CaseIterable {
     case showcase
     case extendedart
     case companion
-    case fullart
     case etched
     case snow
+    case lesson
     case none = "" // This is a workaround for server's behaviour: if there are no frame effects it returns an array with an empty string.
 }
