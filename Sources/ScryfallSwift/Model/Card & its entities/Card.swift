@@ -132,7 +132,10 @@ public class Card: Decodable {
 	public var borderColor: CardBorderColor
     
     /// The Scryfall ID for the card back design present on this card.
-    public var cardBackID: String
+    /// 
+    /// **NOTE:** this is marked as non-nil on backend but some cards that are just art
+    /// pieces actually don't have cardBackID.
+    public var cardBackID: String?
 
 	/// This card’s collector number. Note that collector numbers can contain non-numeric characters, such as letters or ★.
 	public var collectorNumber: String
