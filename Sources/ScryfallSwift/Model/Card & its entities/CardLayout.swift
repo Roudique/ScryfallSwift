@@ -73,4 +73,11 @@ public enum CardLayout: String, Decodable, CaseIterable {
     
     /// A Magic card with two sides that are unrelated
     case doubleSided = "double_sided"
+    
+    case unknown
+    
+    public init(from decoder: Decoder) throws {
+        self = try CardLayout(
+            rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+    }
 }
