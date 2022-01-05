@@ -47,4 +47,11 @@ public enum CardFrameEffect: String, Decodable, CaseIterable {
     case snow
     case lesson
     case none = "" // This is a workaround for server's behaviour: if there are no frame effects it returns an array with an empty string.
+    
+    case unknown
+    
+    public init(from decoder: Decoder) throws {
+        self = try CardFrameEffect(
+            rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+    }
 }
