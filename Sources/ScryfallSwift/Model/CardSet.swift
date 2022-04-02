@@ -53,12 +53,13 @@ public enum CardSetType: String, Decodable, CaseIterable {
     case token
     /// A set made up of gold-bordered, oversize, or trophy cards that are not legal.
     case memorabilia
-    
-    case unknown
-    
+}
+
+public struct NilOnFail<T>: Decodable where T: Decodable {
+    public let value: T?
+
     public init(from decoder: Decoder) throws {
-        self = try CardSetType(
-            rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+        self.value = try? T(from: decoder) // Fail silently
     }
 }
 
@@ -84,7 +85,7 @@ public class CardSet: Decodable {
     public var name: String
     
     /// A computer-readable classification for this set.
-    public var setType: CardSetType
+    public var setType: NilOnFail<CardSetType>
     
     /// The date the set was released (in GMT-8 Pacific time). Not all sets have a known release date.
     public var releasedAt: Date?
