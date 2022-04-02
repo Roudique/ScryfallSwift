@@ -53,6 +53,13 @@ public enum CardSetType: String, Decodable, CaseIterable {
     case token
     /// A set made up of gold-bordered, oversize, or trophy cards that are not legal.
     case memorabilia
+    
+    case unknown
+    
+    public init(from decoder: Decoder) throws {
+        self = try CardSetType(
+            rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+    }
 }
 
 /// A **Set** object represents a group of related Magic cards. All Card objects on Scryfall belong to exactly one set.
