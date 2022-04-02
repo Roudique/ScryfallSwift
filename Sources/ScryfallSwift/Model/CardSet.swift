@@ -15,8 +15,12 @@ public enum CardSetType: String, Decodable, CaseIterable {
     case expansion
     /// A reprint set that contains no new cards (Modern Masters, etc).
     case masters
+    /// An Arena set designed for Alchemy
+    case alchemy
     /// Masterpiece Series premium foil cards.
     case masterpiece
+    /// A Commander-oriented gift set
+    case arsenal
     /// From the Vault gift sets.
     case fromTheVault = "from_the_vault"
     /// Spellbook series gift sets.
@@ -27,6 +31,8 @@ public enum CardSetType: String, Decodable, CaseIterable {
     case duelDeck = "duel_deck"
     /// Special draft sets, like Conspiracy and Battlebond.
     case draftInnovation = "draft_innovation"
+    /// Magic Online treasure chest prize sets.
+    case treasureChest = "treasure_chest"
     /// Commander preconstructed decks.
     case commander
     /// Planechase sets.
@@ -47,9 +53,6 @@ public enum CardSetType: String, Decodable, CaseIterable {
     case token
     /// A set made up of gold-bordered, oversize, or trophy cards that are not legal.
     case memorabilia
-    /// Magic Online treasure chest prize sets.
-    case treasureChest = "treasure_chest"
- 
 }
 
 /// A **Set** object represents a group of related Magic cards. All Card objects on Scryfall belong to exactly one set.
