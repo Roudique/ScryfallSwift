@@ -24,6 +24,11 @@ public enum CardColor: String, Decodable, Comparable, CaseIterable {
     case green      = "G"
     case colorless  = "C"
     
+    public init(from decoder: Decoder) throws {
+        self = try CardColor(
+            rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .colorless
+    }
+    
     private var index: Int {
         return CardColor.allCases.firstIndex(of: self) ?? -1
     }
