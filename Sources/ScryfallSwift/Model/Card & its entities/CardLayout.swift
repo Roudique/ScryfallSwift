@@ -32,17 +32,20 @@ public enum CardLayout: String, Decodable, CaseIterable {
     /// Cards with meld parts printed on the back
     case meld
     
-    /// Class-type enchantment cards
-    case `class`
-    
     /// Cards with Level Up
     case leveler
+
+    /// Class-type enchantment cards
+    case `class`
     
     /// Saga-type cards
     case saga
     
     /// Cards with an Adventure spell part
     case adventure
+    
+    /// Battle-type cards
+    case battle
     
     /// Plane and Phenomenon-type cards
     case planar
@@ -72,7 +75,7 @@ public enum CardLayout: String, Decodable, CaseIterable {
     case artSeries = "art_series"
     
     /// A Magic card with two sides that are unrelated
-    case doubleSided = "double_sided"
+    case reversibleCard = "reversible_card"
     
     case unknown
     
