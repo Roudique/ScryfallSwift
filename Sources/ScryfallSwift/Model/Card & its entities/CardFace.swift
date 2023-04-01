@@ -28,6 +28,7 @@ public struct CardFace: Decodable {
     public var toughness: String?
     public var typeLine: String?
     public var watermark: String?
+    public var defense: String?
     
     enum CodingKeys: String, CodingKey {
         case artist
@@ -47,5 +48,6 @@ public struct CardFace: Decodable {
         case toughness
         case typeLine = "type_line"
         case watermark
+        case defense
     }
 }
