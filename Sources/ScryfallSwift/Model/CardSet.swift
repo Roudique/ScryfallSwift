@@ -53,6 +53,8 @@ public enum CardSetType: String, Decodable, CaseIterable {
     case token
     /// A set made up of gold-bordered, oversize, or trophy cards that are not legal.
     case memorabilia
+    /// A set that contains minigame card inserts from booster packs
+    case minigame
 }
 
 public struct NilOnFail<T>: Decodable where T: Decodable {
