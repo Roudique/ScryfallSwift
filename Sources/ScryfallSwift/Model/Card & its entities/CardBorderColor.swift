@@ -9,5 +9,11 @@ import Foundation
 
 
 public enum CardBorderColor: String, Decodable, CaseIterable {
-    case black, borderless, gold, silver, white
+    case black, borderless, gold, silver, white, yellow
+    case unknown
+    
+    public init(from decoder: Decoder) throws {
+        self = try CardBorderColor(
+            rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+    }
 }
