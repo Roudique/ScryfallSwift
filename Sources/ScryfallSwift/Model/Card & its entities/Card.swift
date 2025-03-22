@@ -30,7 +30,7 @@ public class Card: Decodable {
     public var object: String
     
     /// A unique ID for this card’s oracle identity. This value is consistent across reprinted card editions, and unique among different cards with the same name (tokens, Unstable variants, etc).
-    public var oracleID: String
+    public var oracleID: String?
     
     /// A link to where you can begin paginating all re/prints for this card on Scryfall’s API.
     public var printsSearchURI: URL
@@ -54,7 +54,7 @@ public class Card: Decodable {
 	public var cardFaces: [CardFace]?
 
 	/// The card’s converted mana cost. Note that some funny cards have fractional mana costs.
-	public var cmc: Double
+	public var cmc: Double?
 
 	/// This card’s colors, if the overall card has colors defined by the rules. Otherwise the colors will be on the card_faces objects, see below.
 	public var colors: [CardColor]?
