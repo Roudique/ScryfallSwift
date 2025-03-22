@@ -30,7 +30,7 @@ public class Card: Decodable {
     public var object: String
     
     /// A unique ID for this card’s oracle identity. This value is consistent across reprinted card editions, and unique among different cards with the same name (tokens, Unstable variants, etc).
-    public var oracleID: String?
+    public var oracleID: String
     
     /// A link to where you can begin paginating all re/prints for this card on Scryfall’s API.
     public var printsSearchURI: URL
