@@ -110,6 +110,30 @@ class APIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 15.0)
     }
     
+    func testBrokenDecoding() {
+        let apiClient = BaseAPIClient()
+        
+        let expectation = self.expectation(description: "fulltextSearch")
+        
+        var request = FulltextCardSearchRequest(query: "s:tdm")
+        request.unique = .prints
+        request.order = .spoiled
+
+        apiClient.send(request: request) { response in
+            switch response {
+            case .success(let cards):
+                print("Cards fetched: \(cards.totalCards!)")
+                assert(cards.totalCards! > 0)
+            case .failure(let error):
+                assertionFailure("Failed to fetch all cards: \(error)")
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 15.0)
+    }
+    
     func testAutocompleteSearch() {
         let exp = self.expectation(description: "autocomplete")
         

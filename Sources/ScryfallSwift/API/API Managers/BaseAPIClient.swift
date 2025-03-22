@@ -165,6 +165,13 @@ public class BaseAPIClient: NSObject {
             } catch let DecodingError.keyNotFound(key, context) {
                 print("Decoding error, key not found. Key: \(key)\ncontext: \(context)")
                 print(self.log(key: key, in: context, data: data))
+                
+                if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+                   let jsonDict = jsonObject as? [String: Any] {//,
+//                   let name = jsonDict["name"] as? String {
+                    print("name")
+                }
+                
                 self.completionQueue.async { completion(.failure(DecodingError.keyNotFound(key, context))) }
             } catch {
                 if self.debugLogLevel { print(error) }
