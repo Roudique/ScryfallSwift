@@ -38,11 +38,23 @@ public enum CardLayout: String, Decodable, CaseIterable {
     /// Class-type enchantment cards
     case `class`
     
+    /// Case-type enchantment cards
+    case `case` = "case"
+    
     /// Saga-type cards
     case saga
     
     /// Cards with an Adventure spell part
     case adventure
+    
+    /// Cards with a prepared spell part
+    case prepare
+    
+    /// Cards with Mutate
+    case mutate
+    
+    /// Cards with Prototype
+    case prototype
     
     /// Battle-type cards
     case battle
