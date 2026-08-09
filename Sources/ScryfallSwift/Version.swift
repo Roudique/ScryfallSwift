@@ -12,5 +12,5 @@ import Foundation
 /// maintained by hand. It must be kept in sync with `MARKETING_VERSION` in
 /// `ScryfallSwift.xcodeproj/project.pbxproj` — `VersionTests` fails the build if it drifts.
 public enum ScryfallSwiftVersion {
-    public static let current = "0.13.9"
+    public static let current = "0.13.10"
 }
