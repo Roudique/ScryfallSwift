@@ -63,9 +63,17 @@ extension URLSession: URLSessionProtocol {}
 public class BaseAPIClient: NSObject {
     private let host = "api.scryfall.com"
     private let session: URLSessionProtocol
-    
+
     public var debugLogLevel = true
     public var completionQueue: DispatchQueue = DispatchQueue.main
+
+    /// Scryfall requires every request to identify the client. Set this to your app's
+    /// own identifier (e.g. "MyApp/1.0") so Scryfall can contact you if needed.
+    public var userAgent = "ScryfallSwift/\(ScryfallSwiftVersion.current)"
+
+    /// Value sent in the `Accept` header. Scryfall requires it to be set; the default
+    /// prefers JSON but still allows the text and image endpoints to respond.
+    public var accept = "application/json;q=0.9,*/*;q=0.8"
     
     override public init() {
         self.session = URLSession(configuration: .default)
@@ -87,7 +95,7 @@ public class BaseAPIClient: NSObject {
         }
         
         if let basicRequest = request as? BasicAPIRequest, let basicURL = basicRequest.basicURL {
-            urlRequest = URLRequest(url: basicURL)
+            urlRequest.url = basicURL
         }
         
         if debugLogLevel { print("request url: \(urlRequest.url!)") }
@@ -188,7 +196,7 @@ public class BaseAPIClient: NSObject {
         return urlRequest(for: request)?.url
     }
     
-    private func urlRequest<T: APIRequest>(for request: T) -> URLRequest? {
+    func urlRequest<T: APIRequest>(for request: T) -> URLRequest? {
         var urlComponents       = URLComponents()
         urlComponents.scheme    = "https"
         urlComponents.host      = self.host
@@ -200,7 +208,10 @@ public class BaseAPIClient: NSObject {
         
         guard let url           = urlComponents.url else { return nil }
         var urlRequest          = URLRequest(url: url)
-        
+
+        urlRequest.setValue(userAgent, forHTTPHeaderField: "User-Agent")
+        urlRequest.setValue(accept, forHTTPHeaderField: "Accept")
+
         if let customHTTPRequest = request as? CustomHTTPRequest {
             urlRequest.httpMethod = customHTTPRequest.httpMethod.rawValue
         } else {
@@ -212,7 +223,9 @@ public class BaseAPIClient: NSObject {
         }
         
         if let customHeadersRequest = request as? CustomHeadersRequest {
-            urlRequest.allHTTPHeaderFields = customHeadersRequest.headers
+            for (field, value) in customHeadersRequest.headers {
+                urlRequest.setValue(value, forHTTPHeaderField: field)
+            }
         }
         
         
